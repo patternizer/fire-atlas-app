@@ -1,0 +1,33 @@
+/* ----- style.css ----- */
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background-color: #e5e5f2;
+}
+
+svg path {
+
+	opacity: 0.7;
+	fill: #7f7fbf;
+	stroke: #eee;
+	stroke-width: .25;
+}
+svg path:hover {
+	fill: #008000;
+	transition: 0.6s;
+	cursor: pointer;
+}
+
+.ocean
+{
+	opacity: 1;
+	fill: #ffffff;
+	pointer-events: none;
+	cursor: not-allowed;
+	stroke: #000000;
+	stroke-width: 0.5;
+}
+
+  
