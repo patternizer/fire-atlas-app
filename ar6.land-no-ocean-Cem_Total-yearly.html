@@ -2,23 +2,168 @@
 <html lang="en">
 	<head>
 		<title>Global Wildfire Atlas</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--
 		<link rel="stylesheet" href="style.css" type="text/css" />
+!-->
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	</head>
-	<body>
 	
-<?xml version="1.0" encoding="UTF-8"?>
 
+    <style>
+    h1, h2, h3, h4, h5, h6 {
+    		font-weight: 600;
+    	}
+    h3 {
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+    p {
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+    .button_link {
+      background-color: #777777;
+      color: white;
+      padding: 14px 25px;
+      margin-bottom: 5px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      border-radius: 5px;
+    }
+    .navbar {
+      margin-bottom: 12px;
+      margin-top: 0px;
+      overflow: hidden;
+      background-color: #FFFFFF;
+    }
+    .navbar a {
+      float: left;
+      font-size: 16px;
+      color: black;
+      text-align: center;
+      padding: 8px 10px;
+      text-decoration: none;
+    }
+    .dropdown {
+      float: left;
+      overflow: hidden;
+    }
+    .dropdown .dropbtn {
+      font-size: 16px;
+      border: none;
+      outline: none;
+      color: black;
+      padding: 8px 10px;
+      background-color: inherit;
+      font-family: inherit;
+      margin: 0;
+    }
+    .navbar a:hover, .dropdown:hover .dropbtn {
+      background-color: #ddd;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    .dropdown-content a {
+      float: none;
+      color: black;
+      padding: 8px 10px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    svg path {
+	  opacity: 0.7;
+	  fill: #7f7fbf;
+	  stroke: #eee;
+	  stroke-width: .25;
+    }
+    svg path:hover {
+	  opacity: 0.7;
+	  fill: #008000;
+	  transition: 0.6s;
+	  cursor: pointer;
+    }
+    .ocean {
+	  opacity: 1;
+	  fill: #ffffff;
+	  pointer-events: none;
+	  cursor: not-allowed;
+	  stroke: #000000;
+	  stroke-width: 0.5;
+    }    
+    </style>	
+	
+	<body>
+
+
+        <div class="w3-container w3-padding-32 w3-light-grey">
+        
+            <div class="form-check">
+                <input type="radio" name="switch" value="option1" onclick="window.location.href = 'ar6.land-no-ocean-Cem_Total-monthly.html';">Monthly<br>
+                <input type="radio" name="switch" value="option2"checked="checked">Yearly <br><br>
+            </div>
+            
+            <div class="w3-card navbar w3-margin-bottom ">
+                <a href="ar6.land-no-ocean-BA_Total-yearly.html">Home</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Variables</button>
+                    <div class="dropdown-content">                
+                        <a href="ar6.land-no-ocean-BA_Total-yearly.html">BA_Total</a>                
+                        <a href="ar6.land-no-ocean-BA_Forest_NonForest-yearly.html">BA_Forest_NonForest</a>                
+                        <a href="ar6.land-no-ocean-Cem_Total-yearly.html">Cem_Total</a>                
+                        <a href="ar6.land-no-ocean-Cem_Forest_NonForest-yearly.html">Cem_Forest_NonForest</a>                
+                    </div>
+                </div>
+            </div>
+        
+            <div class="w3-container" style="margin:0 0px">
+                <div class="w3-card w3-container w3-white w3-margin-bottom w3-text-dark-grey">
+                    <h1>Global Wildfire Atlas</h1>
+        			<p>
+        			The dashboard has been created to support navigation of the data products produced by  
+        			<a href="https://www.uea.ac.uk/web/groups-and-centres/climatic-research-unit/data">CRU/UEA</a> climate datasets and reports.
+        			</p>
+                </div>
+            </div>
+        	
+            <div class="w3-row-padding" style="margin:0 0px">
+
+<!--        		
+               <div class="w3-third">
+!-->
+               <div class="w3">
+        			<div class="w3-card w3-container w3-white w3-margin-bottom w3-text-dark-grey" style="padding-bottom:10px">
+        				<p>        				
+                        <figure id=ipcc-map>
 
 <!--
-<svg baseprofile="tiny" stroke-linecap="round" stroke-linejoin="round" version="1.2" viewbox="0 0 2800 1800" xmlns="http://www.w3.org/2000/svg">
+        					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1600 800" preserveAspectRatio="xMinYMin meet" >	
+                            <?xml version="1.0" encoding="UTF-8"?>
 !-->
-<svg baseprofile="tiny" stroke-linecap="round" stroke-linejoin="round" version="1.2" viewbox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+
+                            <svg baseprofile="tiny" stroke-linecap="round" stroke-linejoin="round" version="1.2" viewbox="0 0 800 400" preserveAspectRatio="xMinYMin meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
 
  <g id="figure_1">
-
-
-
-
   <g id="patch_1">
    <path d="M 0 391.653538 
 L 758.214 391.653538 
@@ -5657,28 +5802,15 @@ z
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             
    <g id="LineCollection_1">
-	
+
+
+<!--
+<a xlink:title="Region 2" xlink:href='#' onClick="MyWindow=window.open('figures/BA_Total-ipcc-ar6-land-region-timeseries-sum-monthly-region-01.png', 'MyWindow','width=600,height=300'); return false;">	
+!-->
+
+<a xlink:title="Region 1" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-01.png">	
 	  <path id="r1" d="M 362.922832 53.009093 	   
 L 317.607161 53.009093 
 L 308.512918 61.57414 
@@ -5702,7 +5834,9 @@ L 364.150671 37.939535
 L 362.922832 53.009093 
 L 362.922832 53.009093 
 " />
+</a>
 		
+<a xlink:title="Region 2" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-02.png">	
     <path id="r2" d="M 190.819781 79.330872 
 L 145.98949 79.330872 
 L 144.074463 75.723173 
@@ -5741,7 +5875,9 @@ L 193.20013 75.394141
 L 190.819781 79.330872 
 L 190.819781 79.330872 
 " />
+</a>
 
+<a xlink:title="Region 3" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-03.png">	
     <path id="r3" d="M 289.446419 79.330872 
 L 190.819781 79.330872 
 L 193.816068 74.41467 
@@ -5776,7 +5912,9 @@ L 289.984678 77.429022
 L 289.446419 79.330872 
 L 289.446419 79.330872 
 " />
+</a>
   
+<a xlink:title="Region 4" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-04.png">	
     <path id="r4" d="M 145.98949 79.330872 
 L 190.819781 79.330872 
 L 188.031758 84.304283 
@@ -5797,6 +5935,9 @@ L 145.374094 81.121481
 L 145.98949 79.330872 
 L 145.98949 79.330872 
 " />
+</a>
+
+<a xlink:title="Region 5" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-05.png">	
     <path id="r5" d="M 217.717955 79.330872 
 L 214.86429 85.31399 
 L 211.327561 93.368876 
@@ -5820,6 +5961,9 @@ L 190.819781 79.330872
 L 217.717955 79.330872 
 L 217.717955 79.330872 
 " />
+</a>
+
+<a xlink:title="Region 6" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-06.png">	
     <path id="r6" d="M 238.381525 137.35247 
 L 198.174246 137.35247 
 L 199.342001 131.197737 
@@ -5839,6 +5983,9 @@ L 236.651073 135.347793
 L 238.381525 137.35247 
 L 238.381525 137.35247 
 " />
+</a>
+
+<a xlink:title="Region 7" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-07.png">	
     <path id="r7" d="M 198.174246 137.35247 
 L 166.490355 157.863481 
 L 165.657805 158.403239 
@@ -5856,6 +6003,9 @@ L 193.571299 133.750747
 L 198.174246 137.35247 
 L 198.174246 137.35247 
 " />
+</a>
+
+<a xlink:title="Region 8" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-08.png">	
     <path id="r8" d="M 225.145155 167.759105 
 L 215.273813 179.984133 
 L 206.844058 190.681031 
@@ -5870,6 +6020,9 @@ L 220.204033 162.471002
 L 225.145155 167.759105 
 L 225.145155 167.759105 
 " />
+</a>
+
+<a xlink:title="Region 9" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-09.png">	
     <path id="r9" d="M 225.145155 167.759105 
 L 217.177871 159.165939 
 L 208.929749 149.911784 
@@ -5883,6 +6036,9 @@ L 266.201647 167.759105
 L 225.145155 167.759105 
 L 225.145155 167.759105 
 " />
+</a>
+
+<a xlink:title="Region 10" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-10.png">	
     <path id="r10" d="M 225.145155 167.759105 
 L 231.303628 167.759105 
 L 230.81441 176.926367 
@@ -5903,6 +6059,9 @@ L 216.492554 178.456004
 L 225.145155 167.759105 
 L 225.145155 167.759105 
 " />
+</a>
+
+<a xlink:title="Region 11" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-11.png">	
     <path id="r11" d="M 231.303628 167.759105 
 L 266.201647 167.759105 
 L 276.093464 178.050583 
@@ -5917,6 +6076,9 @@ L 230.8597 175.89466
 L 231.303628 167.759105 
 L 231.303628 167.759105 
 " />
+</a>
+
+<a xlink:title="Region 12" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-12.png">	
     <path id="r12" d="M 310.108332 242.606207 
 L 277.638371 242.606207 
 L 276.687724 228.368984 
@@ -5930,6 +6092,9 @@ L 309.808218 236.504492
 L 310.108332 242.606207 
 L 310.108332 242.606207 
 " />
+</a>
+
+<a xlink:title="Region 13" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-13.png">	
     <path id="r13" d="M 244.35666 242.606207 
 L 231.831827 230.911349 
 L 231.229458 222.724947 
@@ -5941,6 +6106,9 @@ L 277.638371 242.606207
 L 244.35666 242.606207 
 L 244.35666 242.606207 
 " />
+</a>
+
+<a xlink:title="Region 14" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-14.png">	
     <path id="r14" d="M 231.831827 230.911349 
 L 244.35666 242.606207 
 L 243.744303 253.632822 
@@ -5967,6 +6135,9 @@ L 217.513407 230.911349
 L 231.831827 230.911349 
 L 231.831827 230.911349 
 " />
+</a>
+
+<a xlink:title="Region 15" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-15.png">	
     <path id="r15" d="M 310.108332 242.606207 
 L 300.297501 253.613167 
 L 293.245637 261.867853 
@@ -5985,6 +6156,9 @@ L 244.35666 242.606207
 L 310.108332 242.606207 
 L 310.108332 242.606207 
 " />
+</a>
+
+<a xlink:title="Region 16" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-16.png">	
     <path id="r16" d="M 243.963564 325.711482 
 L 240.579863 319.066061 
 L 237.872928 313.291401 
@@ -6003,6 +6177,9 @@ L 283.309121 325.711482
 L 243.963564 325.711482 
 L 243.963564 325.711482 
 " />
+</a>
+
+<a xlink:title="Region 17" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-17.png">	
     <path id="r17" d="M 360.931592 83.872933 
 L 361.858771 68.082183 
 L 363.144467 50.123211 
@@ -6019,6 +6196,9 @@ L 373.324308 79.775853
 L 360.931592 83.872933 
 L 360.931592 83.872933 
 " />
+</a>
+
+<a xlink:title="Region 18" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-18.png">	
     <path id="r18" d="M 360.590164 90.742796 
 L 360.931592 83.872933 
 L 383.921614 76.21471 
@@ -6034,6 +6214,9 @@ L 453.174345 90.742796
 L 360.590164 90.742796 
 L 360.590164 90.742796 
 " />
+</a>
+
+<a xlink:title="Region 19" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-19.png">	
     <path id="r19" d="M 453.174345 90.742796 
 L 451.160027 80.808234 
 L 449.343228 72.975877 
@@ -6050,6 +6233,9 @@ L 490.208018 90.742796
 L 453.174345 90.742796 
 L 453.174345 90.742796 
 " />
+</a>
+
+<a xlink:title="Region 20" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-20.png">	
     <path id="r20" d="M 359.27196 125.657609 
 L 359.892986 106.62747 
 L 360.590164 90.742796 
@@ -6061,6 +6247,9 @@ L 458.447158 125.657609
 L 359.27196 125.657609 
 L 359.27196 125.657609 
 " />
+</a>
+
+<a xlink:title="Region 21" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-21.png">	
     <path id="r21" d="M 338.180669 161.443892 
 L 338.769621 140.994469 
 L 339.329544 127.702906 
@@ -6071,6 +6260,9 @@ L 465.256926 161.443892
 L 338.180669 161.443892 
 L 338.180669 161.443892 
 " />
+</a>
+
+<a xlink:title="Region 22" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-22.png">	
     <path id="r22" d="M 337.901585 178.050583 
 L 338.180669 161.443892 
 L 409.801748 161.443892 
@@ -6079,6 +6271,9 @@ L 395.6362 195.826769
 L 337.901585 178.050583 
 L 337.901585 178.050583 
 " />
+</a>
+
+<a xlink:title="Region 23" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-23.png">	
     <path id="r23" d="M 395.560166 219.216488 
 L 395.6362 195.826769 
 L 405.409141 172.301636 
@@ -6091,6 +6286,9 @@ L 434.636435 219.216488
 L 395.560166 219.216488 
 L 395.560166 219.216488 
 " />
+</a>
+
+<a xlink:title="Region 24" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-24.png">	
     <path id="r24" d="M 434.874046 190.447134 
 L 434.636594 172.445111 
 L 434.357546 161.443892 
@@ -6103,6 +6301,9 @@ L 475.150245 190.447134
 L 434.874046 190.447134 
 L 434.874046 190.447134 
 " />
+</a>
+
+<a xlink:title="Region 25" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-25.png">	
     <path id="r25" d="M 434.636435 219.216488 
 L 434.870274 201.74938 
 L 434.874046 190.447134 
@@ -6113,6 +6314,9 @@ L 474.741027 219.216488
 L 434.636435 219.216488 
 L 434.636435 219.216488 
 " />
+</a>
+
+<a xlink:title="Region 26" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-26.png">	
     <path id="r26" d="M 394.624682 280.026959 
 L 395.13461 257.731281 
 L 395.466394 231.379139 
@@ -6126,6 +6330,9 @@ L 427.599755 280.026959
 L 394.624682 280.026959 
 L 394.624682 280.026959 
 " />
+</a>
+
+<a xlink:title="Region 27" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-27.png">	
     <path id="r27" d="M 430.523143 219.216488 
 L 474.741027 219.216488 
 L 466.741592 233.318095 
@@ -6139,6 +6346,9 @@ L 430.418741 224.284262
 L 430.523143 219.216488 
 L 430.523143 219.216488 
 " />
+</a>
+
+<a xlink:title="Region 28" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-28.png">	
     <path id="r28" d="M 451.533733 258.978636 
 L 460.195481 244.284197 
 L 474.741027 219.216488 
@@ -6150,6 +6360,9 @@ L 485.14614 258.978636
 L 451.533733 258.978636 
 L 451.533733 258.978636 
 " />
+</a>
+
+<a xlink:title="Region 29" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-29.png">	
     <path id="r29" d="M 646.359367 36.720093 
 L 646.359527 36.720191 
 M 661.617421 46.755031 
@@ -6163,6 +6376,9 @@ L 537.391215 19.699551
 L 633.739623 29.47879 
 L 633.739623 29.47879 
 " />
+</a>
+
+<a xlink:title="Region 30" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-30.png">	
     <path id="r30" d="M 124.460994 29.486154 
 L 124.89589 29.562018 
 L 125.353505 29.641728 
@@ -6241,6 +6457,9 @@ L 96.596579 46.755031
 M 111.854473 36.720191 
 L 111.854632 36.720093 
 " />
+</a>
+
+<a xlink:title="Region 31" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-31.png">	
     <path id="r31" d="M 490.208018 90.742796 
 L 487.504987 81.795202 
 L 485.518898 75.899057 
@@ -6259,6 +6478,9 @@ L 545.758527 90.742796
 L 490.208018 90.742796 
 L 490.208018 90.742796 
 " />
+</a>
+
+<a xlink:title="Region 32" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-32.png">	
     <path id="r32" d="M 545.758527 90.742796 
 L 542.174887 82.783756 
 L 539.240151 76.877302 
@@ -6279,6 +6501,9 @@ L 619.825872 90.742796
 L 545.758527 90.742796 
 L 545.758527 90.742796 
 " />
+</a>
+
+<a xlink:title="Region 33" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-33.png">	
     <path id="r33" d="M 676.111919 57.26156 
 L 676.113884 57.263058 
 M 676.391171 57.478868 
@@ -6304,6 +6529,9 @@ L 583.16204 46.755031
 L 661.617421 46.755031 
 L 661.617421 46.755031 
 " />
+</a>
+
+<a xlink:title="Region 34" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-34.png">	
     <path id="r34" d="M 458.447158 125.657609 
 L 457.371683 116.634353 
 L 455.963056 106.62747 
@@ -6323,6 +6551,9 @@ L 473.521788 125.657609
 L 458.447158 125.657609 
 L 458.447158 125.657609 
 " />
+</a>
+
+<a xlink:title="Region 35" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-35.png">	
     <path id="r35" d="M 523.958874 109.292289 
 L 521.957398 102.427974 
 L 519.703413 95.596445 
@@ -6335,6 +6566,9 @@ L 587.693699 109.292289
 L 523.958874 109.292289 
 L 523.958874 109.292289 
 " />
+</a>
+
+<a xlink:title="Region 36" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-36.png">	
     <path id="r36" d="M 527.869797 125.657609 
 L 526.298385 118.492773 
 L 524.508257 111.334679 
@@ -6348,6 +6582,9 @@ L 555.611925 135.013683
 L 527.869797 125.657609 
 L 527.869797 125.657609 
 " />
+</a>
+
+<a xlink:title="Region 37" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-37.png">	
     <path id="r37" d="M 582.216906 150.21687 
 L 580.6209 139.983714 
 L 579.435476 133.844298 
@@ -6376,6 +6613,9 @@ L 647.212075 150.21687
 L 582.216906 150.21687 
 L 582.216906 150.21687 
 " />
+</a>
+
+<a xlink:title="Region 38" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-38.png">	
     <path id="r38" d="M 444.562631 125.657609 
 L 473.521788 125.657609 
 L 500.105587 140.860815 
@@ -6387,6 +6627,9 @@ L 445.082452 126.534932
 L 444.562631 125.657609 
 L 444.562631 125.657609 
 " />
+</a>
+
+<a xlink:title="Region 39" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-39.png">	
     <path id="r39" d="M 500.105587 140.860815 
 L 499.161668 132.752862 
 L 498.117237 125.657609 
@@ -6411,6 +6654,9 @@ L 513.213767 140.860815
 L 500.105587 140.860815 
 L 500.105587 140.860815 
 " />
+</a>
+
+<a xlink:title="Region 40" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-40.png">	
     <path id="r40" d="M 570.375053 219.216488 
 L 570.882338 210.084179 
 L 571.219733 199.937168 
@@ -6433,6 +6679,9 @@ L 697.887089 219.216488
 L 570.375053 219.216488 
 L 570.375053 219.216488 
 " />
+</a>
+
+<a xlink:title="Region 41" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-41.png">	
     <path id="r41" d="M 602.337984 242.606207 
 L 604.043224 231.419817 
 L 604.876948 224.301211 
@@ -6445,6 +6694,9 @@ L 693.659751 242.606207
 L 602.337984 242.606207 
 L 602.337984 242.606207 
 " />
+</a>
+
+<a xlink:title="Region 42" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-42.png">	
     <path id="r42" d="M 597.292435 265.995929 
 L 598.703008 260.910736 
 L 599.919813 255.826369 
@@ -6462,6 +6714,9 @@ L 656.797554 265.995929
 L 597.292435 265.995929 
 L 597.292435 265.995929 
 " />
+</a>
+
+<a xlink:title="Region 43" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-43.png">	
     <path id="r43" d="M 664.831414 272.780667 
 L 665.283701 271.774792 
 L 665.727333 270.768824 
@@ -6582,6 +6837,9 @@ L 665.884641 273.734968
 L 665.359536 273.257833 
 L 664.831414 272.780667 
 " />
+</a>
+
+<a xlink:title="Region 44" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-44.png">	
     <path id="r44" d="M 592.475122 280.026959 
 L 594.689564 274.016957 
 L 596.683299 268.001331 
@@ -6606,6 +6864,9 @@ L 597.278397 282.145204
 L 592.475122 280.026959 
 L 592.475122 280.026959 
 " />
+</a>
+
+<a xlink:title="Region 45" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-45.png">	
     <path id="r45" d="M 701.88509 312.322666 
 L 657.0548 312.322666 
 L 661.142693 307.384095 
@@ -6620,6 +6881,9 @@ L 686.550113 265.995929
 L 736.137711 265.995929 
 L 736.137711 265.995929 
 " />
+</a>
+
+<a xlink:title="Region 46" xlink:href="figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-46.png">	
     <path id="r46" d="M 159.369305 377.432694 
 L 310.724542 377.432694 
 L 307.78847 373.765895 
@@ -6638,7 +6902,9 @@ M 577.035897 384.453538
 L 181.178103 384.453538 
 L 181.178103 384.453538 
 " />
-    <path id="r" d="M 111.85464 354.933452 
+</a>
+
+    <path id="r47" d="M 111.85464 354.933452 
 L 260.328173 354.933452 
 L 263.334153 350.881843 
 L 266.683862 346.737903 
@@ -6656,10 +6922,6 @@ L 310.724542 377.432694
 L 159.369304 377.432694 
 L 159.369304 377.432694 
 " />
-
-
-
-
 
 
 <!--
@@ -6861,19 +7123,80 @@ z
 
 
 
-   </g>   
+        </g>   
+    </g>   
+</g>   
 
 
-   </g>   
+					</svg>
 
-   </g>   
+				</figure>
 
+				</p>
+			</div>
+		</div>
 
+<!--						
+        <div class="w3-third">
+            <div class="w3-card w3-container w3-white w3-margin-bottom w3-text-dark-grey" style="padding-bottom:10px">
+				<p>
 
+                <br>
+                
+				</p>
+				
+            </div>
+        </div>
+!-->
+        
+    </div>	
+            
+            
+    <div class="w3-container" style="margin:0 0px">
+        <div class="w3-card w3-container w3-white w3-margin-bottom w3-text-dark-grey">
+            <div class="w3-content">
+                <h1>NOTES</h1>
+            </div>
+        </div>
+    </div>
 
+   <div class="w3-container" style="margin:0 0px">
+        <div class="w3-card w3-container w3-white w3-margin-bottom w3-text-dark-grey">
+            <div class="w3-content">
+                <h2><a id="Processing">Processing</a></h2>
+				<br>
+                <h3>Regional aggregation</h3>
+                <p> The raw data is at 0.25 degrees resolution. The IPCC AR6 land region mask is used to compute aggregated totals at the monthly and yearly timescales.</p>
+                <br>
+                <h3>Variables</h3>
+                <br>
+                <h4>(1) BA_Total</h3>
+                <p> The total burned area in each gridcell.</p>
+                <br>
+                <h4>(2) BA_Forest_NonForest</h3>
+                <p> The burned area in gridcells having 30% tree cover.</p>
+                <br>
+                <h4>(3) Cem_Total</h3>
+                <p> The total carbon emission in each gridcell.</p>
+                <br>
+                <h4>(4) Cem_Forest_NonForest</h3>
+                <p> The carbon emission in gridcells having 30% tree cover.</p>
+                <br>
+                <h3>Data export</h3>
+                <p> The underlying data for each plot is in CSV format.</p>
+                <br>
+                <h3>Statistics</h3>
+                <br>
+                <p> The timeseries are split into trend, seasonal and residual components using the STL LOESS algorithm of Cleveland et al (1990). The LOESS trend is then fit with a linear tree regression and piecewise linear segments are fit with robust Thiel-Sen OLS regression.</p>
+                <br>
+            </div>
+        </div>
+    </div>
 
- 
-</svg>
+    <p> Page created on 2023-11-03 by Michael Taylor (CRU/UEA) for the UEA PVC impact study project with Matt Jones and Tim Osborn.
+    
+</div>
+
 
 
 	</body>
