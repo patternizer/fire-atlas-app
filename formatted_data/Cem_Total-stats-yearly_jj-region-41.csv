@@ -1,0 +1,7 @@
+,fittype,tstart,tend,slope,intercept,corrcoef,R2adj,variable,timescale,region
+0,theil-sen,2001-06-01,2020-06-01,360054260.845923,11575518153.945164,-0.064072,0.948524,Cem_Total,yearly_jj,region_41
+1,ltr_fit,2001-06-01,2020-06-01,,,0.982168,0.998967,Cem_Total,yearly_jj,region_41
+2,ltr_segment,2001-06-01,2007-06-01,-754596133.860237,23787565688.17461,0.756757,0.997517,Cem_Total,yearly_jj,region_41
+3,ltr_segment,2008-06-01,2012-06-01,856069270.518679,27473688230.21413,0.883128,0.998411,Cem_Total,yearly_jj,region_41
+4,ltr_segment,2013-06-01,2020-06-01,-1948625072.098916,30184550580.18118,0.997179,0.999744,Cem_Total,yearly_jj,region_41
+5,ltr_3_segment,2001-06-01,2020-06-01,,,0.97748,0.998579,Cem_Total,yearly_jj,region_41

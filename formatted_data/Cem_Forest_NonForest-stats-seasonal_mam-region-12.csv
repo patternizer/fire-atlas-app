@@ -1,0 +1,7 @@
+,fittype,tstart,tend,slope,intercept,corrcoef,R2adj,variable,timescale,region
+0,theil-sen,2002-01-01,2020-01-01,8700.470129,102853.430656,0.978273,0.98976,Cem_Forest_NonForest,seasonal_mam,region_12
+1,ltr_fit,2002-01-01,2020-01-01,,,0.998772,0.99972,Cem_Forest_NonForest,seasonal_mam,region_12
+2,ltr_segment,2002-01-01,2007-01-01,713.887787,140852.938757,0.863071,0.999928,Cem_Forest_NonForest,seasonal_mam,region_12
+3,ltr_segment,2008-01-01,2013-01-01,24935.308884,163688.201622,0.999651,0.999971,Cem_Forest_NonForest,seasonal_mam,region_12
+4,ltr_segment,2014-01-01,2020-01-01,12345.024826,294571.239731,0.99859,0.999979,Cem_Forest_NonForest,seasonal_mam,region_12
+5,ltr_3_segment,2002-01-01,2020-01-01,,,0.999888,0.999974,Cem_Forest_NonForest,seasonal_mam,region_12

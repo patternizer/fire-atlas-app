@@ -1,0 +1,7 @@
+,fittype,tstart,tend,slope,intercept,corrcoef,R2adj,variable,timescale,region
+0,theil-sen,2001-01-01,2023-01-01,-10.142202,711.439493,0.808303,0.971819,BA_Forest_NonForest,seasonal_djf,region_39
+1,ltr_fit,2001-01-01,2023-01-01,,,0.999475,0.999937,BA_Forest_NonForest,seasonal_djf,region_39
+2,ltr_segment,2001-01-01,2005-01-01,26.248939,625.425642,0.998712,0.99999,BA_Forest_NonForest,seasonal_djf,region_39
+3,ltr_segment,2006-01-01,2015-01-01,-16.800138,797.078156,0.948348,0.9995,BA_Forest_NonForest,seasonal_djf,region_39
+4,ltr_segment,2016-01-01,2023-01-01,-47.603607,594.948747,0.999946,0.999991,BA_Forest_NonForest,seasonal_djf,region_39
+5,ltr_3_segment,2001-01-01,2023-01-01,,,0.99759,0.999694,BA_Forest_NonForest,seasonal_djf,region_39

@@ -1,0 +1,7 @@
+,fittype,tstart,tend,slope,intercept,corrcoef,R2adj,variable,timescale,region
+0,theil-sen,2000-06-01,2023-06-01,635.791183,21143.301678,0.783343,0.984064,BA_Total,yearly_jj,region_03
+1,ltr_fit,2000-06-01,2023-06-01,,,0.993159,0.999438,BA_Total,yearly_jj,region_03
+2,ltr_segment,2000-06-01,2010-06-01,219.4089,29518.97086,0.879614,0.999225,BA_Total,yearly_jj,region_03
+3,ltr_segment,2011-06-01,2015-06-01,-811.306916,36021.987408,0.934662,0.999824,BA_Total,yearly_jj,region_03
+4,ltr_segment,2016-06-01,2023-06-01,3924.79581,27566.941296,0.987198,0.998649,BA_Total,yearly_jj,region_03
+5,ltr_3_segment,2000-06-01,2023-06-01,,,0.98846,0.999054,BA_Total,yearly_jj,region_03
