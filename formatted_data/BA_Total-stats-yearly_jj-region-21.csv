@@ -1,7 +1,2 @@
-,fittype,tstart,tend,slope,intercept,corrcoef,R2adj,variable,timescale,region
-0,theil-sen,2000-06-01,2023-06-01,-1743.384538,107593.895143,0.140093,0.965134,BA_Total,yearly_jj,region_21
-1,ltr_fit,2000-06-01,2023-06-01,,,0.99469,0.999773,BA_Total,yearly_jj,region_21
-2,ltr_segment,2000-06-01,2005-06-01,6045.447765,72212.623794,0.999266,0.999976,BA_Total,yearly_jj,region_21
-3,ltr_segment,2006-06-01,2015-06-01,-4791.718046,116448.62615,0.966551,0.99817,BA_Total,yearly_jj,region_21
-4,ltr_segment,2016-06-01,2023-06-01,4809.238497,67552.486951,0.995905,0.999833,BA_Total,yearly_jj,region_21
-5,ltr_3_segment,2000-06-01,2023-06-01,,,0.97555,0.998952,BA_Total,yearly_jj,region_21
+fittype,tstart,tend,slope,intercept,corrcoef,R2adj,variable,timescale,region
+theil-sen,2000-07-01,2022-07-01,0.15807,89.234225,0.133388,0.965591,BA_Total,yearly_jj,region_21

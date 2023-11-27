@@ -1,7 +1,2 @@
-,fittype,tstart,tend,slope,intercept,corrcoef,R2adj,variable,timescale,region
-0,theil-sen,2000-06-01,2023-06-01,-11.953021,4183.805541,-0.454061,0.990055,BA_Forest_NonForest,yearly_jj,region_05
-1,ltr_fit,2000-06-01,2023-06-01,,,0.998426,0.999975,BA_Forest_NonForest,yearly_jj,region_05
-2,ltr_segment,2000-06-01,2007-06-01,185.503207,2680.881596,0.99798,0.999924,BA_Forest_NonForest,yearly_jj,region_05
-3,ltr_segment,2008-06-01,2014-06-01,-67.031967,3966.086304,0.997846,0.99999,BA_Forest_NonForest,yearly_jj,region_05
-4,ltr_segment,2015-06-01,2023-06-01,9.034956,3554.274843,0.992141,0.999999,BA_Forest_NonForest,yearly_jj,region_05
-5,ltr_3_segment,2000-06-01,2023-06-01,,,0.998285,0.999973,BA_Forest_NonForest,yearly_jj,region_05
+fittype,tstart,tend,slope,intercept,corrcoef,R2adj,variable,timescale,region
+theil-sen,2000-07-01,2022-07-01,0.050303,3.078035,0.751356,0.992789,BA_Forest_NonForest,yearly_jj,region_05

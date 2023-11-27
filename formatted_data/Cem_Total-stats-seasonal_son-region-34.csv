@@ -1,7 +1,2 @@
-,fittype,tstart,tend,slope,intercept,corrcoef,R2adj,variable,timescale,region
-0,theil-sen,2002-01-01,2020-01-01,-127990.677558,4059725.383942,0.904463,0.971581,Cem_Total,seasonal_son,region_34
-1,ltr_fit,2002-01-01,2020-01-01,,,0.99913,0.999789,Cem_Total,seasonal_son,region_34
-2,ltr_segment,2002-01-01,2008-01-01,-557597.003901,6927246.315231,0.999628,0.999934,Cem_Total,seasonal_son,region_34
-3,ltr_segment,2009-01-01,2014-01-01,-78928.709415,3233236.002215,0.762181,0.998806,Cem_Total,seasonal_son,region_34
-4,ltr_segment,2015-01-01,2020-01-01,-170440.881838,3102422.369304,0.998353,0.999952,Cem_Total,seasonal_son,region_34
-5,ltr_3_segment,2002-01-01,2020-01-01,,,0.998892,0.99972,Cem_Total,seasonal_son,region_34
+fittype,tstart,tend,slope,intercept,corrcoef,R2adj,variable,timescale,region
+theil-sen,2002-01-01,2020-01-01,-0.000182,0.004983,0.904463,0.977299,Cem_Total,seasonal_son,region_34

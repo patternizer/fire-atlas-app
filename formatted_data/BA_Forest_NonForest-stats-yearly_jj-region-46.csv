@@ -1,5 +1,2 @@
-,fittype,tstart,tend,slope,intercept,corrcoef,R2adj,variable,timescale,region
-0,theil-sen,2000-06-01,2023-06-01,0.0,0.0,,,BA_Forest_NonForest,yearly_jj,region_46
-1,ltr_fit,2000-06-01,2023-06-01,,,,,BA_Forest_NonForest,yearly_jj,region_46
-2,ltr_segment,2000-06-01,2023-06-01,0.0,0.0,,,BA_Forest_NonForest,yearly_jj,region_46
-3,ltr_3_segment,2000-06-01,2023-06-01,,,,,BA_Forest_NonForest,yearly_jj,region_46
+fittype,tstart,tend,slope,intercept,corrcoef,R2adj,variable,timescale,region
+theil-sen,2000-07-01,2022-07-01,,,,,BA_Forest_NonForest,yearly_jj,region_46
