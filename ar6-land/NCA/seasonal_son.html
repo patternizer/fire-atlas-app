@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Global Wildfire Atlas</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--
+		<link rel="stylesheet" href="style.css" type="text/css" />
+!-->
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	</head>
+	
+
+    <style>
+    h1, h2, h3, h4, h5, h6 {
+    		font-weight: 600;
+    	}
+    h3 {
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+    p {
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+    .button_link {
+      background-color: #777777;
+      color: white;
+      padding: 14px 25px;
+      margin-bottom: 5px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      border-radius: 5px;
+    }
+    .navbar {
+      margin-bottom: 12px;
+      margin-top: 0px;
+      overflow: hidden;
+      background-color: #FFFFFF;
+    }
+    .navbar a {
+      float: left;
+      font-size: 16px;
+      color: black;
+      text-align: center;
+      padding: 8px 10px;
+      text-decoration: none;
+    }
+    .dropdown {
+      float: left;
+      overflow: hidden;
+    }
+    .dropdown .dropbtn {
+      font-size: 16px;
+      border: none;
+      outline: none;
+      color: black;
+      padding: 8px 10px;
+      background-color: inherit;
+      font-family: inherit;
+      margin: 0;
+    }
+    .navbar a:hover, .dropdown:hover .dropbtn {
+      background-color: #ddd;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    .dropdown-content a {
+      float: none;
+      color: black;
+      padding: 8px 10px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    svg path {
+	  opacity: 0.7;
+	  fill: #7f7fbf;
+	  stroke: #eee;
+	  stroke-width: .25;
+    }
+    svg path:hover {
+	  opacity: 0.7;
+	  fill: #008000;
+	  transition: 0.6s;
+	  cursor: pointer;
+    }
+    .ocean {
+	  opacity: 1;
+	  fill: #ffffff;
+	  pointer-events: none;
+	  cursor: not-allowed;
+	  stroke: #000000;
+	  stroke-width: 0.5;
+    }    
+    </style>	
+	
+	<body>
+
+	<div class="w3-container w3-padding-32 w3-light-grey">
+
+        <div class="w3-half">
+			<div class="form-check">
+				<input type="radio" name="switch" value="option1" onclick="window.location.href = 'monthly.html';">Monthly<br>
+				<input type="radio" name="switch" value="option1" onclick="window.location.href = 'seasonal_djf.html';">Seasonal (DJF)<br>
+				<input type="radio" name="switch" value="option1" onclick="window.location.href = 'seasonal_mam.html';">Seasonal (MAM)<br>
+				<input type="radio" name="switch" value="option1" onclick="window.location.href = 'seasonal_jja.html';">Seasonal (JJA)<br>
+				<input type="radio" name="switch" value="option2"checked="checked">Seasonal (SON)<br>
+				<input type="radio" name="switch" value="option1" onclick="window.location.href = 'yearly_jj.html';">Yearly (JUL-JUN)<br>
+				<input type="radio" name="switch" value="option1" onclick="window.location.href = 'yearly.html';">Yearly (JAN-DEC)<br><br>
+			</div>
+        </div>
+
+        <div class="w3-half">
+			<div style="float: right;">
+				<a href="../../global-wildfire-atlas-seasonal_son.html"" target="_blank"><img src="../../figures/atlas.png" height=150px /></a>
+            </div>
+        </div>
+        
+		<div class="w3-container" style="margin:0 -16px">
+			<div class="w3-card w3-container w3-white w3-margin-bottom w3-text-dark-grey">
+				<h1>N.Central-America (NCA)</h1>
+			</div>
+		</div>
+
+        <div class="w3-half">
+            <div class="w3-card w3-container w3-white w3-margin-bottom w3-text-dark-grey" style="padding-bottom:10px">
+                <p> <img src="../../figures/BA_Total-ipcc-ar6-land-region-timeseries-sum-seasonal_son-region-07.png" width=auto height=450px> </p>
+                <h3>Area Burned by All Fires</h3>
+                <p>Includes fires detected by the MODIS burned area product with 500m resolution<br>(MCD64A1c6.1; Giglio et al., 2018)</p>				
+                <p>
+                <div style="float: left;">
+					<h4>Downloads:</h4>					
+                    Image: <a href="../../figures/BA_Total-ipcc-ar6-land-region-timeseries-sum-seasonal_son-region-07.png" target="_blank">png</a> <br>
+                    Timeseries data: <a href="../../formatted_data/BA_Total-timeseries-seasonal_son-region-07.csv">csv</a> <br>
+                    Statistical summary data: <a href="../../formatted_data/BA_Total-stats-seasonal_son-region-07.csv" target="_blank">csv</a> <br>
+                    <a href="#Processing">Processing</a><br>
+                </div>
+                <div style="float: right;"> </div>
+                </p>
+            </div>
+        </div>
+
+        <div class="w3-half">
+            <div class="w3-card w3-container w3-white w3-margin-bottom w3-text-dark-grey" style="padding-bottom:10px">
+                <p> <img src="../../figures/BA_Forest_NonForest-ipcc-ar6-land-region-timeseries-sum-seasonal_son-region-07.png" width=auto height=450px> </p>
+                <h3>Area Burned by Forest Fires</h3>
+                <p>Forests are any areas with tree cover over 30%, based on the MODIS vegetation continuous field product with 250m<br>(MCD12Q1c6.0; Giglio et al., 2018)</p>				
+                <p>
+                <div style="float: left;">
+					<h4>Downloads:</h4>
+					Image: <a href="../../figures/BA_Forest_NonForest-ipcc-ar6-land-region-timeseries-sum-seasonal_son-region-07.png" target="_blank">png</a> <br>
+                    Timeseries data: <a href="../../formatted_data/BA_Forest_NonForest-timeseries-seasonal_son-region-07.csv">csv</a> <br>
+                    Statistical summary data: <a href="../../formatted_data/BA_Forest_NonForest-stats-seasonal_son-region-07.csv" target="_blank">csv</a> <br>
+                    <a href="#Processing">Processing</a><br>
+                </div>
+                <div style="float: right;"> </div>
+                </p>
+            </div>
+        </div>
+
+        <div class="w3-half">
+            <div class="w3-card w3-container w3-white w3-margin-bottom w3-text-dark-grey" style="padding-bottom:10px">
+                <p> <img src="../../figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-seasonal_son-region-07.png" width=auto height=450px> </p>
+                <h3>Carbon Emissions from All Fires</h3>
+                <p>Emissions from all fires based on the 500m GFED product driven by MCD64A1c6.1<br>(van Wees et al., 2023)</p>				
+                <p>
+                <div style="float: left;">
+					<h4>Downloads:</h4>
+                    Image: <a href="../../figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-seasonal_son-region-07.png" target="_blank">png</a> <br>
+                    Timeseries data: <a href="../../formatted_data/Cem_Total-timeseries-seasonal_son-region-07.csv">csv</a> <br>
+                    Statistical summary data: <a href="../../formatted_data/Cem_Total-stats-seasonal_son-region-07.csv" target="_blank">csv</a> <br>
+                    <a href="#Processing">Processing</a><br>
+                </div>
+                <div style="float: right;"> </div>
+                </p>
+            </div>
+        </div>
+
+        <div class="w3-half">
+            <div class="w3-card w3-container w3-white w3-margin-bottom w3-text-dark-grey" style="padding-bottom:10px">
+                <p> <img src="../../figures/Cem_Forest_NonForest-ipcc-ar6-land-region-timeseries-sum-seasonal_son-region-07.png" width=auto height=450px> </p>
+                <h3>Carbon Emissions from Forest Fires</h3>
+                <p>Emissions from forest fires based on the 500m GFED product driven by MCD64A1c6.1<br>(van Wees et al., 2023)</p>
+                <p>
+                <div style="float: left;">
+					<h4>Downloads:</h4>
+                    Image: <a href="../../figures/Cem_Forest_NonForest-ipcc-ar6-land-region-timeseries-sum-seasonal_son-region-07.png" target="_blank">png</a> <br>
+                    Timeseries data: <a href="../../formatted_data/Cem_Forest_NonForest-timeseries-seasonal_son-region-07.csv">csv</a> <br>
+                    Statistical summary data: <a href="../../formatted_data/Cem_Forest_NonForest-stats-seasonal_son-region-07.csv" target="_blank">csv</a> <br>
+                    <a href="#Processing">Processing</a><br>
+                </div>
+                <div style="float: right;"> </div>
+                </p>
+            </div>
+        </div>
+    
+    	<div class="w3-container" style="margin:0 -16px">
+			<div class="w3-card w3-container w3-white w3-margin-bottom w3-text-dark-grey">
+				<div class="w3-content">
+					<h1>NOTES</h1>
+				</div>
+			</div>
+		</div>
+        
+	    <div class="w3-container" style="margin:0 -16px">
+			<div class="w3-card w3-container w3-white w3-margin-bottom w3-text-dark-grey">
+				<div class="w3-content">
+					<h2><a id="Processing">Processing</a></h2>
+					<p> Set the timescale using the radio buttons. Selecting an IPCC AR6 region will take you to a page showing the timeseries of all variables processed.
+					</p>
+					
+					<br>
+					<h3>Regional aggregation</h3>
+					<p> The raw data is at 0.25 degrees resolution. The IPCC AR6 land region mask is used to compute aggregated totals at the monthly, yearly (JAN-DEC), yearly (JUL-JUN), seasonal (DJF), seasonal (DJF), seasonal (MAM), and seasonal (SON) timescales. 
+					The IPCC AR6 land regions abbreviations have the following meaning:
+					</p>
+					<ol start="1">             
+						<li>GIC &nbsp;&nbsp;&nbsp;&nbsp; Greenland/Iceland</li>
+						<li>NWN	&nbsp;&nbsp;&nbsp;&nbsp; N.W.North-America</li>
+						<li>NEN &nbsp;&nbsp;&nbsp;&nbsp; N.E.North-America</li>
+						<li>WNA &nbsp;&nbsp;&nbsp;&nbsp; W.North-America</li>
+						<li>CNA &nbsp;&nbsp;&nbsp;&nbsp; C.North-America</li>
+						<li>ENA &nbsp;&nbsp;&nbsp;&nbsp; E.North-America</li>
+						<li>NCA &nbsp;&nbsp;&nbsp;&nbsp; N.Central-America</li>
+						<li>SCA &nbsp;&nbsp;&nbsp;&nbsp; S.Central-America</li>
+						<li>CAR &nbsp;&nbsp;&nbsp;&nbsp; Caribbean</li>
+						<li>NWS &nbsp;&nbsp;&nbsp;&nbsp; N.W.South-America</li>
+						<li>NSA &nbsp;&nbsp;&nbsp;&nbsp; N.South-America</li>
+						<li>NES &nbsp;&nbsp;&nbsp;&nbsp; N.E.South-America</li>
+						<li>SAM &nbsp;&nbsp;&nbsp;&nbsp; South-American-Monsoon</li>
+						<li>SWS &nbsp;&nbsp;&nbsp;&nbsp; S.W.South-America</li>
+						<li>SES &nbsp;&nbsp;&nbsp;&nbsp; S.E.South-America</li>
+						<li>SSA &nbsp;&nbsp;&nbsp;&nbsp; S.South-America</li>
+						<li>NEU &nbsp;&nbsp;&nbsp;&nbsp; N.Europe</li>
+						<li>WCE &nbsp;&nbsp;&nbsp;&nbsp; West & Central-Europe</li>
+						<li>EEU &nbsp;&nbsp;&nbsp;&nbsp; E.Europe</li>
+						<li>MED &nbsp;&nbsp;&nbsp;&nbsp; Mediterranean</li>
+						<li>SAH &nbsp;&nbsp;&nbsp;&nbsp; Sahara</li>
+						<li>WAF &nbsp;&nbsp;&nbsp;&nbsp; Western-Africa</li>
+						<li>CAF &nbsp;&nbsp;&nbsp;&nbsp; Central-Africa</li>
+						<li>NEAF &nbsp;&nbsp;&nbsp; N.Eastern-Africa</li>
+						<li>SEAF &nbsp;&nbsp;&nbsp; S.Eastern-Africa</li>
+						<li>WSAF &nbsp;&nbsp;&nbsp; W.Southern-Africa</li>
+						<li>ESAF &nbsp;&nbsp;&nbsp; E.Southern-Africa</li>
+						<li>MDG &nbsp;&nbsp;&nbsp;&nbsp; Madagascar</li>
+						<li>RAR &nbsp;&nbsp;&nbsp;&nbsp; Russian-Arctic</li>
+						<li>WSB &nbsp;&nbsp;&nbsp;&nbsp; W.Siberia</li>
+						<li>ESB &nbsp;&nbsp;&nbsp;&nbsp; E.Siberia</li>
+						<li>RFE &nbsp;&nbsp;&nbsp;&nbsp; Russian-Far-East</li>
+						<li>WCA &nbsp;&nbsp;&nbsp;&nbsp; W.C.Asia</li>
+						<li>ECA &nbsp;&nbsp;&nbsp;&nbsp; E.C.Asia</li>
+						<li>TIB &nbsp;&nbsp;&nbsp;&nbsp; Tibetan-Plateau</li>
+						<li>EAS &nbsp;&nbsp;&nbsp;&nbsp; E.Asia</li>
+						<li>ARP &nbsp;&nbsp;&nbsp;&nbsp; Arabian-Peninsula</li>
+						<li>SAS &nbsp;&nbsp;&nbsp;&nbsp; S.Asia</li>
+						<li>SEA &nbsp;&nbsp;&nbsp;&nbsp; S.E.Asia</li>
+						<li>NAU &nbsp;&nbsp;&nbsp;&nbsp; N.Australia</li>
+						<li>CAU &nbsp;&nbsp;&nbsp;&nbsp; C.Australia</li>
+						<li>EAU &nbsp;&nbsp;&nbsp;&nbsp; E.Australia</li>
+						<li>SAU &nbsp;&nbsp;&nbsp;&nbsp; S.Australia</li>
+						<li>NZ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; New-Zealand</li>
+						<li>EAN &nbsp;&nbsp;&nbsp;&nbsp; E.Antarctica</li>
+						<li>WAN &nbsp;&nbsp;&nbsp;&nbsp; W.Antarctica</li>			
+					</ol>
+
+					<br>
+					<h3>Variables</h3>
+					<br>
+					<h4>(1) Area Burned by All Fires</h3>
+					<p> The total area burned by fires in the region in units of thousands of km².</p>
+					<br>
+					<h4>(2) Area Burned by Forest Fires</h3>
+					<p> The total burned area by forest fire in the region from gridcells having 30% tree cover in units of thousands of km².</p>
+					<br>
+					<h4>(3) Carbon Emissions from All Fires</h3>
+					<p> The total carbon emissions from all fires in the region in units of thousands of tonnes of C.</p>
+					<br>
+					<h4>(4) Carbon Emissions from Forest Fires</h3>
+					<p> The total carbon emissions from forest fires in the region from gridcells having 30% tree cover in units of thousands of tonnes of C.</p>
+					<br>
+					<h3>Data export</h3>
+					<p> The underlying data for each plot is in CSV format.</p>
+					<br>
+					<h3>Statistics</h3>
+					<br>
+					<p> The timeseries are fit with a robust OLS regression (Theil-Sen) and a regression t-test is performed to determine if the OLS slope is significant at the 95% confidence level (p < 0.05, alpha = 0.05). This is only shown when the alternative hypothesis is true. The uncertainty band for the 95% confidence interval on the slope and intercept is provided. For each timescale (with the exception of the monthly data), 5-yr means are shaded as a visual guide to help understand the variability and potential trend in the data.
+					</p>
+					<br>
+				</div>
+			</div>
+		</div>
+
+    <p> Page created on 2023-11-28 by Michael Taylor (CRU/UEA) for the UEA PVC impact study project with Matt Jones and Tim Osborn. </p>
+    
+</div>
+
+
+
+
+</body>
+</html>
