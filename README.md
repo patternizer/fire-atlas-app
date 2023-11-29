@@ -13,6 +13,7 @@ UEA impact study app (dev)
 * `global-wildfire-atlas-seasonal_son.html` - HTML script to generate an interactive IPCC AR6 land region world map with radio button timescales that link to a page that displays associated variables (seasonal: SON)
 * `global-wildfire-atlas-monthly.html` - HTML script to generate an interactive IPCC AR6 land region world map with radio button timescales that link to a page that displays associated variables (monthly)
 * `create-region-directories.py` - Python script to generate a directory per IPCC AR6 land region containing timescale HTML files
+* `update-map-htmls.py` - Python script to re-point map HTMLs to region directory HTML at the corresponding timescale
 * `ar6.land.csv` - Look up table for IPCC AR6 land region abbreviations and descriptive names
 
 The first step is to clone the latest fire-atlas-app repo and step into the check out directory: 
