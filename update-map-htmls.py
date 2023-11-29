@@ -41,7 +41,7 @@ def replace_string(csv_file, html_file):
 		
         id = str(id).zfill(2)
         replacement_string = f"ar6-land/{info['abbrev']}/{timescale}.html"
-        html_content = html_content.replace(f"figures/BA_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-{id}.png", replacement_string)
+        html_content = html_content.replace(f"figures/BA_Total-ipcc-ar6-land-region-timeseries-sum-{timescale}-region-{id}.png", replacement_string)
 
     # WRITE: modified content back to the HTML file
 
@@ -57,6 +57,7 @@ html_filelist = glob.glob('*.html')
 
 for html_file in html_filelist:
 
+    print(html_file)
     replace_string(csv_file, html_file)
 
 #------------------------------------------------------------------------------
