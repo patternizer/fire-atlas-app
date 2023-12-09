@@ -1,2 +1,0 @@
-fittype,tstart,tend,slope,intercept,corrcoef,R2adj,variable,timescale,region
-theil-sen,2001-01-01,2023-01-01,-8.7e-05,0.49659,0.115482,0.980631,BA_Forest_NonForest,seasonal_mam,region_39

@@ -59,27 +59,13 @@ for index, row in df.iterrows():
 
         # UPDATE: region HTML files with modifications
         
-        modified_content = file_content.replace('<h1>E.Southern-Africa (ESAF)</h1>', f'<h1>{name_value} ({abbrev_value})</h1>')
-        modified_content = modified_content.replace('-region-27', f'-region-{str(id_value).zfill(2)}')
-        
-        modified_content = modified_content.replace('"../../figures/BA_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-27.png"', f'"../../figures/BA_Total-ipcc-ar6-land-region-timeseries-sum-{timescale}-region-{str(id_value).zfill(2)}.png"')
-        modified_content = modified_content.replace('"../../formatted_data/BA_Total-timeseries-yearly-region-27.csv"', f'"../../formatted_data/BA_Total-timeseries-{timescale}-region-{str(id_value).zfill(2)}.csv"')
-        modified_content = modified_content.replace('"../../formatted_data/BA_Total-stats-yearly-region-27.csv"', f'"../../formatted_data/BA_Total-stats-{timescale}-region-{str(id_value).zfill(2)}.csv"')                
-
-        modified_content = modified_content.replace('"../../figures/BA_Total_Forest_NonForest-ipcc-ar6-land-region-timeseries-sum-yearly-region-27.png"', f'"../../figures/BA_Total_Forest_NonForest-ipcc-ar6-land-region-timeseries-sum-{timescale}-region-{str(id_value).zfill(2)}.png"')
-        modified_content = modified_content.replace('"../../formatted_data/BA_Total_Forest_NonForest-timeseries-yearly-region-27.csv"', f'"../../formatted_data/BA_Total_Forest_NonForest-timeseries-{timescale}-region-{str(id_value).zfill(2)}.csv"')
-        modified_content = modified_content.replace('"../../formatted_data/BA_Total_Forest_NonForest-stats-yearly-region-27.csv"', f'"../../formatted_data/BA_Total_Forest_NonForest-stats-{timescale}-region-{str(id_value).zfill(2)}.csv"')                
-
-        modified_content = modified_content.replace('"../../figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-yearly-region-27.png"', f'"../../figures/Cem_Total-ipcc-ar6-land-region-timeseries-sum-{timescale}-region-{str(id_value).zfill(2)}.png"')
-        modified_content = modified_content.replace('"../../formatted_data/Cem_Total-timeseries-yearly-region-27.csv"', f'"../../formatted_data/Cem_Total-timeseries-{timescale}-region-{str(id_value).zfill(2)}.csv"')
-        modified_content = modified_content.replace('"../../formatted_data/Cem_Total-stats-yearly-region-27.csv"', f'"../../formatted_data/Cem_Total-stats-{timescale}-region-{str(id_value).zfill(2)}.csv"')                
-
-        modified_content = modified_content.replace('"../../figures/Cem_Total_Forest_NonForest-ipcc-ar6-land-region-timeseries-sum-yearly-region-27.png"', f'"../../figures/Cem_Total_Forest_NonForest-ipcc-ar6-land-region-timeseries-sum-{timescale}-region-{str(id_value).zfill(2)}.png"')
-        modified_content = modified_content.replace('"../../formatted_data/Cem_Total_Forest_NonForest-timeseries-yearly-region-27.csv"', f'"../../formatted_data/Cem_Total_Forest_NonForest-timeseries-{timescale}-region-{str(id_value).zfill(2)}.csv"')
-        modified_content = modified_content.replace('"../../formatted_data/Cem_Total_Forest_NonForest-stats-yearly-region-27.csv"', f'"../../formatted_data/Cem_Total_Forest_NonForest-stats-{timescale}-region-{str(id_value).zfill(2)}.csv"')                
-
+        modified_content = file_content.replace(f'-region-{str(id_value).zfill(2)}', f'-{abbrev_value}')       
         modified_content = modified_content.replace('csv">csv</a>', 'csv" target="_self">csv</a>')
         modified_content = modified_content.replace('target="_blank"', 'target="_self"')
+
+        modified_content = modified_content.replace('"width=device-width, initial-scale=1"', '"width=device-width, initial-scale=1.0"')                
+        modified_content = modified_content.replace('"width=auto height=450px"', '"style="max-width:100%"; height=auto;"')                
+
                                                                     
         # WRITE: modified content back to the file
                                         

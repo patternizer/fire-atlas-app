@@ -39,9 +39,10 @@ def replace_string(csv_file, html_file):
     
     for id, info in data.items():
 		
-        id = str(id).zfill(2)
-        replacement_string = f"ar6-land/{info['abbrev']}/{timescale}.html"
-        html_content = html_content.replace(f"figures/BA_Total-ipcc-ar6-land-region-timeseries-sum-{timescale}-region-{id}.png", replacement_string)
+        #id = str(id).zfill(2)
+        #replacement_string = f"ar6-land/{info['abbrev']}/{timescale}.html"
+        #html_content = html_content.replace(f"figures/BA_Total-ipcc-ar6-land-region-timeseries-sum-{timescale}-region-{id}.png", replacement_string)
+        html_content = html_content.replace(f'"Region {id}"', f"{info['abbrev']}")
 
     # WRITE: modified content back to the HTML file
 

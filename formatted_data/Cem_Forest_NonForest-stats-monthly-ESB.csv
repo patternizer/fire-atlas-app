@@ -1,0 +1,2 @@
+fittype,tstart,tend,slope,intercept,corrcoef,R2adj,variable,timescale,region
+theil-sen,2002-01-01,2020-12-01,0.011488,3.104542,0.888752,0.957363,Cem_Forest_NonForest,monthly,ESB
