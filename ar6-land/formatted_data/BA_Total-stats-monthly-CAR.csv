@@ -1,0 +1,2 @@
+fittype,tstart,tend,slope,intercept,corrcoef,R2adj,variable,timescale,region
+theil-sen,2001-01-01,2023-06-01,-0.001754,1.159266,0.725743,0.986842,BA_Total,monthly,CAR
