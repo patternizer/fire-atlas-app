@@ -1,2 +1,0 @@
-fittype,tstart,tend,slope,intercept,corrcoef,R2adj,variable,timescale,region
-theil-sen,2001-01-01,2023-06-01,0.010567,3.494383,0.857215,0.992468,BA_Total,monthly,WNA

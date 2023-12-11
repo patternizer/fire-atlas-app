@@ -1,2 +1,0 @@
-fittype,tstart,tend,slope,intercept,corrcoef,R2adj,variable,timescale,region
-theil-sen,2002-01-01,2020-12-01,1e-05,0.000224,0.850667,0.872871,Cem_Total,monthly,NZ

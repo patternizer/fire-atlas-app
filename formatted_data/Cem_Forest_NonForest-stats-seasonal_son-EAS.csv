@@ -1,2 +1,0 @@
-fittype,tstart,tend,slope,intercept,corrcoef,R2adj,variable,timescale,region
-theil-sen,2002-10-01,2020-10-01,-0.018842,0.386913,0.890113,0.954357,Cem_Forest_NonForest,seasonal_son,EAS

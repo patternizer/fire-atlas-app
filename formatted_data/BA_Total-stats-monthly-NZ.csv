@@ -1,2 +1,0 @@
-fittype,tstart,tend,slope,intercept,corrcoef,R2adj,variable,timescale,region
-theil-sen,2001-01-01,2023-06-01,2.3e-05,0.006008,0.960283,0.963702,BA_Total,monthly,NZ

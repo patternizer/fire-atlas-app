@@ -1,2 +1,0 @@
-fittype,tstart,tend,slope,intercept,corrcoef,R2adj,variable,timescale,region
-theil-sen,2002-04-01,2020-04-01,4.2e-05,-0.000113,0.777364,0.791644,Cem_Forest_NonForest,seasonal_mam,NZ
