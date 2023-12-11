@@ -5,13 +5,13 @@ UEA impact study app (dev)
 
 ## Contents
 
-* `global-wildfire-atlas-yearly.html` - HTML script to generate an interactive IPCC AR6 land region world map with radio button timescales that link to a page that displays associated variables (yearly: JAN-DEC)
-* `global-wildfire-atlas-yearly_jj.html` - HTML script to generate an interactive IPCC AR6 land region world map with radio button timescales that link to a page that displays associated variables (yearly: JUL-JUN)
-* `global-wildfire-atlas-seasonal_djf.html` - HTML script to generate an interactive IPCC AR6 land region world map with radio button timescales that link to a page that displays associated variables (seasonal: DJF)
-* `global-wildfire-atlas-seasonal_mam.html` - HTML script to generate an interactive IPCC AR6 land region world map with radio button timescales that link to a page that displays associated variables (seasonal: MAM)
-* `global-wildfire-atlas-seasonal_jja.html` - HTML script to generate an interactive IPCC AR6 land region world map with radio button timescales that link to a page that displays associated variables (seasonal: JJA)
-* `global-wildfire-atlas-seasonal_son.html` - HTML script to generate an interactive IPCC AR6 land region world map with radio button timescales that link to a page that displays associated variables (seasonal: SON)
-* `global-wildfire-atlas-monthly.html` - HTML script to generate an interactive IPCC AR6 land region world map with radio button timescales that link to a page that displays associated variables (monthly)
+* `global-fire-dashboard-yearly.html` - HTML script to generate an interactive IPCC AR6 land region world map with radio button timescales that link to a page that displays associated variables (yearly: JAN-DEC)
+* `global-fire-dashboard-yearly_jj.html` - HTML script to generate an interactive IPCC AR6 land region world map with radio button timescales that link to a page that displays associated variables (yearly: JUL-JUN)
+* `global-fire-dashboard-seasonal_djf.html` - HTML script to generate an interactive IPCC AR6 land region world map with radio button timescales that link to a page that displays associated variables (seasonal: DJF)
+* `global-fire-dashboard-seasonal_mam.html` - HTML script to generate an interactive IPCC AR6 land region world map with radio button timescales that link to a page that displays associated variables (seasonal: MAM)
+* `global-fire-dashboard-seasonal_jja.html` - HTML script to generate an interactive IPCC AR6 land region world map with radio button timescales that link to a page that displays associated variables (seasonal: JJA)
+* `global-fire-dashboard-seasonal_son.html` - HTML script to generate an interactive IPCC AR6 land region world map with radio button timescales that link to a page that displays associated variables (seasonal: SON)
+* `global-fire-dashboard-monthly.html` - HTML script to generate an interactive IPCC AR6 land region world map with radio button timescales that link to a page that displays associated variables (monthly)
 * `create-region-directories.py` - Python script to generate a directory per IPCC AR6 land region containing timescale HTML files
 * `update-map-htmls.py` - Python script to re-point map HTMLs to region directory HTML at the corresponding timescale
 * `ar6.land.csv` - Look up table for IPCC AR6 land region abbreviations and descriptive names
@@ -25,7 +25,7 @@ The first step is to clone the latest fire-atlas-app repo and step into the chec
 
 The code was tested locally in a Python 3.8.16 virtual environment.
 
-    $ firefox global-wildfire-atlas-yearly.html (or any of the other HTML map files as they're interlinked)
+    $ firefox global-fire-dashboard-yearly.html (or any of the other HTML map files as they're interlinked)
         
 ## License
 
