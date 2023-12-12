@@ -1,0 +1,2 @@
+fittype,tstart,tend,slope,intercept,corrcoef,R2adj,variable,timescale,region
+theil-sen,2002-10-01,2020-10-01,0.003622,0.016223,0.88401,0.958037,Cem_Total,seasonal_son,VN

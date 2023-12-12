@@ -1,0 +1,2 @@
+fittype,tstart,tend,slope,intercept,corrcoef,R2adj,variable,timescale,region
+theil-sen,2001-04-01,2023-04-01,-0.274597,12.395219,0.702152,0.966521,BA_Total,seasonal_mam,CF

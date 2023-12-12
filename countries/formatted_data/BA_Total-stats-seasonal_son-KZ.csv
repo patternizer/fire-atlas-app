@@ -1,0 +1,2 @@
+fittype,tstart,tend,slope,intercept,corrcoef,R2adj,variable,timescale,region
+theil-sen,2001-10-01,2023-10-01,-6.509764,147.329243,0.896785,0.916639,BA_Total,seasonal_son,KZ
