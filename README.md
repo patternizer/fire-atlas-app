@@ -15,6 +15,7 @@ UEA impact study app (dev)
 * `create-region-directories.py` - Python script to generate a directory per IPCC AR6 land region containing timescale HTML files
 * `update-map-htmls.py` - Python script to re-point map HTMLs to region directory HTML at the corresponding timescale
 * `ar6.land.csv` - Look up table for IPCC AR6 land region abbreviations and descriptive names
+* `natural_earth_v5_0_0.countries_110.csv` - Look up table for the country list aligned with regionmask output but with country abbreviations replaced with ISO 3166 alpha-3 codes.
 
 The first step is to clone the latest fire-atlas-app repo and step into the check out directory: 
 
@@ -26,6 +27,8 @@ The first step is to clone the latest fire-atlas-app repo and step into the chec
 The code was tested locally in a Python 3.8.16 virtual environment.
 
     $ firefox global-fire-dashboard-yearly.html (or any of the other HTML map files as they're interlinked)
+        
+The country level interactive dashboard landing pages and integrated structure is coded. The image and stats files are being re-generated for each country.        
         
 ## License
 
