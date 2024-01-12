@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<title>Global Fire Dashboard (CRU, UEA)</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<!--
+		<link rel="stylesheet" href="style.css" type="text/css" />
+        <link rel="stylesheet" href="w3.css">
+        <link rel="stylesheet" href="Global%20Fire%20Dashboard%20(CRU,%20UEA)_files/w3.css">
+!-->
+    </head>
+
+
+    <style>
+    h1, h2, h3, h4, h5, h6 {
+    		font-weight: 600;
+    	}
+    h3 {
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+    p {
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+    .button_link {
+      background-color: #777777;
+      color: white;
+      padding: 14px 25px;
+      margin-bottom: 5px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      border-radius: 5px;
+    }
+    .navbar {
+      margin-bottom: 12px;
+      margin-top: 0px;
+      overflow: hidden;
+      background-color: #FFFFFF;
+    }
+    .navbar a {
+      float: left;
+      font-size: 16px;
+      color: black;
+      text-align: center;
+      padding: 8px 10px;
+      text-decoration: none;
+    }
+    .dropdown {
+      float: left;
+      overflow: hidden;      
+    }
+    .dropdown .dropbtn {
+      font-size: 16px;
+      border: none;
+      outline: none;
+      color: white;
+      padding: 12px 20px;
+      background-color: #3498db;
+      font-family: inherit;
+      margin: 0;
+      cursor: pointer; /* Set cursor to pointer on hover */
+      border-radius: 4px; /* Add border-radius for rounded corners */      
+    }
+    .navbar a:hover, .dropdown:hover .dropbtn {
+      background-color: #2980b9;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 180px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      max-height: 400px; /* Set a maximum height for the dropdown content */
+      overflow-y: auto; /* Add a scrollbar when content exceeds the maximum height */
+    }
+    .dropdown-content a {
+      float: none;
+      color: black;
+      padding: 2px 76px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    svg path {
+	  opacity: 0.7;
+	  fill: #7f7fbf;
+	  stroke: #eee;
+	  stroke-width: .25;
+    }
+    svg path:hover {
+	  opacity: 0.7;
+	  fill: #008000;
+	  transition: 0.6s;
+	  cursor: pointer;
+    }
+    .ocean {
+	  opacity: 1;
+	  fill: #ffffff;
+	  pointer-events: none;
+	  cursor: not-allowed;
+	  stroke: #000000;
+	  stroke-width: 0.5;
+    }  
+    .nostyle {
+		list-style-type: none;
+	}  
+    </style>	
+   
+    
+	<body>
+
+
+        <div class="w3-container w3-padding-32 w3-light-grey">
+
+			<div class="w3-third">
+        
+				<div class="form-check">
+					<input type="radio" name="switch" value="option1" checked="checked">Monthly<br>
+					<input type="radio" name="switch" value="option1" onclick="window.location.href = 'countries-fire-dashboard-seasonal_djf.html';">Seasonal (DJF)<br>
+					<input type="radio" name="switch" value="option1" onclick="window.location.href = 'countries-fire-dashboard-seasonal_mam.html';">Seasonal (MAM)<br>
+					<input type="radio" name="switch" value="option1" onclick="window.location.href = 'countries-fire-dashboard-seasonal_jja.html';">Seasonal (JJA)<br>
+					<input type="radio" name="switch" value="option1" onclick="window.location.href = 'countries-fire-dashboard-seasonal_son.html';">Seasonal (SON)<br>
+					<input type="radio" name="switch" value="option1" onclick="window.location.href = 'countries-fire-dashboard-yearly_jj.html';">Yearly (JUL-JUN)<br>
+					<input type="radio" name="switch" value="option2" onclick="window.location.href = 'countries-fire-dashboard-yearly.html';">Yearly (JAN-DEC)<br><br>
+				</div>
+            
+            </div>	                    
+
+			<div class="w3-third">
+				<div class="dropdown">
+					<button class="dropbtn">Select country from list (or click on map)</button>
+					<div class="dropdown-content">                
+
+						<h4>Africa</h4>
+
+						<ol class='nostyle'>
+						  <li><a href="countries/AGO/monthly.html">AGO &nbsp;&nbsp;&nbsp; Angola</a></li>
+						  <li><a href="countries/BDI/monthly.html">BDI &nbsp;&nbsp;&nbsp; Burundi</a></li>
+						  <li><a href="countries/BEN/monthly.html">BEN &nbsp;&nbsp;&nbsp; Benin</a></li>
+						  <li><a href="countries/BFA/monthly.html">BFA &nbsp;&nbsp;&nbsp; Burkina Faso</a></li>
+						  <li><a href="countries/BWA/monthly.html">BWA &nbsp;&nbsp;&nbsp; Botswana</a></li>
+						  <li><a href="countries/CAF/monthly.html">CAF &nbsp;&nbsp;&nbsp; Central African Rep.</a></li>
+						  <li><a href="countries/CIV/monthly.html">CIV &nbsp;&nbsp;&nbsp; C&ocircte d'Ivoire</a></li>
+						  <li><a href="countries/CMR/monthly.html">CMR &nbsp;&nbsp;&nbsp; Cameroon</a></li>
+						  <li><a href="countries/COD/monthly.html">COD &nbsp;&nbsp;&nbsp; Dem. Rep. Congo</a></li>
+						  <li><a href="countries/COG/monthly.html">COG &nbsp;&nbsp;&nbsp; Congo</a></li>
+						  <li><a href="countries/DJI/monthly.html">DJI &nbsp;&nbsp;&nbsp; Djibouti</a></li>
+						  <li><a href="countries/DZA/monthly.html">DZA &nbsp;&nbsp;&nbsp; Algeria</a></li>
+						  <li><a href="countries/EGY/monthly.html">EGY &nbsp;&nbsp;&nbsp; Egypt</a></li>
+						  <li><a href="countries/ERI/monthly.html">ERI &nbsp;&nbsp;&nbsp; Eritrea</a></li>
+						  <li><a href="countries/ESH/monthly.html">ESH &nbsp;&nbsp;&nbsp; W. Sahara</a></li>
+						  <li><a href="countries/ETH/monthly.html">ETH &nbsp;&nbsp;&nbsp; Ethiopia</a></li>
+						  <li><a href="countries/GAB/monthly.html">GAB &nbsp;&nbsp;&nbsp; Gabon</a></li>
+						  <li><a href="countries/GHA/monthly.html">GHA &nbsp;&nbsp;&nbsp; Ghana</a></li>
+						  <li><a href="countries/GIN/monthly.html">GIN &nbsp;&nbsp;&nbsp; Guinea</a></li>
+						  <li><a href="countries/GMB/monthly.html">GMB &nbsp;&nbsp;&nbsp; Gambia</a></li>
+						  <li><a href="countries/GNB/monthly.html">GNB &nbsp;&nbsp;&nbsp; Guinea-Bissau</a></li>
+						  <li><a href="countries/GNQ/monthly.html">GNQ &nbsp;&nbsp;&nbsp; Eq. Guinea</a></li>
+						  <li><a href="countries/KEN/monthly.html">KEN &nbsp;&nbsp;&nbsp; Kenya</a></li>
+						  <li><a href="countries/LBR/monthly.html">LBR &nbsp;&nbsp;&nbsp; Liberia</a></li>
+						  <li><a href="countries/LBY/monthly.html">LBY &nbsp;&nbsp;&nbsp; Libya</a></li>
+						  <li><a href="countries/LSO/monthly.html">LSO &nbsp;&nbsp;&nbsp; Lesotho</a></li>
+						  <li><a href="countries/MAR/monthly.html">MAR &nbsp;&nbsp;&nbsp; Morocco</a></li>
+						  <li><a href="countries/MDG/monthly.html">MDG &nbsp;&nbsp;&nbsp; Madagascar</a></li>
+						  <li><a href="countries/MLI/monthly.html">MLI &nbsp;&nbsp;&nbsp; Mali</a></li>
+						  <li><a href="countries/MOZ/monthly.html">MOZ &nbsp;&nbsp;&nbsp; Mozambique</a></li>
+						  <li><a href="countries/MRT/monthly.html">MRT &nbsp;&nbsp;&nbsp; Mauritania</a></li>
+						  <li><a href="countries/MWI/monthly.html">MWI &nbsp;&nbsp;&nbsp; Malawi</a></li>
+						  <li><a href="countries/NAM/monthly.html">NAM &nbsp;&nbsp;&nbsp; Namibia</a></li>
+						  <li><a href="countries/NER/monthly.html">NER &nbsp;&nbsp;&nbsp; Niger</a></li>
+						  <li><a href="countries/NGA/monthly.html">NGA &nbsp;&nbsp;&nbsp; Nigeria</a></li>
+						  <li><a href="countries/RWA/monthly.html">RWA &nbsp;&nbsp;&nbsp; Rwanda</a></li>
+						  <li><a href="countries/SDN/monthly.html">SDN &nbsp;&nbsp;&nbsp; Sudan</a></li>
+						  <li><a href="countries/SEN/monthly.html">SEN &nbsp;&nbsp;&nbsp; Senegal</a></li>
+						  <li><a href="countries/SLE/monthly.html">SLE &nbsp;&nbsp;&nbsp; Sierra Leone</a></li>
+						  <li><a href="countries/SOM/monthly.html">SOM &nbsp;&nbsp;&nbsp; Somalia</a></li>
+						  <li><a href="countries/SSD/monthly.html">SSD &nbsp;&nbsp;&nbsp; S. Sudan</a></li>
+						  <li><a href="countries/SWZ/monthly.html">SWZ &nbsp;&nbsp;&nbsp; Eswatini</a></li>
+						  <li><a href="countries/TCD/monthly.html">TCD &nbsp;&nbsp;&nbsp; Chad</a></li>
+						  <li><a href="countries/TGO/monthly.html">TGO &nbsp;&nbsp;&nbsp; Togo</a></li>
+						  <li><a href="countries/TUN/monthly.html">TUN &nbsp;&nbsp;&nbsp; Tunisia</a></li>
+						  <li><a href="countries/TZA/monthly.html">TZA &nbsp;&nbsp;&nbsp; Tanzania</a></li>
+						  <li><a href="countries/UGA/monthly.html">UGA &nbsp;&nbsp;&nbsp; Uganda</a></li>
+						  <li><a href="countries/XSO/monthly.html">XSO &nbsp;&nbsp;&nbsp; Somaliland</a></li>
+						  <li><a href="countries/ZAF/monthly.html">ZAF &nbsp;&nbsp;&nbsp; South Africa</a></li>
+						  <li><a href="countries/ZMB/monthly.html">ZMB &nbsp;&nbsp;&nbsp; Zambia</a></li>
+						  <li><a href="countries/ZWE/monthly.html">ZWE &nbsp;&nbsp;&nbsp; Zimbabwe</a></li>
+						</ol>
+
+						<h4>Asia</h4>
+
+						<ol class='nostyle'>
+						  <li><a href="countries/AFG/monthly.html">AFG &nbsp;&nbsp;&nbsp; Afghanistan</a></li>
+						  <li><a href="countries/ARE/monthly.html">ARE &nbsp;&nbsp;&nbsp; United Arab Emirates</a></li>
+						  <li><a href="countries/ARM/monthly.html">ARM &nbsp;&nbsp;&nbsp; Armenia</a></li>
+						  <li><a href="countries/AZE/monthly.html">AZE &nbsp;&nbsp;&nbsp; Azerbaijan</a></li>
+						  <li><a href="countries/BGD/monthly.html">BGD &nbsp;&nbsp;&nbsp; Bangladesh</a></li>
+						  <li><a href="countries/BRN/monthly.html">BRN &nbsp;&nbsp;&nbsp; Brunei</a></li>
+						  <li><a href="countries/BTN/monthly.html">BTN &nbsp;&nbsp;&nbsp; Bhutan</a></li>
+						  <li><a href="countries/CHN/monthly.html">CHN &nbsp;&nbsp;&nbsp; China</a></li>
+						  <li><a href="countries/GEO/monthly.html">GEO &nbsp;&nbsp;&nbsp; Georgia</a></li>
+						  <li><a href="countries/IDN/monthly.html">IDN &nbsp;&nbsp;&nbsp; Indonesia</a></li>
+						  <li><a href="countries/IND/monthly.html">IND &nbsp;&nbsp;&nbsp; India</a></li>
+						  <li><a href="countries/IRN/monthly.html">IRN &nbsp;&nbsp;&nbsp; Iran</a></li>
+						  <li><a href="countries/IRQ/monthly.html">IRQ &nbsp;&nbsp;&nbsp; Iraq</a></li>
+						  <li><a href="countries/ISR/monthly.html">ISR &nbsp;&nbsp;&nbsp; Israel</a></li>
+						  <li><a href="countries/JOR/monthly.html">JOR &nbsp;&nbsp;&nbsp; Jordan</a></li>
+						  <li><a href="countries/JPN/monthly.html">JPN &nbsp;&nbsp;&nbsp; Japan</a></li>
+						  <li><a href="countries/KAZ/monthly.html">KAZ &nbsp;&nbsp;&nbsp; Kazakhstan</a></li>
+						  <li><a href="countries/KGZ/monthly.html">KGZ &nbsp;&nbsp;&nbsp; Kyrgyzstan</a></li>
+						  <li><a href="countries/KHM/monthly.html">KHM &nbsp;&nbsp;&nbsp; Cambodia</a></li>
+						  <li><a href="countries/KOR/monthly.html">KOR &nbsp;&nbsp;&nbsp; South Korea</a></li>
+						  <li><a href="countries/KWT/monthly.html">KWT &nbsp;&nbsp;&nbsp; Kuwait</a></li>
+						  <li><a href="countries/LAO/monthly.html">LAO &nbsp;&nbsp;&nbsp; Laos</a></li>
+						  <li><a href="countries/LBN/monthly.html">LBN &nbsp;&nbsp;&nbsp; Lebanon</a></li>
+						  <li><a href="countries/LKA/monthly.html">LKA &nbsp;&nbsp;&nbsp; Sri Lanka</a></li>
+						  <li><a href="countries/MMR/monthly.html">MMR &nbsp;&nbsp;&nbsp; Myanmar</a></li>
+						  <li><a href="countries/MNG/monthly.html">MNG &nbsp;&nbsp;&nbsp; Mongolia</a></li>
+						  <li><a href="countries/MYS/monthly.html">MYS &nbsp;&nbsp;&nbsp; Malaysia</a></li>
+						  <li><a href="countries/NPL/monthly.html">NPL &nbsp;&nbsp;&nbsp; Nepal</a></li>
+						  <li><a href="countries/OMN/monthly.html">OMN &nbsp;&nbsp;&nbsp; Oman</a></li>
+						  <li><a href="countries/PAK/monthly.html">PAK &nbsp;&nbsp;&nbsp; Pakistan</a></li>
+						  <li><a href="countries/PHL/monthly.html">PHL &nbsp;&nbsp;&nbsp; Philippines</a></li>
+						  <li><a href="countries/PRK/monthly.html">PRK &nbsp;&nbsp;&nbsp; North Korea</a></li>
+						  <li><a href="countries/PSE/monthly.html">PSE &nbsp;&nbsp;&nbsp; Palestine</a></li>
+						  <li><a href="countries/QAT/monthly.html">QAT &nbsp;&nbsp;&nbsp; Qatar</a></li>
+						  <li><a href="countries/RUS/monthly.html">RUS &nbsp;&nbsp;&nbsp; Russia</a></li>
+						  <li><a href="countries/SAU/monthly.html">SAU &nbsp;&nbsp;&nbsp; Saudi Arabia</a></li>
+						  <li><a href="countries/SYR/monthly.html">SYR &nbsp;&nbsp;&nbsp; Syria</a></li>
+						  <li><a href="countries/THA/monthly.html">THA &nbsp;&nbsp;&nbsp; Thailand</a></li>
+						  <li><a href="countries/TJK/monthly.html">TJK &nbsp;&nbsp;&nbsp; Tajikistan</a></li>
+						  <li><a href="countries/TKM/monthly.html">TKM &nbsp;&nbsp;&nbsp; Turkmenistan</a></li>
+						  <li><a href="countries/TLS/monthly.html">TLS &nbsp;&nbsp;&nbsp; Timor-Leste</a></li>
+						  <li><a href="countries/TUR/monthly.html">TUR &nbsp;&nbsp;&nbsp; Turkey</a></li>
+						  <li><a href="countries/TWN/monthly.html">TWN &nbsp;&nbsp;&nbsp; Taiwan</a></li>
+						  <li><a href="countries/UZB/monthly.html">UZB &nbsp;&nbsp;&nbsp; Uzbekistan</a></li>
+						  <li><a href="countries/VNM/monthly.html">VNM &nbsp;&nbsp;&nbsp; Vietnam</a></li>
+						  <li><a href="countries/YEM/monthly.html">YEM &nbsp;&nbsp;&nbsp; Yemen</a></li>
+						</ol>
+
+						<h4>Europe</h4>
+
+						<ol class='nostyle'>
+						  <li><a href="countries/ALB/monthly.html">ALB &nbsp;&nbsp;&nbsp; Albania</a></li>
+						  <li><a href="countries/ARM/monthly.html">ARM &nbsp;&nbsp;&nbsp; Armenia</a></li>
+						  <li><a href="countries/AUT/monthly.html">AUT &nbsp;&nbsp;&nbsp; Austria</a></li>
+						  <li><a href="countries/AZE/monthly.html">AZE &nbsp;&nbsp;&nbsp; Azerbaijan</a></li>
+						  <li><a href="countries/BEL/monthly.html">BEL &nbsp;&nbsp;&nbsp; Belgium</a></li>
+						  <li><a href="countries/BGR/monthly.html">BGR &nbsp;&nbsp;&nbsp; Bulgaria</a></li>
+						  <li><a href="countries/BIH/monthly.html">BIH &nbsp;&nbsp;&nbsp; Bosnia and Herz.</a></li>
+						  <li><a href="countries/BLR/monthly.html">BLR &nbsp;&nbsp;&nbsp; Belarus</a></li>
+						  <li><a href="countries/CHE/monthly.html">CHE &nbsp;&nbsp;&nbsp; Switzerland</a></li>
+						  <li><a href="countries/CYP/monthly.html">CYP &nbsp;&nbsp;&nbsp; Cyprus</a></li>
+						  <li><a href="countries/CZE/monthly.html">CZE &nbsp;&nbsp;&nbsp; Czechia</a></li>
+						  <li><a href="countries/DEU/monthly.html">DEU &nbsp;&nbsp;&nbsp; Germany</a></li>
+						  <li><a href="countries/DNK/monthly.html">DNK &nbsp;&nbsp;&nbsp; Denmark</a></li>
+						  <li><a href="countries/ESP/monthly.html">ESP &nbsp;&nbsp;&nbsp; Spain</a></li>
+						  <li><a href="countries/EST/monthly.html">EST &nbsp;&nbsp;&nbsp; Estonia</a></li>
+						  <li><a href="countries/FIN/monthly.html">FIN &nbsp;&nbsp;&nbsp; Finland</a></li>
+						  <li><a href="countries/FRA/monthly.html">FRA &nbsp;&nbsp;&nbsp; France</a></li>
+						  <li><a href="countries/GBR/monthly.html">GBR &nbsp;&nbsp;&nbsp; United Kingdom</a></li>
+						  <li><a href="countries/GEO/monthly.html">GEO &nbsp;&nbsp;&nbsp; Georgia</a></li>
+						  <li><a href="countries/GRC/monthly.html">GRC &nbsp;&nbsp;&nbsp; Greece</a></li>
+						  <li><a href="countries/HRV/monthly.html">HRV &nbsp;&nbsp;&nbsp; Croatia</a></li>
+						  <li><a href="countries/HUN/monthly.html">HUN &nbsp;&nbsp;&nbsp; Hungary</a></li>
+						  <li><a href="countries/IRL/monthly.html">IRL &nbsp;&nbsp;&nbsp; Ireland</a></li>
+						  <li><a href="countries/ISL/monthly.html">ISL &nbsp;&nbsp;&nbsp; Iceland</a></li>
+						  <li><a href="countries/ITA/monthly.html">ITA &nbsp;&nbsp;&nbsp; Italy</a></li>
+						  <li><a href="countries/LTU/monthly.html">LTU &nbsp;&nbsp;&nbsp; Lithuania</a></li>
+						  <li><a href="countries/LUX/monthly.html">LUX &nbsp;&nbsp;&nbsp; Luxembourg</a></li>
+						  <li><a href="countries/LVA/monthly.html">LVA &nbsp;&nbsp;&nbsp; Latvia</a></li>
+						  <li><a href="countries/MDA/monthly.html">MDA &nbsp;&nbsp;&nbsp; Moldova</a></li>
+						  <li><a href="countries/MKD/monthly.html">MKD &nbsp;&nbsp;&nbsp; North Macedonia</a></li>
+						  <li><a href="countries/MNE/monthly.html">MNE &nbsp;&nbsp;&nbsp; Montenegro</a></li>
+						  <li><a href="countries/NLD/monthly.html">NLD &nbsp;&nbsp;&nbsp; Netherlands</a></li>
+						  <li><a href="countries/NOR/monthly.html">NOR &nbsp;&nbsp;&nbsp; Norway</a></li>
+						  <li><a href="countries/POL/monthly.html">POL &nbsp;&nbsp;&nbsp; Poland</a></li>
+						  <li><a href="countries/PRT/monthly.html">PRT &nbsp;&nbsp;&nbsp; Portugal</a></li>
+						  <li><a href="countries/ROU/monthly.html">ROU &nbsp;&nbsp;&nbsp; Romania</a></li>
+						  <li><a href="countries/RUS/monthly.html">RUS &nbsp;&nbsp;&nbsp; Russia</a></li>
+						  <li><a href="countries/SRB/monthly.html">SRB &nbsp;&nbsp;&nbsp; Serbia</a></li>
+						  <li><a href="countries/SVK/monthly.html">SVK &nbsp;&nbsp;&nbsp; Slovakia</a></li>
+						  <li><a href="countries/SVN/monthly.html">SVN &nbsp;&nbsp;&nbsp; Slovenia</a></li>
+						  <li><a href="countries/SWE/monthly.html">SWE &nbsp;&nbsp;&nbsp; Sweden</a></li>
+						  <li><a href="countries/TUR/monthly.html">TUR &nbsp;&nbsp;&nbsp; Turkey</a></li>
+						  <li><a href="countries/UKR/monthly.html">UKR &nbsp;&nbsp;&nbsp; Ukraine</a></li>
+						  <li><a href="countries/XKO/monthly.html">XKO &nbsp;&nbsp;&nbsp; Kosovo</a></li>
+						  <li><a href="countries/XNC/monthly.html">XNC &nbsp;&nbsp;&nbsp; N. Cyprus</a></li>
+						</ol>
+
+						<h4>North America</h4>
+
+						<ol class='nostyle'>
+						  <li><a href="countries/BHS/monthly.html">BHS &nbsp;&nbsp;&nbsp; Bahamas</a></li>
+						  <li><a href="countries/BLZ/monthly.html">BLZ &nbsp;&nbsp;&nbsp; Belize</a></li>
+						  <li><a href="countries/CAN/monthly.html">CAN &nbsp;&nbsp;&nbsp; Canada</a></li>
+						  <li><a href="countries/CRI/monthly.html">CRI &nbsp;&nbsp;&nbsp; Costa Rica</a></li>
+						  <li><a href="countries/CUB/monthly.html">CUB &nbsp;&nbsp;&nbsp; Cuba</a></li>
+						  <li><a href="countries/DOM/monthly.html">DOM &nbsp;&nbsp;&nbsp; Dominican Rep.</a></li>
+						  <li><a href="countries/GRL/monthly.html">GRL &nbsp;&nbsp;&nbsp; Greenland</a></li>
+						  <li><a href="countries/GTM/monthly.html">GTM &nbsp;&nbsp;&nbsp; Guatemala</a></li>
+						  <li><a href="countries/HND/monthly.html">HND &nbsp;&nbsp;&nbsp; Honduras</a></li>
+						  <li><a href="countries/HTI/monthly.html">HTI &nbsp;&nbsp;&nbsp; Haiti</a></li>
+						  <li><a href="countries/JAM/monthly.html">JAM &nbsp;&nbsp;&nbsp; Jamaica</a></li>
+						  <li><a href="countries/MEX/monthly.html">MEX &nbsp;&nbsp;&nbsp; Mexico</a></li>
+						  <li><a href="countries/NIC/monthly.html">NIC &nbsp;&nbsp;&nbsp; Nicaragua</a></li>
+						  <li><a href="countries/PAN/monthly.html">PAN &nbsp;&nbsp;&nbsp; Panama</a></li>
+						  <li><a href="countries/PRI/monthly.html">PRI &nbsp;&nbsp;&nbsp; Puerto Rico</a></li>
+						  <li><a href="countries/SLV/monthly.html">SLV &nbsp;&nbsp;&nbsp; El Salvador</a></li>
+						  <li><a href="countries/USA/monthly.html">USA &nbsp;&nbsp;&nbsp; United States of America</a></li>
+						</ol>
+
+						<h4>South America</h4>
+
+						<ol class='nostyle'>
+						  <li><a href="countries/ARG/monthly.html">ARG &nbsp;&nbsp;&nbsp; Argentina</a></li>
+						  <li><a href="countries/BOL/monthly.html">BOL &nbsp;&nbsp;&nbsp; Bolivia</a></li>
+						  <li><a href="countries/BRA/monthly.html">BRA &nbsp;&nbsp;&nbsp; Brazil</a></li>
+						  <li><a href="countries/CHL/monthly.html">CHL &nbsp;&nbsp;&nbsp; Chile</a></li>
+						  <li><a href="countries/COL/monthly.html">COL &nbsp;&nbsp;&nbsp; Colombia</a></li>
+						  <li><a href="countries/ECU/monthly.html">ECU &nbsp;&nbsp;&nbsp; Ecuador</a></li>
+						  <li><a href="countries/FLK/monthly.html">FLK &nbsp;&nbsp;&nbsp; Falkland Is.</a></li>
+						  <li><a href="countries/GUY/monthly.html">GUY &nbsp;&nbsp;&nbsp; Guyana</a></li>
+						  <li><a href="countries/PER/monthly.html">PER &nbsp;&nbsp;&nbsp; Peru</a></li>
+						  <li><a href="countries/PRY/monthly.html">PRY &nbsp;&nbsp;&nbsp; Paraguay</a></li>
+						  <li><a href="countries/SUR/monthly.html">SUR &nbsp;&nbsp;&nbsp; Suriname</a></li>
+						  <li><a href="countries/TTO/monthly.html">TTO &nbsp;&nbsp;&nbsp; Trinidad and Tobago</a></li>
+						  <li><a href="countries/URY/monthly.html">URY &nbsp;&nbsp;&nbsp; Uruguay</a></li>
+						  <li><a href="countries/VEN/monthly.html">VEN &nbsp;&nbsp;&nbsp; Venezuela</a></li>
+						</ol>
+
+						<h4>Oceania</h4>
+
+						<ol class='nostyle'>
+						  <li><a href="countries/AUS/monthly.html">AUS &nbsp;&nbsp;&nbsp; Australia</a></li>
+						  <li><a href="countries/FJI/monthly.html">FJI &nbsp;&nbsp;&nbsp; Fiji</a></li>
+						  <li><a href="countries/NCL/monthly.html">NCL &nbsp;&nbsp;&nbsp; New Caledonia</a></li>
+						  <li><a href="countries/NZL/monthly.html">NZL &nbsp;&nbsp;&nbsp; New Zealand</a></li>
+						  <li><a href="countries/PNG/monthly.html">PNG &nbsp;&nbsp;&nbsp; Papua New Guinea</a></li>
+						  <li><a href="countries/SLB/monthly.html">SLB &nbsp;&nbsp;&nbsp; Solomon Is.</a></li>
+						  <li><a href="countries/VUT/monthly.html">VUT &nbsp;&nbsp;&nbsp; Vanuatu</a></li>
+						</ol>
+
+						<h4>Other Territories</h4>
+
+						<ol class='nostyle'>
+						  <li><a href="countries/ATA/monthly.html">ATA &nbsp;&nbsp;&nbsp; Antarctica</a></li>
+						  <li><a href="countries/ATF/monthly.html">ATF &nbsp;&nbsp;&nbsp; Fr. S. Antarctic Lands</a></li>
+						</ol>
+
+  												          
+					</div>
+				</div>
+			</div>                
+                
+                    
+            <div class="w3-container" style="margin:0 -16px">
+                <div class="w3-card w3-container w3-white w3-margin-bottom w3-text-dark-grey">
+                    <h1>Global Fire Dashboard</h1>
+        			<p>
+        			The dashboard has been created to support navigation of the data products produced by  
+        			<a href="https://www.uea.ac.uk/web/groups-and-centres/climatic-research-unit/data">CRU/UEA</a> climate datasets and reports.
+        			</p>
+                </div>
+            </div>
+            
+
+    <div class="w3-container" style="margin:0 -16px">
+        <div class="w3-card w3-container w3-white w3-margin-bottom w3-text-dark-grey">
+            <div class="w3-content">
+                <h1>COUNTRY SELECTION</h1>
+                <p>Select country from the list below to view fire data aggregated for that country.</p>
+
+<h4>Africa</h4>
+
+<ol class='nostyle'>
+  <li><a href="countries/AGO/monthly.html">AGO &nbsp;&nbsp;&nbsp; Angola</a></li>
+  <li><a href="countries/BDI/monthly.html">BDI &nbsp;&nbsp;&nbsp; Burundi</a></li>
+  <li><a href="countries/BEN/monthly.html">BEN &nbsp;&nbsp;&nbsp; Benin</a></li>
+  <li><a href="countries/BFA/monthly.html">BFA &nbsp;&nbsp;&nbsp; Burkina Faso</a></li>
+  <li><a href="countries/BWA/monthly.html">BWA &nbsp;&nbsp;&nbsp; Botswana</a></li>
+  <li><a href="countries/CAF/monthly.html">CAF &nbsp;&nbsp;&nbsp; Central African Rep.</a></li>
+  <li><a href="countries/CIV/monthly.html">CIV &nbsp;&nbsp;&nbsp; C&ocircte d'Ivoire</a></li>
+  <li><a href="countries/CMR/monthly.html">CMR &nbsp;&nbsp;&nbsp; Cameroon</a></li>
+  <li><a href="countries/COD/monthly.html">COD &nbsp;&nbsp;&nbsp; Dem. Rep. Congo</a></li>
+  <li><a href="countries/COG/monthly.html">COG &nbsp;&nbsp;&nbsp; Congo</a></li>
+  <li><a href="countries/DJI/monthly.html">DJI &nbsp;&nbsp;&nbsp; Djibouti</a></li>
+  <li><a href="countries/DZA/monthly.html">DZA &nbsp;&nbsp;&nbsp; Algeria</a></li>
+  <li><a href="countries/EGY/monthly.html">EGY &nbsp;&nbsp;&nbsp; Egypt</a></li>
+  <li><a href="countries/ERI/monthly.html">ERI &nbsp;&nbsp;&nbsp; Eritrea</a></li>
+  <li><a href="countries/ESH/monthly.html">ESH &nbsp;&nbsp;&nbsp; W. Sahara</a></li>
+  <li><a href="countries/ETH/monthly.html">ETH &nbsp;&nbsp;&nbsp; Ethiopia</a></li>
+  <li><a href="countries/GAB/monthly.html">GAB &nbsp;&nbsp;&nbsp; Gabon</a></li>
+  <li><a href="countries/GHA/monthly.html">GHA &nbsp;&nbsp;&nbsp; Ghana</a></li>
+  <li><a href="countries/GIN/monthly.html">GIN &nbsp;&nbsp;&nbsp; Guinea</a></li>
+  <li><a href="countries/GMB/monthly.html">GMB &nbsp;&nbsp;&nbsp; Gambia</a></li>
+  <li><a href="countries/GNB/monthly.html">GNB &nbsp;&nbsp;&nbsp; Guinea-Bissau</a></li>
+  <li><a href="countries/GNQ/monthly.html">GNQ &nbsp;&nbsp;&nbsp; Eq. Guinea</a></li>
+  <li><a href="countries/KEN/monthly.html">KEN &nbsp;&nbsp;&nbsp; Kenya</a></li>
+  <li><a href="countries/LBR/monthly.html">LBR &nbsp;&nbsp;&nbsp; Liberia</a></li>
+  <li><a href="countries/LBY/monthly.html">LBY &nbsp;&nbsp;&nbsp; Libya</a></li>
+  <li><a href="countries/LSO/monthly.html">LSO &nbsp;&nbsp;&nbsp; Lesotho</a></li>
+  <li><a href="countries/MAR/monthly.html">MAR &nbsp;&nbsp;&nbsp; Morocco</a></li>
+  <li><a href="countries/MDG/monthly.html">MDG &nbsp;&nbsp;&nbsp; Madagascar</a></li>
+  <li><a href="countries/MLI/monthly.html">MLI &nbsp;&nbsp;&nbsp; Mali</a></li>
+  <li><a href="countries/MOZ/monthly.html">MOZ &nbsp;&nbsp;&nbsp; Mozambique</a></li>
+  <li><a href="countries/MRT/monthly.html">MRT &nbsp;&nbsp;&nbsp; Mauritania</a></li>
+  <li><a href="countries/MWI/monthly.html">MWI &nbsp;&nbsp;&nbsp; Malawi</a></li>
+  <li><a href="countries/NAM/monthly.html">NAM &nbsp;&nbsp;&nbsp; Namibia</a></li>
+  <li><a href="countries/NER/monthly.html">NER &nbsp;&nbsp;&nbsp; Niger</a></li>
+  <li><a href="countries/NGA/monthly.html">NGA &nbsp;&nbsp;&nbsp; Nigeria</a></li>
+  <li><a href="countries/RWA/monthly.html">RWA &nbsp;&nbsp;&nbsp; Rwanda</a></li>
+  <li><a href="countries/SDN/monthly.html">SDN &nbsp;&nbsp;&nbsp; Sudan</a></li>
+  <li><a href="countries/SEN/monthly.html">SEN &nbsp;&nbsp;&nbsp; Senegal</a></li>
+  <li><a href="countries/SLE/monthly.html">SLE &nbsp;&nbsp;&nbsp; Sierra Leone</a></li>
+  <li><a href="countries/SOM/monthly.html">SOM &nbsp;&nbsp;&nbsp; Somalia</a></li>
+  <li><a href="countries/SSD/monthly.html">SSD &nbsp;&nbsp;&nbsp; S. Sudan</a></li>
+  <li><a href="countries/SWZ/monthly.html">SWZ &nbsp;&nbsp;&nbsp; Eswatini</a></li>
+  <li><a href="countries/TCD/monthly.html">TCD &nbsp;&nbsp;&nbsp; Chad</a></li>
+  <li><a href="countries/TGO/monthly.html">TGO &nbsp;&nbsp;&nbsp; Togo</a></li>
+  <li><a href="countries/TUN/monthly.html">TUN &nbsp;&nbsp;&nbsp; Tunisia</a></li>
+  <li><a href="countries/TZA/monthly.html">TZA &nbsp;&nbsp;&nbsp; Tanzania</a></li>
+  <li><a href="countries/UGA/monthly.html">UGA &nbsp;&nbsp;&nbsp; Uganda</a></li>
+  <li><a href="countries/XSO/monthly.html">XSO &nbsp;&nbsp;&nbsp; Somaliland</a></li>
+  <li><a href="countries/ZAF/monthly.html">ZAF &nbsp;&nbsp;&nbsp; South Africa</a></li>
+  <li><a href="countries/ZMB/monthly.html">ZMB &nbsp;&nbsp;&nbsp; Zambia</a></li>
+  <li><a href="countries/ZWE/monthly.html">ZWE &nbsp;&nbsp;&nbsp; Zimbabwe</a></li>
+</ol>
+
+<h4>Asia</h4>
+
+<ol class='nostyle'>
+  <li><a href="countries/AFG/monthly.html">AFG &nbsp;&nbsp;&nbsp; Afghanistan</a></li>
+  <li><a href="countries/ARE/monthly.html">ARE &nbsp;&nbsp;&nbsp; United Arab Emirates</a></li>
+  <li><a href="countries/ARM/monthly.html">ARM &nbsp;&nbsp;&nbsp; Armenia</a></li>
+  <li><a href="countries/AZE/monthly.html">AZE &nbsp;&nbsp;&nbsp; Azerbaijan</a></li>
+  <li><a href="countries/BGD/monthly.html">BGD &nbsp;&nbsp;&nbsp; Bangladesh</a></li>
+  <li><a href="countries/BRN/monthly.html">BRN &nbsp;&nbsp;&nbsp; Brunei</a></li>
+  <li><a href="countries/BTN/monthly.html">BTN &nbsp;&nbsp;&nbsp; Bhutan</a></li>
+  <li><a href="countries/CHN/monthly.html">CHN &nbsp;&nbsp;&nbsp; China</a></li>
+  <li><a href="countries/GEO/monthly.html">GEO &nbsp;&nbsp;&nbsp; Georgia</a></li>
+  <li><a href="countries/IDN/monthly.html">IDN &nbsp;&nbsp;&nbsp; Indonesia</a></li>
+  <li><a href="countries/IND/monthly.html">IND &nbsp;&nbsp;&nbsp; India</a></li>
+  <li><a href="countries/IRN/monthly.html">IRN &nbsp;&nbsp;&nbsp; Iran</a></li>
+  <li><a href="countries/IRQ/monthly.html">IRQ &nbsp;&nbsp;&nbsp; Iraq</a></li>
+  <li><a href="countries/ISR/monthly.html">ISR &nbsp;&nbsp;&nbsp; Israel</a></li>
+  <li><a href="countries/JOR/monthly.html">JOR &nbsp;&nbsp;&nbsp; Jordan</a></li>
+  <li><a href="countries/JPN/monthly.html">JPN &nbsp;&nbsp;&nbsp; Japan</a></li>
+  <li><a href="countries/KAZ/monthly.html">KAZ &nbsp;&nbsp;&nbsp; Kazakhstan</a></li>
+  <li><a href="countries/KGZ/monthly.html">KGZ &nbsp;&nbsp;&nbsp; Kyrgyzstan</a></li>
+  <li><a href="countries/KHM/monthly.html">KHM &nbsp;&nbsp;&nbsp; Cambodia</a></li>
+  <li><a href="countries/KOR/monthly.html">KOR &nbsp;&nbsp;&nbsp; South Korea</a></li>
+  <li><a href="countries/KWT/monthly.html">KWT &nbsp;&nbsp;&nbsp; Kuwait</a></li>
+  <li><a href="countries/LAO/monthly.html">LAO &nbsp;&nbsp;&nbsp; Laos</a></li>
+  <li><a href="countries/LBN/monthly.html">LBN &nbsp;&nbsp;&nbsp; Lebanon</a></li>
+  <li><a href="countries/LKA/monthly.html">LKA &nbsp;&nbsp;&nbsp; Sri Lanka</a></li>
+  <li><a href="countries/MMR/monthly.html">MMR &nbsp;&nbsp;&nbsp; Myanmar</a></li>
+  <li><a href="countries/MNG/monthly.html">MNG &nbsp;&nbsp;&nbsp; Mongolia</a></li>
+  <li><a href="countries/MYS/monthly.html">MYS &nbsp;&nbsp;&nbsp; Malaysia</a></li>
+  <li><a href="countries/NPL/monthly.html">NPL &nbsp;&nbsp;&nbsp; Nepal</a></li>
+  <li><a href="countries/OMN/monthly.html">OMN &nbsp;&nbsp;&nbsp; Oman</a></li>
+  <li><a href="countries/PAK/monthly.html">PAK &nbsp;&nbsp;&nbsp; Pakistan</a></li>
+  <li><a href="countries/PHL/monthly.html">PHL &nbsp;&nbsp;&nbsp; Philippines</a></li>
+  <li><a href="countries/PRK/monthly.html">PRK &nbsp;&nbsp;&nbsp; North Korea</a></li>
+  <li><a href="countries/PSE/monthly.html">PSE &nbsp;&nbsp;&nbsp; Palestine</a></li>
+  <li><a href="countries/QAT/monthly.html">QAT &nbsp;&nbsp;&nbsp; Qatar</a></li>
+  <li><a href="countries/RUS/monthly.html">RUS &nbsp;&nbsp;&nbsp; Russia</a></li>
+  <li><a href="countries/SAU/monthly.html">SAU &nbsp;&nbsp;&nbsp; Saudi Arabia</a></li>
+  <li><a href="countries/SYR/monthly.html">SYR &nbsp;&nbsp;&nbsp; Syria</a></li>
+  <li><a href="countries/THA/monthly.html">THA &nbsp;&nbsp;&nbsp; Thailand</a></li>
+  <li><a href="countries/TJK/monthly.html">TJK &nbsp;&nbsp;&nbsp; Tajikistan</a></li>
+  <li><a href="countries/TKM/monthly.html">TKM &nbsp;&nbsp;&nbsp; Turkmenistan</a></li>
+  <li><a href="countries/TLS/monthly.html">TLS &nbsp;&nbsp;&nbsp; Timor-Leste</a></li>
+  <li><a href="countries/TUR/monthly.html">TUR &nbsp;&nbsp;&nbsp; Turkey</a></li>
+  <li><a href="countries/TWN/monthly.html">TWN &nbsp;&nbsp;&nbsp; Taiwan</a></li>
+  <li><a href="countries/UZB/monthly.html">UZB &nbsp;&nbsp;&nbsp; Uzbekistan</a></li>
+  <li><a href="countries/VNM/monthly.html">VNM &nbsp;&nbsp;&nbsp; Vietnam</a></li>
+  <li><a href="countries/YEM/monthly.html">YEM &nbsp;&nbsp;&nbsp; Yemen</a></li>
+</ol>
+
+<h4>Europe</h4>
+
+<ol class='nostyle'>
+  <li><a href="countries/ALB/monthly.html">ALB &nbsp;&nbsp;&nbsp; Albania</a></li>
+  <li><a href="countries/ARM/monthly.html">ARM &nbsp;&nbsp;&nbsp; Armenia</a></li>
+  <li><a href="countries/AUT/monthly.html">AUT &nbsp;&nbsp;&nbsp; Austria</a></li>
+  <li><a href="countries/AZE/monthly.html">AZE &nbsp;&nbsp;&nbsp; Azerbaijan</a></li>
+  <li><a href="countries/BEL/monthly.html">BEL &nbsp;&nbsp;&nbsp; Belgium</a></li>
+  <li><a href="countries/BGR/monthly.html">BGR &nbsp;&nbsp;&nbsp; Bulgaria</a></li>
+  <li><a href="countries/BIH/monthly.html">BIH &nbsp;&nbsp;&nbsp; Bosnia and Herz.</a></li>
+  <li><a href="countries/BLR/monthly.html">BLR &nbsp;&nbsp;&nbsp; Belarus</a></li>
+  <li><a href="countries/CHE/monthly.html">CHE &nbsp;&nbsp;&nbsp; Switzerland</a></li>
+  <li><a href="countries/CYP/monthly.html">CYP &nbsp;&nbsp;&nbsp; Cyprus</a></li>
+  <li><a href="countries/CZE/monthly.html">CZE &nbsp;&nbsp;&nbsp; Czechia</a></li>
+  <li><a href="countries/DEU/monthly.html">DEU &nbsp;&nbsp;&nbsp; Germany</a></li>
+  <li><a href="countries/DNK/monthly.html">DNK &nbsp;&nbsp;&nbsp; Denmark</a></li>
+  <li><a href="countries/ESP/monthly.html">ESP &nbsp;&nbsp;&nbsp; Spain</a></li>
+  <li><a href="countries/EST/monthly.html">EST &nbsp;&nbsp;&nbsp; Estonia</a></li>
+  <li><a href="countries/FIN/monthly.html">FIN &nbsp;&nbsp;&nbsp; Finland</a></li>
+  <li><a href="countries/FRA/monthly.html">FRA &nbsp;&nbsp;&nbsp; France</a></li>
+  <li><a href="countries/GBR/monthly.html">GBR &nbsp;&nbsp;&nbsp; United Kingdom</a></li>
+  <li><a href="countries/GEO/monthly.html">GEO &nbsp;&nbsp;&nbsp; Georgia</a></li>
+  <li><a href="countries/GRC/monthly.html">GRC &nbsp;&nbsp;&nbsp; Greece</a></li>
+  <li><a href="countries/HRV/monthly.html">HRV &nbsp;&nbsp;&nbsp; Croatia</a></li>
+  <li><a href="countries/HUN/monthly.html">HUN &nbsp;&nbsp;&nbsp; Hungary</a></li>
+  <li><a href="countries/IRL/monthly.html">IRL &nbsp;&nbsp;&nbsp; Ireland</a></li>
+  <li><a href="countries/ISL/monthly.html">ISL &nbsp;&nbsp;&nbsp; Iceland</a></li>
+  <li><a href="countries/ITA/monthly.html">ITA &nbsp;&nbsp;&nbsp; Italy</a></li>
+  <li><a href="countries/LTU/monthly.html">LTU &nbsp;&nbsp;&nbsp; Lithuania</a></li>
+  <li><a href="countries/LUX/monthly.html">LUX &nbsp;&nbsp;&nbsp; Luxembourg</a></li>
+  <li><a href="countries/LVA/monthly.html">LVA &nbsp;&nbsp;&nbsp; Latvia</a></li>
+  <li><a href="countries/MDA/monthly.html">MDA &nbsp;&nbsp;&nbsp; Moldova</a></li>
+  <li><a href="countries/MKD/monthly.html">MKD &nbsp;&nbsp;&nbsp; North Macedonia</a></li>
+  <li><a href="countries/MNE/monthly.html">MNE &nbsp;&nbsp;&nbsp; Montenegro</a></li>
+  <li><a href="countries/NLD/monthly.html">NLD &nbsp;&nbsp;&nbsp; Netherlands</a></li>
+  <li><a href="countries/NOR/monthly.html">NOR &nbsp;&nbsp;&nbsp; Norway</a></li>
+  <li><a href="countries/POL/monthly.html">POL &nbsp;&nbsp;&nbsp; Poland</a></li>
+  <li><a href="countries/PRT/monthly.html">PRT &nbsp;&nbsp;&nbsp; Portugal</a></li>
+  <li><a href="countries/ROU/monthly.html">ROU &nbsp;&nbsp;&nbsp; Romania</a></li>
+  <li><a href="countries/RUS/monthly.html">RUS &nbsp;&nbsp;&nbsp; Russia</a></li>
+  <li><a href="countries/SRB/monthly.html">SRB &nbsp;&nbsp;&nbsp; Serbia</a></li>
+  <li><a href="countries/SVK/monthly.html">SVK &nbsp;&nbsp;&nbsp; Slovakia</a></li>
+  <li><a href="countries/SVN/monthly.html">SVN &nbsp;&nbsp;&nbsp; Slovenia</a></li>
+  <li><a href="countries/SWE/monthly.html">SWE &nbsp;&nbsp;&nbsp; Sweden</a></li>
+  <li><a href="countries/TUR/monthly.html">TUR &nbsp;&nbsp;&nbsp; Turkey</a></li>
+  <li><a href="countries/UKR/monthly.html">UKR &nbsp;&nbsp;&nbsp; Ukraine</a></li>
+  <li><a href="countries/XKO/monthly.html">XKO &nbsp;&nbsp;&nbsp; Kosovo</a></li>
+  <li><a href="countries/XNC/monthly.html">XNC &nbsp;&nbsp;&nbsp; N. Cyprus</a></li>
+</ol>
+
+<h4>North America</h4>
+
+<ol class='nostyle'>
+  <li><a href="countries/BHS/monthly.html">BHS &nbsp;&nbsp;&nbsp; Bahamas</a></li>
+  <li><a href="countries/BLZ/monthly.html">BLZ &nbsp;&nbsp;&nbsp; Belize</a></li>
+  <li><a href="countries/CAN/monthly.html">CAN &nbsp;&nbsp;&nbsp; Canada</a></li>
+  <li><a href="countries/CRI/monthly.html">CRI &nbsp;&nbsp;&nbsp; Costa Rica</a></li>
+  <li><a href="countries/CUB/monthly.html">CUB &nbsp;&nbsp;&nbsp; Cuba</a></li>
+  <li><a href="countries/DOM/monthly.html">DOM &nbsp;&nbsp;&nbsp; Dominican Rep.</a></li>
+  <li><a href="countries/GRL/monthly.html">GRL &nbsp;&nbsp;&nbsp; Greenland</a></li>
+  <li><a href="countries/GTM/monthly.html">GTM &nbsp;&nbsp;&nbsp; Guatemala</a></li>
+  <li><a href="countries/HND/monthly.html">HND &nbsp;&nbsp;&nbsp; Honduras</a></li>
+  <li><a href="countries/HTI/monthly.html">HTI &nbsp;&nbsp;&nbsp; Haiti</a></li>
+  <li><a href="countries/JAM/monthly.html">JAM &nbsp;&nbsp;&nbsp; Jamaica</a></li>
+  <li><a href="countries/MEX/monthly.html">MEX &nbsp;&nbsp;&nbsp; Mexico</a></li>
+  <li><a href="countries/NIC/monthly.html">NIC &nbsp;&nbsp;&nbsp; Nicaragua</a></li>
+  <li><a href="countries/PAN/monthly.html">PAN &nbsp;&nbsp;&nbsp; Panama</a></li>
+  <li><a href="countries/PRI/monthly.html">PRI &nbsp;&nbsp;&nbsp; Puerto Rico</a></li>
+  <li><a href="countries/SLV/monthly.html">SLV &nbsp;&nbsp;&nbsp; El Salvador</a></li>
+  <li><a href="countries/USA/monthly.html">USA &nbsp;&nbsp;&nbsp; United States of America</a></li>
+</ol>
+
+<h4>South America</h4>
+
+<ol class='nostyle'>
+  <li><a href="countries/ARG/monthly.html">ARG &nbsp;&nbsp;&nbsp; Argentina</a></li>
+  <li><a href="countries/BOL/monthly.html">BOL &nbsp;&nbsp;&nbsp; Bolivia</a></li>
+  <li><a href="countries/BRA/monthly.html">BRA &nbsp;&nbsp;&nbsp; Brazil</a></li>
+  <li><a href="countries/CHL/monthly.html">CHL &nbsp;&nbsp;&nbsp; Chile</a></li>
+  <li><a href="countries/COL/monthly.html">COL &nbsp;&nbsp;&nbsp; Colombia</a></li>
+  <li><a href="countries/ECU/monthly.html">ECU &nbsp;&nbsp;&nbsp; Ecuador</a></li>
+  <li><a href="countries/FLK/monthly.html">FLK &nbsp;&nbsp;&nbsp; Falkland Is.</a></li>
+  <li><a href="countries/GUY/monthly.html">GUY &nbsp;&nbsp;&nbsp; Guyana</a></li>
+  <li><a href="countries/PER/monthly.html">PER &nbsp;&nbsp;&nbsp; Peru</a></li>
+  <li><a href="countries/PRY/monthly.html">PRY &nbsp;&nbsp;&nbsp; Paraguay</a></li>
+  <li><a href="countries/SUR/monthly.html">SUR &nbsp;&nbsp;&nbsp; Suriname</a></li>
+  <li><a href="countries/TTO/monthly.html">TTO &nbsp;&nbsp;&nbsp; Trinidad and Tobago</a></li>
+  <li><a href="countries/URY/monthly.html">URY &nbsp;&nbsp;&nbsp; Uruguay</a></li>
+  <li><a href="countries/VEN/monthly.html">VEN &nbsp;&nbsp;&nbsp; Venezuela</a></li>
+</ol>
+
+<h4>Oceania</h4>
+
+<ol class='nostyle'>
+  <li><a href="countries/AUS/monthly.html">AUS &nbsp;&nbsp;&nbsp; Australia</a></li>
+  <li><a href="countries/FJI/monthly.html">FJI &nbsp;&nbsp;&nbsp; Fiji</a></li>
+  <li><a href="countries/NCL/monthly.html">NCL &nbsp;&nbsp;&nbsp; New Caledonia</a></li>
+  <li><a href="countries/NZL/monthly.html">NZL &nbsp;&nbsp;&nbsp; New Zealand</a></li>
+  <li><a href="countries/PNG/monthly.html">PNG &nbsp;&nbsp;&nbsp; Papua New Guinea</a></li>
+  <li><a href="countries/SLB/monthly.html">SLB &nbsp;&nbsp;&nbsp; Solomon Is.</a></li>
+  <li><a href="countries/VUT/monthly.html">VUT &nbsp;&nbsp;&nbsp; Vanuatu</a></li>
+</ol>
+
+<h4>Other Territories</h4>
+
+<ol class='nostyle'>
+  <li><a href="countries/ATA/monthly.html">ATA &nbsp;&nbsp;&nbsp; Antarctica</a></li>
+  <li><a href="countries/ATF/monthly.html">ATF &nbsp;&nbsp;&nbsp; Fr. S. Antarctic Lands</a></li>
+</ol>
+
+
+            </div>
+        </div>
+    </div>
+        	
+            
+    <div class="w3-container" style="margin:0 -16px">
+        <div class="w3-card w3-container w3-white w3-margin-bottom w3-text-dark-grey">
+            <div class="w3-content">
+                <h1>NOTES</h1>
+            </div>
+        </div>
+    </div>
+
+   <div class="w3-container" style="margin:0 -16px">
+        <div class="w3-card w3-container w3-white w3-margin-bottom w3-text-dark-grey">
+            <div class="w3-content">
+                <h2><a id="Processing">Processing</a></h2>
+                <p> Set the timescale using the radio buttons. Selecting
+ an IPCC AR6 region will take you to a page showing the timeseries of 
+all variables processed.
+				</p>
+                
+				<br>
+                <h3>Country level aggregation</h3>
+                <p> The raw data is at 0.25 degrees resolution. The Natural Earth_v5.0.0 country mask is used to compute aggregated totals at the monthly, yearly (JAN-DEC), yearly (JUL-JUN), seasonal (DJF), seasonal  (DJF), seasonal (MAM), and seasonal (SON) timescales. 
+				</p>
+
+                <br>
+                <h3>Variables</h3>
+                <br>
+                <h4>(1) Area Burned by All fires</h4>
+                <p> The total area burned by fires in the country in units of thousands km².</p>
+                <br>
+                <h4>(2) Area Burned by Forest Fires</h4>
+                <p> The total area burned by forest fires in the country from gridcells having 30% tree cover in units of thousands of km².</p>
+                <br>
+                <h4>(3) Carbon Emssions from All Fires</h4>
+                <p> The total carbon emissions from all fires in the country in units of thousands of tonnes of C.</p>
+                <br>
+                <h4>(4) Carbon Emissions from fires in forests</h4>
+                <p> The total carbon emissions from forest fires in the  country from gridcells having 30% tree cover in units of thousands of tonnes of C.</p>
+                <br>
+                <h3>Data export</h3>
+                <p> The underlying data for each plot is in CSV format.</p>
+                <br>
+                <h3>Statistics</h3>
+                <br>
+                <p> The timeseries are fit with a robust OLS regression 
+(Theil-Sen) and a regression t-test is performed to determine if the OLS
+ slope is significant at the 95% confidence level (p &lt; 0.05, α = 
+0.05). This is only shown when the alternative hypothesis is true. The 
+uncertainty band for the 95% confidence interval on the slope and 
+intercept is provided. For each timescale (with the exception of the 
+monthly data), 5-yr means are shaded as a visual guide to help 
+understand the variability and potential trend in the data.
+                </p>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    <p> Page created on 2024-01-08 by Michael Taylor (CRU/UEA) for the UEA PVC impact study project with Matt Jones and Tim Osborn.</p>
+    
+</div>
+
+
+
+	
+
+
+
+</body></html>

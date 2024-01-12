@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<title>Global Fire Dashboard (CRU, UEA)</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<!--
+		<link rel="stylesheet" href="style.css" type="text/css" />
+        <link rel="stylesheet" href="w3.css">
+        <link rel="stylesheet" href="Global%20Fire%20Dashboard%20(CRU,%20UEA)_files/w3.css">
+!-->
+    </head>
+
+
+    <style>
+    h1, h2, h3, h4, h5, h6 {
+    		font-weight: 600;
+    	}
+    h3 {
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+    p {
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+    .button_link {
+      background-color: #777777;
+      color: white;
+      padding: 14px 25px;
+      margin-bottom: 5px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      border-radius: 5px;
+    }
+    .navbar {
+      margin-bottom: 12px;
+      margin-top: 0px;
+      overflow: hidden;
+      background-color: #FFFFFF;
+    }
+    .navbar a {
+      float: left;
+      font-size: 16px;
+      color: black;
+      text-align: center;
+      padding: 8px 10px;
+      text-decoration: none;
+    }
+    .dropdown {
+      float: left;
+      overflow: hidden;      
+    }
+    .dropdown .dropbtn {
+      font-size: 16px;
+      border: none;
+      outline: none;
+      color: white;
+      padding: 12px 20px;
+      background-color: #3498db;
+      font-family: inherit;
+      margin: 0;
+      cursor: pointer; /* Set cursor to pointer on hover */
+      border-radius: 4px; /* Add border-radius for rounded corners */      
+    }
+    .navbar a:hover, .dropdown:hover .dropbtn {
+      background-color: #2980b9;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 180px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      max-height: 400px; /* Set a maximum height for the dropdown content */
+      overflow-y: auto; /* Add a scrollbar when content exceeds the maximum height */
+    }
+    .dropdown-content a {
+      float: none;
+      color: black;
+      padding: 2px 76px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    svg path {
+	  opacity: 0.7;
+	  fill: #7f7fbf;
+	  stroke: #eee;
+	  stroke-width: .25;
+    }
+    svg path:hover {
+	  opacity: 0.7;
+	  fill: #008000;
+	  transition: 0.6s;
+	  cursor: pointer;
+    }
+    .ocean {
+	  opacity: 1;
+	  fill: #ffffff;
+	  pointer-events: none;
+	  cursor: not-allowed;
+	  stroke: #000000;
+	  stroke-width: 0.5;
+    }  
+    .nostyle {
+		list-style-type: none;
+	}  
+    </style>	
+   
+    
+	<body>
+
+
+        <div class="w3-container w3-padding-32 w3-light-grey">
+
+			<div class="w3-third">
+        
+				<div class="form-check">
+					<input type="radio" name="switch" value="option1" onclick="window.location.href = 'countries-fire-dashboard-monthly.html';">Monthly<br>
+					<input type="radio" name="switch" value="option1" onclick="window.location.href = 'countries-fire-dashboard-seasonal_djf.html';">Seasonal (DJF)<br>
+					<input type="radio" name="switch" value="option1" onclick="window.location.href = 'countries-fire-dashboard-seasonal_mam.html';">Seasonal (MAM)<br>
+					<input type="radio" name="switch" value="option1" onclick="window.location.href = 'countries-fire-dashboard-seasonal_jja.html';">Seasonal (JJA)<br>
+					<input type="radio" name="switch" value="option1" checked="checked">Seasonal (SON)<br>
+					<input type="radio" name="switch" value="option1" onclick="window.location.href = 'countries-fire-dashboard-yearly_jj.html';">Yearly (JUL-JUN)<br>
+					<input type="radio" name="switch" value="option2" onclick="window.location.href = 'countries-fire-dashboard-yearly.html';">Yearly (JAN-DEC)<br><br>
+				</div>
+
+            </div>	                    
+
+			<div class="w3-third">
+				<div class="dropdown">
+					<button class="dropbtn">Select country from list (or click on map)</button>
+					<div class="dropdown-content">                
+
+						<h4>Africa</h4>
+
+						<ol class='nostyle'>
+						  <li><a href="countries/AGO/seasonal_son.html">AGO &nbsp;&nbsp;&nbsp; Angola</a></li>
+						  <li><a href="countries/BDI/seasonal_son.html">BDI &nbsp;&nbsp;&nbsp; Burundi</a></li>
+						  <li><a href="countries/BEN/seasonal_son.html">BEN &nbsp;&nbsp;&nbsp; Benin</a></li>
+						  <li><a href="countries/BFA/seasonal_son.html">BFA &nbsp;&nbsp;&nbsp; Burkina Faso</a></li>
+						  <li><a href="countries/BWA/seasonal_son.html">BWA &nbsp;&nbsp;&nbsp; Botswana</a></li>
+						  <li><a href="countries/CAF/seasonal_son.html">CAF &nbsp;&nbsp;&nbsp; Central African Rep.</a></li>
+						  <li><a href="countries/CIV/seasonal_son.html">CIV &nbsp;&nbsp;&nbsp; C&ocircte d'Ivoire</a></li>
+						  <li><a href="countries/CMR/seasonal_son.html">CMR &nbsp;&nbsp;&nbsp; Cameroon</a></li>
+						  <li><a href="countries/COD/seasonal_son.html">COD &nbsp;&nbsp;&nbsp; Dem. Rep. Congo</a></li>
+						  <li><a href="countries/COG/seasonal_son.html">COG &nbsp;&nbsp;&nbsp; Congo</a></li>
+						  <li><a href="countries/DJI/seasonal_son.html">DJI &nbsp;&nbsp;&nbsp; Djibouti</a></li>
+						  <li><a href="countries/DZA/seasonal_son.html">DZA &nbsp;&nbsp;&nbsp; Algeria</a></li>
+						  <li><a href="countries/EGY/seasonal_son.html">EGY &nbsp;&nbsp;&nbsp; Egypt</a></li>
+						  <li><a href="countries/ERI/seasonal_son.html">ERI &nbsp;&nbsp;&nbsp; Eritrea</a></li>
+						  <li><a href="countries/ESH/seasonal_son.html">ESH &nbsp;&nbsp;&nbsp; W. Sahara</a></li>
+						  <li><a href="countries/ETH/seasonal_son.html">ETH &nbsp;&nbsp;&nbsp; Ethiopia</a></li>
+						  <li><a href="countries/GAB/seasonal_son.html">GAB &nbsp;&nbsp;&nbsp; Gabon</a></li>
+						  <li><a href="countries/GHA/seasonal_son.html">GHA &nbsp;&nbsp;&nbsp; Ghana</a></li>
+						  <li><a href="countries/GIN/seasonal_son.html">GIN &nbsp;&nbsp;&nbsp; Guinea</a></li>
+						  <li><a href="countries/GMB/seasonal_son.html">GMB &nbsp;&nbsp;&nbsp; Gambia</a></li>
+						  <li><a href="countries/GNB/seasonal_son.html">GNB &nbsp;&nbsp;&nbsp; Guinea-Bissau</a></li>
+						  <li><a href="countries/GNQ/seasonal_son.html">GNQ &nbsp;&nbsp;&nbsp; Eq. Guinea</a></li>
+						  <li><a href="countries/KEN/seasonal_son.html">KEN &nbsp;&nbsp;&nbsp; Kenya</a></li>
+						  <li><a href="countries/LBR/seasonal_son.html">LBR &nbsp;&nbsp;&nbsp; Liberia</a></li>
+						  <li><a href="countries/LBY/seasonal_son.html">LBY &nbsp;&nbsp;&nbsp; Libya</a></li>
+						  <li><a href="countries/LSO/seasonal_son.html">LSO &nbsp;&nbsp;&nbsp; Lesotho</a></li>
+						  <li><a href="countries/MAR/seasonal_son.html">MAR &nbsp;&nbsp;&nbsp; Morocco</a></li>
+						  <li><a href="countries/MDG/seasonal_son.html">MDG &nbsp;&nbsp;&nbsp; Madagascar</a></li>
+						  <li><a href="countries/MLI/seasonal_son.html">MLI &nbsp;&nbsp;&nbsp; Mali</a></li>
+						  <li><a href="countries/MOZ/seasonal_son.html">MOZ &nbsp;&nbsp;&nbsp; Mozambique</a></li>
+						  <li><a href="countries/MRT/seasonal_son.html">MRT &nbsp;&nbsp;&nbsp; Mauritania</a></li>
+						  <li><a href="countries/MWI/seasonal_son.html">MWI &nbsp;&nbsp;&nbsp; Malawi</a></li>
+						  <li><a href="countries/NAM/seasonal_son.html">NAM &nbsp;&nbsp;&nbsp; Namibia</a></li>
+						  <li><a href="countries/NER/seasonal_son.html">NER &nbsp;&nbsp;&nbsp; Niger</a></li>
+						  <li><a href="countries/NGA/seasonal_son.html">NGA &nbsp;&nbsp;&nbsp; Nigeria</a></li>
+						  <li><a href="countries/RWA/seasonal_son.html">RWA &nbsp;&nbsp;&nbsp; Rwanda</a></li>
+						  <li><a href="countries/SDN/seasonal_son.html">SDN &nbsp;&nbsp;&nbsp; Sudan</a></li>
+						  <li><a href="countries/SEN/seasonal_son.html">SEN &nbsp;&nbsp;&nbsp; Senegal</a></li>
+						  <li><a href="countries/SLE/seasonal_son.html">SLE &nbsp;&nbsp;&nbsp; Sierra Leone</a></li>
+						  <li><a href="countries/SOM/seasonal_son.html">SOM &nbsp;&nbsp;&nbsp; Somalia</a></li>
+						  <li><a href="countries/SSD/seasonal_son.html">SSD &nbsp;&nbsp;&nbsp; S. Sudan</a></li>
+						  <li><a href="countries/SWZ/seasonal_son.html">SWZ &nbsp;&nbsp;&nbsp; Eswatini</a></li>
+						  <li><a href="countries/TCD/seasonal_son.html">TCD &nbsp;&nbsp;&nbsp; Chad</a></li>
+						  <li><a href="countries/TGO/seasonal_son.html">TGO &nbsp;&nbsp;&nbsp; Togo</a></li>
+						  <li><a href="countries/TUN/seasonal_son.html">TUN &nbsp;&nbsp;&nbsp; Tunisia</a></li>
+						  <li><a href="countries/TZA/seasonal_son.html">TZA &nbsp;&nbsp;&nbsp; Tanzania</a></li>
+						  <li><a href="countries/UGA/seasonal_son.html">UGA &nbsp;&nbsp;&nbsp; Uganda</a></li>
+						  <li><a href="countries/XSO/seasonal_son.html">XSO &nbsp;&nbsp;&nbsp; Somaliland</a></li>
+						  <li><a href="countries/ZAF/seasonal_son.html">ZAF &nbsp;&nbsp;&nbsp; South Africa</a></li>
+						  <li><a href="countries/ZMB/seasonal_son.html">ZMB &nbsp;&nbsp;&nbsp; Zambia</a></li>
+						  <li><a href="countries/ZWE/seasonal_son.html">ZWE &nbsp;&nbsp;&nbsp; Zimbabwe</a></li>
+						</ol>
+
+						<h4>Asia</h4>
+
+						<ol class='nostyle'>
+						  <li><a href="countries/AFG/seasonal_son.html">AFG &nbsp;&nbsp;&nbsp; Afghanistan</a></li>
+						  <li><a href="countries/ARE/seasonal_son.html">ARE &nbsp;&nbsp;&nbsp; United Arab Emirates</a></li>
+						  <li><a href="countries/ARM/seasonal_son.html">ARM &nbsp;&nbsp;&nbsp; Armenia</a></li>
+						  <li><a href="countries/AZE/seasonal_son.html">AZE &nbsp;&nbsp;&nbsp; Azerbaijan</a></li>
+						  <li><a href="countries/BGD/seasonal_son.html">BGD &nbsp;&nbsp;&nbsp; Bangladesh</a></li>
+						  <li><a href="countries/BRN/seasonal_son.html">BRN &nbsp;&nbsp;&nbsp; Brunei</a></li>
+						  <li><a href="countries/BTN/seasonal_son.html">BTN &nbsp;&nbsp;&nbsp; Bhutan</a></li>
+						  <li><a href="countries/CHN/seasonal_son.html">CHN &nbsp;&nbsp;&nbsp; China</a></li>
+						  <li><a href="countries/GEO/seasonal_son.html">GEO &nbsp;&nbsp;&nbsp; Georgia</a></li>
+						  <li><a href="countries/IDN/seasonal_son.html">IDN &nbsp;&nbsp;&nbsp; Indonesia</a></li>
+						  <li><a href="countries/IND/seasonal_son.html">IND &nbsp;&nbsp;&nbsp; India</a></li>
+						  <li><a href="countries/IRN/seasonal_son.html">IRN &nbsp;&nbsp;&nbsp; Iran</a></li>
+						  <li><a href="countries/IRQ/seasonal_son.html">IRQ &nbsp;&nbsp;&nbsp; Iraq</a></li>
+						  <li><a href="countries/ISR/seasonal_son.html">ISR &nbsp;&nbsp;&nbsp; Israel</a></li>
+						  <li><a href="countries/JOR/seasonal_son.html">JOR &nbsp;&nbsp;&nbsp; Jordan</a></li>
+						  <li><a href="countries/JPN/seasonal_son.html">JPN &nbsp;&nbsp;&nbsp; Japan</a></li>
+						  <li><a href="countries/KAZ/seasonal_son.html">KAZ &nbsp;&nbsp;&nbsp; Kazakhstan</a></li>
+						  <li><a href="countries/KGZ/seasonal_son.html">KGZ &nbsp;&nbsp;&nbsp; Kyrgyzstan</a></li>
+						  <li><a href="countries/KHM/seasonal_son.html">KHM &nbsp;&nbsp;&nbsp; Cambodia</a></li>
+						  <li><a href="countries/KOR/seasonal_son.html">KOR &nbsp;&nbsp;&nbsp; South Korea</a></li>
+						  <li><a href="countries/KWT/seasonal_son.html">KWT &nbsp;&nbsp;&nbsp; Kuwait</a></li>
+						  <li><a href="countries/LAO/seasonal_son.html">LAO &nbsp;&nbsp;&nbsp; Laos</a></li>
+						  <li><a href="countries/LBN/seasonal_son.html">LBN &nbsp;&nbsp;&nbsp; Lebanon</a></li>
+						  <li><a href="countries/LKA/seasonal_son.html">LKA &nbsp;&nbsp;&nbsp; Sri Lanka</a></li>
+						  <li><a href="countries/MMR/seasonal_son.html">MMR &nbsp;&nbsp;&nbsp; Myanmar</a></li>
+						  <li><a href="countries/MNG/seasonal_son.html">MNG &nbsp;&nbsp;&nbsp; Mongolia</a></li>
+						  <li><a href="countries/MYS/seasonal_son.html">MYS &nbsp;&nbsp;&nbsp; Malaysia</a></li>
+						  <li><a href="countries/NPL/seasonal_son.html">NPL &nbsp;&nbsp;&nbsp; Nepal</a></li>
+						  <li><a href="countries/OMN/seasonal_son.html">OMN &nbsp;&nbsp;&nbsp; Oman</a></li>
+						  <li><a href="countries/PAK/seasonal_son.html">PAK &nbsp;&nbsp;&nbsp; Pakistan</a></li>
+						  <li><a href="countries/PHL/seasonal_son.html">PHL &nbsp;&nbsp;&nbsp; Philippines</a></li>
+						  <li><a href="countries/PRK/seasonal_son.html">PRK &nbsp;&nbsp;&nbsp; North Korea</a></li>
+						  <li><a href="countries/PSE/seasonal_son.html">PSE &nbsp;&nbsp;&nbsp; Palestine</a></li>
+						  <li><a href="countries/QAT/seasonal_son.html">QAT &nbsp;&nbsp;&nbsp; Qatar</a></li>
+						  <li><a href="countries/RUS/seasonal_son.html">RUS &nbsp;&nbsp;&nbsp; Russia</a></li>
+						  <li><a href="countries/SAU/seasonal_son.html">SAU &nbsp;&nbsp;&nbsp; Saudi Arabia</a></li>
+						  <li><a href="countries/SYR/seasonal_son.html">SYR &nbsp;&nbsp;&nbsp; Syria</a></li>
+						  <li><a href="countries/THA/seasonal_son.html">THA &nbsp;&nbsp;&nbsp; Thailand</a></li>
+						  <li><a href="countries/TJK/seasonal_son.html">TJK &nbsp;&nbsp;&nbsp; Tajikistan</a></li>
+						  <li><a href="countries/TKM/seasonal_son.html">TKM &nbsp;&nbsp;&nbsp; Turkmenistan</a></li>
+						  <li><a href="countries/TLS/seasonal_son.html">TLS &nbsp;&nbsp;&nbsp; Timor-Leste</a></li>
+						  <li><a href="countries/TUR/seasonal_son.html">TUR &nbsp;&nbsp;&nbsp; Turkey</a></li>
+						  <li><a href="countries/TWN/seasonal_son.html">TWN &nbsp;&nbsp;&nbsp; Taiwan</a></li>
+						  <li><a href="countries/UZB/seasonal_son.html">UZB &nbsp;&nbsp;&nbsp; Uzbekistan</a></li>
+						  <li><a href="countries/VNM/seasonal_son.html">VNM &nbsp;&nbsp;&nbsp; Vietnam</a></li>
+						  <li><a href="countries/YEM/seasonal_son.html">YEM &nbsp;&nbsp;&nbsp; Yemen</a></li>
+						</ol>
+
+						<h4>Europe</h4>
+
+						<ol class='nostyle'>
+						  <li><a href="countries/ALB/seasonal_son.html">ALB &nbsp;&nbsp;&nbsp; Albania</a></li>
+						  <li><a href="countries/ARM/seasonal_son.html">ARM &nbsp;&nbsp;&nbsp; Armenia</a></li>
+						  <li><a href="countries/AUT/seasonal_son.html">AUT &nbsp;&nbsp;&nbsp; Austria</a></li>
+						  <li><a href="countries/AZE/seasonal_son.html">AZE &nbsp;&nbsp;&nbsp; Azerbaijan</a></li>
+						  <li><a href="countries/BEL/seasonal_son.html">BEL &nbsp;&nbsp;&nbsp; Belgium</a></li>
+						  <li><a href="countries/BGR/seasonal_son.html">BGR &nbsp;&nbsp;&nbsp; Bulgaria</a></li>
+						  <li><a href="countries/BIH/seasonal_son.html">BIH &nbsp;&nbsp;&nbsp; Bosnia and Herz.</a></li>
+						  <li><a href="countries/BLR/seasonal_son.html">BLR &nbsp;&nbsp;&nbsp; Belarus</a></li>
+						  <li><a href="countries/CHE/seasonal_son.html">CHE &nbsp;&nbsp;&nbsp; Switzerland</a></li>
+						  <li><a href="countries/CYP/seasonal_son.html">CYP &nbsp;&nbsp;&nbsp; Cyprus</a></li>
+						  <li><a href="countries/CZE/seasonal_son.html">CZE &nbsp;&nbsp;&nbsp; Czechia</a></li>
+						  <li><a href="countries/DEU/seasonal_son.html">DEU &nbsp;&nbsp;&nbsp; Germany</a></li>
+						  <li><a href="countries/DNK/seasonal_son.html">DNK &nbsp;&nbsp;&nbsp; Denmark</a></li>
+						  <li><a href="countries/ESP/seasonal_son.html">ESP &nbsp;&nbsp;&nbsp; Spain</a></li>
+						  <li><a href="countries/EST/seasonal_son.html">EST &nbsp;&nbsp;&nbsp; Estonia</a></li>
+						  <li><a href="countries/FIN/seasonal_son.html">FIN &nbsp;&nbsp;&nbsp; Finland</a></li>
+						  <li><a href="countries/FRA/seasonal_son.html">FRA &nbsp;&nbsp;&nbsp; France</a></li>
+						  <li><a href="countries/GBR/seasonal_son.html">GBR &nbsp;&nbsp;&nbsp; United Kingdom</a></li>
+						  <li><a href="countries/GEO/seasonal_son.html">GEO &nbsp;&nbsp;&nbsp; Georgia</a></li>
+						  <li><a href="countries/GRC/seasonal_son.html">GRC &nbsp;&nbsp;&nbsp; Greece</a></li>
+						  <li><a href="countries/HRV/seasonal_son.html">HRV &nbsp;&nbsp;&nbsp; Croatia</a></li>
+						  <li><a href="countries/HUN/seasonal_son.html">HUN &nbsp;&nbsp;&nbsp; Hungary</a></li>
+						  <li><a href="countries/IRL/seasonal_son.html">IRL &nbsp;&nbsp;&nbsp; Ireland</a></li>
+						  <li><a href="countries/ISL/seasonal_son.html">ISL &nbsp;&nbsp;&nbsp; Iceland</a></li>
+						  <li><a href="countries/ITA/seasonal_son.html">ITA &nbsp;&nbsp;&nbsp; Italy</a></li>
+						  <li><a href="countries/LTU/seasonal_son.html">LTU &nbsp;&nbsp;&nbsp; Lithuania</a></li>
+						  <li><a href="countries/LUX/seasonal_son.html">LUX &nbsp;&nbsp;&nbsp; Luxembourg</a></li>
+						  <li><a href="countries/LVA/seasonal_son.html">LVA &nbsp;&nbsp;&nbsp; Latvia</a></li>
+						  <li><a href="countries/MDA/seasonal_son.html">MDA &nbsp;&nbsp;&nbsp; Moldova</a></li>
+						  <li><a href="countries/MKD/seasonal_son.html">MKD &nbsp;&nbsp;&nbsp; North Macedonia</a></li>
+						  <li><a href="countries/MNE/seasonal_son.html">MNE &nbsp;&nbsp;&nbsp; Montenegro</a></li>
+						  <li><a href="countries/NLD/seasonal_son.html">NLD &nbsp;&nbsp;&nbsp; Netherlands</a></li>
+						  <li><a href="countries/NOR/seasonal_son.html">NOR &nbsp;&nbsp;&nbsp; Norway</a></li>
+						  <li><a href="countries/POL/seasonal_son.html">POL &nbsp;&nbsp;&nbsp; Poland</a></li>
+						  <li><a href="countries/PRT/seasonal_son.html">PRT &nbsp;&nbsp;&nbsp; Portugal</a></li>
+						  <li><a href="countries/ROU/seasonal_son.html">ROU &nbsp;&nbsp;&nbsp; Romania</a></li>
+						  <li><a href="countries/RUS/seasonal_son.html">RUS &nbsp;&nbsp;&nbsp; Russia</a></li>
+						  <li><a href="countries/SRB/seasonal_son.html">SRB &nbsp;&nbsp;&nbsp; Serbia</a></li>
+						  <li><a href="countries/SVK/seasonal_son.html">SVK &nbsp;&nbsp;&nbsp; Slovakia</a></li>
+						  <li><a href="countries/SVN/seasonal_son.html">SVN &nbsp;&nbsp;&nbsp; Slovenia</a></li>
+						  <li><a href="countries/SWE/seasonal_son.html">SWE &nbsp;&nbsp;&nbsp; Sweden</a></li>
+						  <li><a href="countries/TUR/seasonal_son.html">TUR &nbsp;&nbsp;&nbsp; Turkey</a></li>
+						  <li><a href="countries/UKR/seasonal_son.html">UKR &nbsp;&nbsp;&nbsp; Ukraine</a></li>
+						  <li><a href="countries/XKO/seasonal_son.html">XKO &nbsp;&nbsp;&nbsp; Kosovo</a></li>
+						  <li><a href="countries/XNC/seasonal_son.html">XNC &nbsp;&nbsp;&nbsp; N. Cyprus</a></li>
+						</ol>
+
+						<h4>North America</h4>
+
+						<ol class='nostyle'>
+						  <li><a href="countries/BHS/seasonal_son.html">BHS &nbsp;&nbsp;&nbsp; Bahamas</a></li>
+						  <li><a href="countries/BLZ/seasonal_son.html">BLZ &nbsp;&nbsp;&nbsp; Belize</a></li>
+						  <li><a href="countries/CAN/seasonal_son.html">CAN &nbsp;&nbsp;&nbsp; Canada</a></li>
+						  <li><a href="countries/CRI/seasonal_son.html">CRI &nbsp;&nbsp;&nbsp; Costa Rica</a></li>
+						  <li><a href="countries/CUB/seasonal_son.html">CUB &nbsp;&nbsp;&nbsp; Cuba</a></li>
+						  <li><a href="countries/DOM/seasonal_son.html">DOM &nbsp;&nbsp;&nbsp; Dominican Rep.</a></li>
+						  <li><a href="countries/GRL/seasonal_son.html">GRL &nbsp;&nbsp;&nbsp; Greenland</a></li>
+						  <li><a href="countries/GTM/seasonal_son.html">GTM &nbsp;&nbsp;&nbsp; Guatemala</a></li>
+						  <li><a href="countries/HND/seasonal_son.html">HND &nbsp;&nbsp;&nbsp; Honduras</a></li>
+						  <li><a href="countries/HTI/seasonal_son.html">HTI &nbsp;&nbsp;&nbsp; Haiti</a></li>
+						  <li><a href="countries/JAM/seasonal_son.html">JAM &nbsp;&nbsp;&nbsp; Jamaica</a></li>
+						  <li><a href="countries/MEX/seasonal_son.html">MEX &nbsp;&nbsp;&nbsp; Mexico</a></li>
+						  <li><a href="countries/NIC/seasonal_son.html">NIC &nbsp;&nbsp;&nbsp; Nicaragua</a></li>
+						  <li><a href="countries/PAN/seasonal_son.html">PAN &nbsp;&nbsp;&nbsp; Panama</a></li>
+						  <li><a href="countries/PRI/seasonal_son.html">PRI &nbsp;&nbsp;&nbsp; Puerto Rico</a></li>
+						  <li><a href="countries/SLV/seasonal_son.html">SLV &nbsp;&nbsp;&nbsp; El Salvador</a></li>
+						  <li><a href="countries/USA/seasonal_son.html">USA &nbsp;&nbsp;&nbsp; United States of America</a></li>
+						</ol>
+
+						<h4>South America</h4>
+
+						<ol class='nostyle'>
+						  <li><a href="countries/ARG/seasonal_son.html">ARG &nbsp;&nbsp;&nbsp; Argentina</a></li>
+						  <li><a href="countries/BOL/seasonal_son.html">BOL &nbsp;&nbsp;&nbsp; Bolivia</a></li>
+						  <li><a href="countries/BRA/seasonal_son.html">BRA &nbsp;&nbsp;&nbsp; Brazil</a></li>
+						  <li><a href="countries/CHL/seasonal_son.html">CHL &nbsp;&nbsp;&nbsp; Chile</a></li>
+						  <li><a href="countries/COL/seasonal_son.html">COL &nbsp;&nbsp;&nbsp; Colombia</a></li>
+						  <li><a href="countries/ECU/seasonal_son.html">ECU &nbsp;&nbsp;&nbsp; Ecuador</a></li>
+						  <li><a href="countries/FLK/seasonal_son.html">FLK &nbsp;&nbsp;&nbsp; Falkland Is.</a></li>
+						  <li><a href="countries/GUY/seasonal_son.html">GUY &nbsp;&nbsp;&nbsp; Guyana</a></li>
+						  <li><a href="countries/PER/seasonal_son.html">PER &nbsp;&nbsp;&nbsp; Peru</a></li>
+						  <li><a href="countries/PRY/seasonal_son.html">PRY &nbsp;&nbsp;&nbsp; Paraguay</a></li>
+						  <li><a href="countries/SUR/seasonal_son.html">SUR &nbsp;&nbsp;&nbsp; Suriname</a></li>
+						  <li><a href="countries/TTO/seasonal_son.html">TTO &nbsp;&nbsp;&nbsp; Trinidad and Tobago</a></li>
+						  <li><a href="countries/URY/seasonal_son.html">URY &nbsp;&nbsp;&nbsp; Uruguay</a></li>
+						  <li><a href="countries/VEN/seasonal_son.html">VEN &nbsp;&nbsp;&nbsp; Venezuela</a></li>
+						</ol>
+
+						<h4>Oceania</h4>
+
+						<ol class='nostyle'>
+						  <li><a href="countries/AUS/seasonal_son.html">AUS &nbsp;&nbsp;&nbsp; Australia</a></li>
+						  <li><a href="countries/FJI/seasonal_son.html">FJI &nbsp;&nbsp;&nbsp; Fiji</a></li>
+						  <li><a href="countries/NCL/seasonal_son.html">NCL &nbsp;&nbsp;&nbsp; New Caledonia</a></li>
+						  <li><a href="countries/NZL/seasonal_son.html">NZL &nbsp;&nbsp;&nbsp; New Zealand</a></li>
+						  <li><a href="countries/PNG/seasonal_son.html">PNG &nbsp;&nbsp;&nbsp; Papua New Guinea</a></li>
+						  <li><a href="countries/SLB/seasonal_son.html">SLB &nbsp;&nbsp;&nbsp; Solomon Is.</a></li>
+						  <li><a href="countries/VUT/seasonal_son.html">VUT &nbsp;&nbsp;&nbsp; Vanuatu</a></li>
+						</ol>
+
+						<h4>Other Territories</h4>
+
+						<ol class='nostyle'>
+						  <li><a href="countries/ATA/seasonal_son.html">ATA &nbsp;&nbsp;&nbsp; Antarctica</a></li>
+						  <li><a href="countries/ATF/seasonal_son.html">ATF &nbsp;&nbsp;&nbsp; Fr. S. Antarctic Lands</a></li>
+						</ol>
+  												          
+					</div>
+				</div>
+			</div>                
+
+                    
+            <div class="w3-container" style="margin:0 -16px">
+                <div class="w3-card w3-container w3-white w3-margin-bottom w3-text-dark-grey">
+                    <h1>Global Fire Dashboard</h1>
+        			<p>
+        			The dashboard has been created to support navigation of the data products produced by  
+        			<a href="https://www.uea.ac.uk/web/groups-and-centres/climatic-research-unit/data">CRU/UEA</a> climate datasets and reports.
+        			</p>
+                </div>
+            </div>
+            
+
+    <div class="w3-container" style="margin:0 -16px">
+        <div class="w3-card w3-container w3-white w3-margin-bottom w3-text-dark-grey">
+            <div class="w3-content">
+                <h1>COUNTRY SELECTION</h1>
+                <p>Select country from the list below to view fire data aggregated for that country.</p>
+
+
+<h4>Africa</h4>
+
+<ol class='nostyle'>
+  <li><a href="countries/AGO/seasonal_son.html">AGO &nbsp;&nbsp;&nbsp; Angola</a></li>
+  <li><a href="countries/BDI/seasonal_son.html">BDI &nbsp;&nbsp;&nbsp; Burundi</a></li>
+  <li><a href="countries/BEN/seasonal_son.html">BEN &nbsp;&nbsp;&nbsp; Benin</a></li>
+  <li><a href="countries/BFA/seasonal_son.html">BFA &nbsp;&nbsp;&nbsp; Burkina Faso</a></li>
+  <li><a href="countries/BWA/seasonal_son.html">BWA &nbsp;&nbsp;&nbsp; Botswana</a></li>
+  <li><a href="countries/CAF/seasonal_son.html">CAF &nbsp;&nbsp;&nbsp; Central African Rep.</a></li>
+  <li><a href="countries/CIV/seasonal_son.html">CIV &nbsp;&nbsp;&nbsp; C&ocircte d'Ivoire</a></li>
+  <li><a href="countries/CMR/seasonal_son.html">CMR &nbsp;&nbsp;&nbsp; Cameroon</a></li>
+  <li><a href="countries/COD/seasonal_son.html">COD &nbsp;&nbsp;&nbsp; Dem. Rep. Congo</a></li>
+  <li><a href="countries/COG/seasonal_son.html">COG &nbsp;&nbsp;&nbsp; Congo</a></li>
+  <li><a href="countries/DJI/seasonal_son.html">DJI &nbsp;&nbsp;&nbsp; Djibouti</a></li>
+  <li><a href="countries/DZA/seasonal_son.html">DZA &nbsp;&nbsp;&nbsp; Algeria</a></li>
+  <li><a href="countries/EGY/seasonal_son.html">EGY &nbsp;&nbsp;&nbsp; Egypt</a></li>
+  <li><a href="countries/ERI/seasonal_son.html">ERI &nbsp;&nbsp;&nbsp; Eritrea</a></li>
+  <li><a href="countries/ESH/seasonal_son.html">ESH &nbsp;&nbsp;&nbsp; W. Sahara</a></li>
+  <li><a href="countries/ETH/seasonal_son.html">ETH &nbsp;&nbsp;&nbsp; Ethiopia</a></li>
+  <li><a href="countries/GAB/seasonal_son.html">GAB &nbsp;&nbsp;&nbsp; Gabon</a></li>
+  <li><a href="countries/GHA/seasonal_son.html">GHA &nbsp;&nbsp;&nbsp; Ghana</a></li>
+  <li><a href="countries/GIN/seasonal_son.html">GIN &nbsp;&nbsp;&nbsp; Guinea</a></li>
+  <li><a href="countries/GMB/seasonal_son.html">GMB &nbsp;&nbsp;&nbsp; Gambia</a></li>
+  <li><a href="countries/GNB/seasonal_son.html">GNB &nbsp;&nbsp;&nbsp; Guinea-Bissau</a></li>
+  <li><a href="countries/GNQ/seasonal_son.html">GNQ &nbsp;&nbsp;&nbsp; Eq. Guinea</a></li>
+  <li><a href="countries/KEN/seasonal_son.html">KEN &nbsp;&nbsp;&nbsp; Kenya</a></li>
+  <li><a href="countries/LBR/seasonal_son.html">LBR &nbsp;&nbsp;&nbsp; Liberia</a></li>
+  <li><a href="countries/LBY/seasonal_son.html">LBY &nbsp;&nbsp;&nbsp; Libya</a></li>
+  <li><a href="countries/LSO/seasonal_son.html">LSO &nbsp;&nbsp;&nbsp; Lesotho</a></li>
+  <li><a href="countries/MAR/seasonal_son.html">MAR &nbsp;&nbsp;&nbsp; Morocco</a></li>
+  <li><a href="countries/MDG/seasonal_son.html">MDG &nbsp;&nbsp;&nbsp; Madagascar</a></li>
+  <li><a href="countries/MLI/seasonal_son.html">MLI &nbsp;&nbsp;&nbsp; Mali</a></li>
+  <li><a href="countries/MOZ/seasonal_son.html">MOZ &nbsp;&nbsp;&nbsp; Mozambique</a></li>
+  <li><a href="countries/MRT/seasonal_son.html">MRT &nbsp;&nbsp;&nbsp; Mauritania</a></li>
+  <li><a href="countries/MWI/seasonal_son.html">MWI &nbsp;&nbsp;&nbsp; Malawi</a></li>
+  <li><a href="countries/NAM/seasonal_son.html">NAM &nbsp;&nbsp;&nbsp; Namibia</a></li>
+  <li><a href="countries/NER/seasonal_son.html">NER &nbsp;&nbsp;&nbsp; Niger</a></li>
+  <li><a href="countries/NGA/seasonal_son.html">NGA &nbsp;&nbsp;&nbsp; Nigeria</a></li>
+  <li><a href="countries/RWA/seasonal_son.html">RWA &nbsp;&nbsp;&nbsp; Rwanda</a></li>
+  <li><a href="countries/SDN/seasonal_son.html">SDN &nbsp;&nbsp;&nbsp; Sudan</a></li>
+  <li><a href="countries/SEN/seasonal_son.html">SEN &nbsp;&nbsp;&nbsp; Senegal</a></li>
+  <li><a href="countries/SLE/seasonal_son.html">SLE &nbsp;&nbsp;&nbsp; Sierra Leone</a></li>
+  <li><a href="countries/SOM/seasonal_son.html">SOM &nbsp;&nbsp;&nbsp; Somalia</a></li>
+  <li><a href="countries/SSD/seasonal_son.html">SSD &nbsp;&nbsp;&nbsp; S. Sudan</a></li>
+  <li><a href="countries/SWZ/seasonal_son.html">SWZ &nbsp;&nbsp;&nbsp; Eswatini</a></li>
+  <li><a href="countries/TCD/seasonal_son.html">TCD &nbsp;&nbsp;&nbsp; Chad</a></li>
+  <li><a href="countries/TGO/seasonal_son.html">TGO &nbsp;&nbsp;&nbsp; Togo</a></li>
+  <li><a href="countries/TUN/seasonal_son.html">TUN &nbsp;&nbsp;&nbsp; Tunisia</a></li>
+  <li><a href="countries/TZA/seasonal_son.html">TZA &nbsp;&nbsp;&nbsp; Tanzania</a></li>
+  <li><a href="countries/UGA/seasonal_son.html">UGA &nbsp;&nbsp;&nbsp; Uganda</a></li>
+  <li><a href="countries/XSO/seasonal_son.html">XSO &nbsp;&nbsp;&nbsp; Somaliland</a></li>
+  <li><a href="countries/ZAF/seasonal_son.html">ZAF &nbsp;&nbsp;&nbsp; South Africa</a></li>
+  <li><a href="countries/ZMB/seasonal_son.html">ZMB &nbsp;&nbsp;&nbsp; Zambia</a></li>
+  <li><a href="countries/ZWE/seasonal_son.html">ZWE &nbsp;&nbsp;&nbsp; Zimbabwe</a></li>
+</ol>
+
+<h4>Asia</h4>
+
+<ol class='nostyle'>
+  <li><a href="countries/AFG/seasonal_son.html">AFG &nbsp;&nbsp;&nbsp; Afghanistan</a></li>
+  <li><a href="countries/ARE/seasonal_son.html">ARE &nbsp;&nbsp;&nbsp; United Arab Emirates</a></li>
+  <li><a href="countries/ARM/seasonal_son.html">ARM &nbsp;&nbsp;&nbsp; Armenia</a></li>
+  <li><a href="countries/AZE/seasonal_son.html">AZE &nbsp;&nbsp;&nbsp; Azerbaijan</a></li>
+  <li><a href="countries/BGD/seasonal_son.html">BGD &nbsp;&nbsp;&nbsp; Bangladesh</a></li>
+  <li><a href="countries/BRN/seasonal_son.html">BRN &nbsp;&nbsp;&nbsp; Brunei</a></li>
+  <li><a href="countries/BTN/seasonal_son.html">BTN &nbsp;&nbsp;&nbsp; Bhutan</a></li>
+  <li><a href="countries/CHN/seasonal_son.html">CHN &nbsp;&nbsp;&nbsp; China</a></li>
+  <li><a href="countries/GEO/seasonal_son.html">GEO &nbsp;&nbsp;&nbsp; Georgia</a></li>
+  <li><a href="countries/IDN/seasonal_son.html">IDN &nbsp;&nbsp;&nbsp; Indonesia</a></li>
+  <li><a href="countries/IND/seasonal_son.html">IND &nbsp;&nbsp;&nbsp; India</a></li>
+  <li><a href="countries/IRN/seasonal_son.html">IRN &nbsp;&nbsp;&nbsp; Iran</a></li>
+  <li><a href="countries/IRQ/seasonal_son.html">IRQ &nbsp;&nbsp;&nbsp; Iraq</a></li>
+  <li><a href="countries/ISR/seasonal_son.html">ISR &nbsp;&nbsp;&nbsp; Israel</a></li>
+  <li><a href="countries/JOR/seasonal_son.html">JOR &nbsp;&nbsp;&nbsp; Jordan</a></li>
+  <li><a href="countries/JPN/seasonal_son.html">JPN &nbsp;&nbsp;&nbsp; Japan</a></li>
+  <li><a href="countries/KAZ/seasonal_son.html">KAZ &nbsp;&nbsp;&nbsp; Kazakhstan</a></li>
+  <li><a href="countries/KGZ/seasonal_son.html">KGZ &nbsp;&nbsp;&nbsp; Kyrgyzstan</a></li>
+  <li><a href="countries/KHM/seasonal_son.html">KHM &nbsp;&nbsp;&nbsp; Cambodia</a></li>
+  <li><a href="countries/KOR/seasonal_son.html">KOR &nbsp;&nbsp;&nbsp; South Korea</a></li>
+  <li><a href="countries/KWT/seasonal_son.html">KWT &nbsp;&nbsp;&nbsp; Kuwait</a></li>
+  <li><a href="countries/LAO/seasonal_son.html">LAO &nbsp;&nbsp;&nbsp; Laos</a></li>
+  <li><a href="countries/LBN/seasonal_son.html">LBN &nbsp;&nbsp;&nbsp; Lebanon</a></li>
+  <li><a href="countries/LKA/seasonal_son.html">LKA &nbsp;&nbsp;&nbsp; Sri Lanka</a></li>
+  <li><a href="countries/MMR/seasonal_son.html">MMR &nbsp;&nbsp;&nbsp; Myanmar</a></li>
+  <li><a href="countries/MNG/seasonal_son.html">MNG &nbsp;&nbsp;&nbsp; Mongolia</a></li>
+  <li><a href="countries/MYS/seasonal_son.html">MYS &nbsp;&nbsp;&nbsp; Malaysia</a></li>
+  <li><a href="countries/NPL/seasonal_son.html">NPL &nbsp;&nbsp;&nbsp; Nepal</a></li>
+  <li><a href="countries/OMN/seasonal_son.html">OMN &nbsp;&nbsp;&nbsp; Oman</a></li>
+  <li><a href="countries/PAK/seasonal_son.html">PAK &nbsp;&nbsp;&nbsp; Pakistan</a></li>
+  <li><a href="countries/PHL/seasonal_son.html">PHL &nbsp;&nbsp;&nbsp; Philippines</a></li>
+  <li><a href="countries/PRK/seasonal_son.html">PRK &nbsp;&nbsp;&nbsp; North Korea</a></li>
+  <li><a href="countries/PSE/seasonal_son.html">PSE &nbsp;&nbsp;&nbsp; Palestine</a></li>
+  <li><a href="countries/QAT/seasonal_son.html">QAT &nbsp;&nbsp;&nbsp; Qatar</a></li>
+  <li><a href="countries/RUS/seasonal_son.html">RUS &nbsp;&nbsp;&nbsp; Russia</a></li>
+  <li><a href="countries/SAU/seasonal_son.html">SAU &nbsp;&nbsp;&nbsp; Saudi Arabia</a></li>
+  <li><a href="countries/SYR/seasonal_son.html">SYR &nbsp;&nbsp;&nbsp; Syria</a></li>
+  <li><a href="countries/THA/seasonal_son.html">THA &nbsp;&nbsp;&nbsp; Thailand</a></li>
+  <li><a href="countries/TJK/seasonal_son.html">TJK &nbsp;&nbsp;&nbsp; Tajikistan</a></li>
+  <li><a href="countries/TKM/seasonal_son.html">TKM &nbsp;&nbsp;&nbsp; Turkmenistan</a></li>
+  <li><a href="countries/TLS/seasonal_son.html">TLS &nbsp;&nbsp;&nbsp; Timor-Leste</a></li>
+  <li><a href="countries/TUR/seasonal_son.html">TUR &nbsp;&nbsp;&nbsp; Turkey</a></li>
+  <li><a href="countries/TWN/seasonal_son.html">TWN &nbsp;&nbsp;&nbsp; Taiwan</a></li>
+  <li><a href="countries/UZB/seasonal_son.html">UZB &nbsp;&nbsp;&nbsp; Uzbekistan</a></li>
+  <li><a href="countries/VNM/seasonal_son.html">VNM &nbsp;&nbsp;&nbsp; Vietnam</a></li>
+  <li><a href="countries/YEM/seasonal_son.html">YEM &nbsp;&nbsp;&nbsp; Yemen</a></li>
+</ol>
+
+<h4>Europe</h4>
+
+<ol class='nostyle'>
+  <li><a href="countries/ALB/seasonal_son.html">ALB &nbsp;&nbsp;&nbsp; Albania</a></li>
+  <li><a href="countries/ARM/seasonal_son.html">ARM &nbsp;&nbsp;&nbsp; Armenia</a></li>
+  <li><a href="countries/AUT/seasonal_son.html">AUT &nbsp;&nbsp;&nbsp; Austria</a></li>
+  <li><a href="countries/AZE/seasonal_son.html">AZE &nbsp;&nbsp;&nbsp; Azerbaijan</a></li>
+  <li><a href="countries/BEL/seasonal_son.html">BEL &nbsp;&nbsp;&nbsp; Belgium</a></li>
+  <li><a href="countries/BGR/seasonal_son.html">BGR &nbsp;&nbsp;&nbsp; Bulgaria</a></li>
+  <li><a href="countries/BIH/seasonal_son.html">BIH &nbsp;&nbsp;&nbsp; Bosnia and Herz.</a></li>
+  <li><a href="countries/BLR/seasonal_son.html">BLR &nbsp;&nbsp;&nbsp; Belarus</a></li>
+  <li><a href="countries/CHE/seasonal_son.html">CHE &nbsp;&nbsp;&nbsp; Switzerland</a></li>
+  <li><a href="countries/CYP/seasonal_son.html">CYP &nbsp;&nbsp;&nbsp; Cyprus</a></li>
+  <li><a href="countries/CZE/seasonal_son.html">CZE &nbsp;&nbsp;&nbsp; Czechia</a></li>
+  <li><a href="countries/DEU/seasonal_son.html">DEU &nbsp;&nbsp;&nbsp; Germany</a></li>
+  <li><a href="countries/DNK/seasonal_son.html">DNK &nbsp;&nbsp;&nbsp; Denmark</a></li>
+  <li><a href="countries/ESP/seasonal_son.html">ESP &nbsp;&nbsp;&nbsp; Spain</a></li>
+  <li><a href="countries/EST/seasonal_son.html">EST &nbsp;&nbsp;&nbsp; Estonia</a></li>
+  <li><a href="countries/FIN/seasonal_son.html">FIN &nbsp;&nbsp;&nbsp; Finland</a></li>
+  <li><a href="countries/FRA/seasonal_son.html">FRA &nbsp;&nbsp;&nbsp; France</a></li>
+  <li><a href="countries/GBR/seasonal_son.html">GBR &nbsp;&nbsp;&nbsp; United Kingdom</a></li>
+  <li><a href="countries/GEO/seasonal_son.html">GEO &nbsp;&nbsp;&nbsp; Georgia</a></li>
+  <li><a href="countries/GRC/seasonal_son.html">GRC &nbsp;&nbsp;&nbsp; Greece</a></li>
+  <li><a href="countries/HRV/seasonal_son.html">HRV &nbsp;&nbsp;&nbsp; Croatia</a></li>
+  <li><a href="countries/HUN/seasonal_son.html">HUN &nbsp;&nbsp;&nbsp; Hungary</a></li>
+  <li><a href="countries/IRL/seasonal_son.html">IRL &nbsp;&nbsp;&nbsp; Ireland</a></li>
+  <li><a href="countries/ISL/seasonal_son.html">ISL &nbsp;&nbsp;&nbsp; Iceland</a></li>
+  <li><a href="countries/ITA/seasonal_son.html">ITA &nbsp;&nbsp;&nbsp; Italy</a></li>
+  <li><a href="countries/LTU/seasonal_son.html">LTU &nbsp;&nbsp;&nbsp; Lithuania</a></li>
+  <li><a href="countries/LUX/seasonal_son.html">LUX &nbsp;&nbsp;&nbsp; Luxembourg</a></li>
+  <li><a href="countries/LVA/seasonal_son.html">LVA &nbsp;&nbsp;&nbsp; Latvia</a></li>
+  <li><a href="countries/MDA/seasonal_son.html">MDA &nbsp;&nbsp;&nbsp; Moldova</a></li>
+  <li><a href="countries/MKD/seasonal_son.html">MKD &nbsp;&nbsp;&nbsp; North Macedonia</a></li>
+  <li><a href="countries/MNE/seasonal_son.html">MNE &nbsp;&nbsp;&nbsp; Montenegro</a></li>
+  <li><a href="countries/NLD/seasonal_son.html">NLD &nbsp;&nbsp;&nbsp; Netherlands</a></li>
+  <li><a href="countries/NOR/seasonal_son.html">NOR &nbsp;&nbsp;&nbsp; Norway</a></li>
+  <li><a href="countries/POL/seasonal_son.html">POL &nbsp;&nbsp;&nbsp; Poland</a></li>
+  <li><a href="countries/PRT/seasonal_son.html">PRT &nbsp;&nbsp;&nbsp; Portugal</a></li>
+  <li><a href="countries/ROU/seasonal_son.html">ROU &nbsp;&nbsp;&nbsp; Romania</a></li>
+  <li><a href="countries/RUS/seasonal_son.html">RUS &nbsp;&nbsp;&nbsp; Russia</a></li>
+  <li><a href="countries/SRB/seasonal_son.html">SRB &nbsp;&nbsp;&nbsp; Serbia</a></li>
+  <li><a href="countries/SVK/seasonal_son.html">SVK &nbsp;&nbsp;&nbsp; Slovakia</a></li>
+  <li><a href="countries/SVN/seasonal_son.html">SVN &nbsp;&nbsp;&nbsp; Slovenia</a></li>
+  <li><a href="countries/SWE/seasonal_son.html">SWE &nbsp;&nbsp;&nbsp; Sweden</a></li>
+  <li><a href="countries/TUR/seasonal_son.html">TUR &nbsp;&nbsp;&nbsp; Turkey</a></li>
+  <li><a href="countries/UKR/seasonal_son.html">UKR &nbsp;&nbsp;&nbsp; Ukraine</a></li>
+  <li><a href="countries/XKO/seasonal_son.html">XKO &nbsp;&nbsp;&nbsp; Kosovo</a></li>
+  <li><a href="countries/XNC/seasonal_son.html">XNC &nbsp;&nbsp;&nbsp; N. Cyprus</a></li>
+</ol>
+
+<h4>North America</h4>
+
+<ol class='nostyle'>
+  <li><a href="countries/BHS/seasonal_son.html">BHS &nbsp;&nbsp;&nbsp; Bahamas</a></li>
+  <li><a href="countries/BLZ/seasonal_son.html">BLZ &nbsp;&nbsp;&nbsp; Belize</a></li>
+  <li><a href="countries/CAN/seasonal_son.html">CAN &nbsp;&nbsp;&nbsp; Canada</a></li>
+  <li><a href="countries/CRI/seasonal_son.html">CRI &nbsp;&nbsp;&nbsp; Costa Rica</a></li>
+  <li><a href="countries/CUB/seasonal_son.html">CUB &nbsp;&nbsp;&nbsp; Cuba</a></li>
+  <li><a href="countries/DOM/seasonal_son.html">DOM &nbsp;&nbsp;&nbsp; Dominican Rep.</a></li>
+  <li><a href="countries/GRL/seasonal_son.html">GRL &nbsp;&nbsp;&nbsp; Greenland</a></li>
+  <li><a href="countries/GTM/seasonal_son.html">GTM &nbsp;&nbsp;&nbsp; Guatemala</a></li>
+  <li><a href="countries/HND/seasonal_son.html">HND &nbsp;&nbsp;&nbsp; Honduras</a></li>
+  <li><a href="countries/HTI/seasonal_son.html">HTI &nbsp;&nbsp;&nbsp; Haiti</a></li>
+  <li><a href="countries/JAM/seasonal_son.html">JAM &nbsp;&nbsp;&nbsp; Jamaica</a></li>
+  <li><a href="countries/MEX/seasonal_son.html">MEX &nbsp;&nbsp;&nbsp; Mexico</a></li>
+  <li><a href="countries/NIC/seasonal_son.html">NIC &nbsp;&nbsp;&nbsp; Nicaragua</a></li>
+  <li><a href="countries/PAN/seasonal_son.html">PAN &nbsp;&nbsp;&nbsp; Panama</a></li>
+  <li><a href="countries/PRI/seasonal_son.html">PRI &nbsp;&nbsp;&nbsp; Puerto Rico</a></li>
+  <li><a href="countries/SLV/seasonal_son.html">SLV &nbsp;&nbsp;&nbsp; El Salvador</a></li>
+  <li><a href="countries/USA/seasonal_son.html">USA &nbsp;&nbsp;&nbsp; United States of America</a></li>
+</ol>
+
+<h4>South America</h4>
+
+<ol class='nostyle'>
+  <li><a href="countries/ARG/seasonal_son.html">ARG &nbsp;&nbsp;&nbsp; Argentina</a></li>
+  <li><a href="countries/BOL/seasonal_son.html">BOL &nbsp;&nbsp;&nbsp; Bolivia</a></li>
+  <li><a href="countries/BRA/seasonal_son.html">BRA &nbsp;&nbsp;&nbsp; Brazil</a></li>
+  <li><a href="countries/CHL/seasonal_son.html">CHL &nbsp;&nbsp;&nbsp; Chile</a></li>
+  <li><a href="countries/COL/seasonal_son.html">COL &nbsp;&nbsp;&nbsp; Colombia</a></li>
+  <li><a href="countries/ECU/seasonal_son.html">ECU &nbsp;&nbsp;&nbsp; Ecuador</a></li>
+  <li><a href="countries/FLK/seasonal_son.html">FLK &nbsp;&nbsp;&nbsp; Falkland Is.</a></li>
+  <li><a href="countries/GUY/seasonal_son.html">GUY &nbsp;&nbsp;&nbsp; Guyana</a></li>
+  <li><a href="countries/PER/seasonal_son.html">PER &nbsp;&nbsp;&nbsp; Peru</a></li>
+  <li><a href="countries/PRY/seasonal_son.html">PRY &nbsp;&nbsp;&nbsp; Paraguay</a></li>
+  <li><a href="countries/SUR/seasonal_son.html">SUR &nbsp;&nbsp;&nbsp; Suriname</a></li>
+  <li><a href="countries/TTO/seasonal_son.html">TTO &nbsp;&nbsp;&nbsp; Trinidad and Tobago</a></li>
+  <li><a href="countries/URY/seasonal_son.html">URY &nbsp;&nbsp;&nbsp; Uruguay</a></li>
+  <li><a href="countries/VEN/seasonal_son.html">VEN &nbsp;&nbsp;&nbsp; Venezuela</a></li>
+</ol>
+
+<h4>Oceania</h4>
+
+<ol class='nostyle'>
+  <li><a href="countries/AUS/seasonal_son.html">AUS &nbsp;&nbsp;&nbsp; Australia</a></li>
+  <li><a href="countries/FJI/seasonal_son.html">FJI &nbsp;&nbsp;&nbsp; Fiji</a></li>
+  <li><a href="countries/NCL/seasonal_son.html">NCL &nbsp;&nbsp;&nbsp; New Caledonia</a></li>
+  <li><a href="countries/NZL/seasonal_son.html">NZL &nbsp;&nbsp;&nbsp; New Zealand</a></li>
+  <li><a href="countries/PNG/seasonal_son.html">PNG &nbsp;&nbsp;&nbsp; Papua New Guinea</a></li>
+  <li><a href="countries/SLB/seasonal_son.html">SLB &nbsp;&nbsp;&nbsp; Solomon Is.</a></li>
+  <li><a href="countries/VUT/seasonal_son.html">VUT &nbsp;&nbsp;&nbsp; Vanuatu</a></li>
+</ol>
+
+<h4>Other Territories</h4>
+
+<ol class='nostyle'>
+  <li><a href="countries/ATA/seasonal_son.html">ATA &nbsp;&nbsp;&nbsp; Antarctica</a></li>
+  <li><a href="countries/ATF/seasonal_son.html">ATF &nbsp;&nbsp;&nbsp; Fr. S. Antarctic Lands</a></li>
+</ol>
+
+
+
+
+            </div>
+        </div>
+    </div>
+        	
+            
+    <div class="w3-container" style="margin:0 -16px">
+        <div class="w3-card w3-container w3-white w3-margin-bottom w3-text-dark-grey">
+            <div class="w3-content">
+                <h1>NOTES</h1>
+            </div>
+        </div>
+    </div>
+
+   <div class="w3-container" style="margin:0 -16px">
+        <div class="w3-card w3-container w3-white w3-margin-bottom w3-text-dark-grey">
+            <div class="w3-content">
+                <h2><a id="Processing">Processing</a></h2>
+                <p> Set the timescale using the radio buttons. Selecting
+ an IPCC AR6 region will take you to a page showing the timeseries of 
+all variables processed.
+				</p>
+                
+				<br>
+                <h3>Country level aggregation</h3>
+                <p> The raw data is at 0.25 degrees resolution. The Natural Earth_v5.0.0 country mask is used to compute aggregated totals at the monthly, yearly (JAN-DEC), yearly (JUL-JUN), seasonal (DJF), seasonal  (DJF), seasonal (MAM), and seasonal (SON) timescales. 
+				</p>
+
+                <br>
+                <h3>Variables</h3>
+                <br>
+                <h4>(1) Area Burned by All fires</h4>
+                <p> The total area burned by fires in the country in units of thousands km².</p>
+                <br>
+                <h4>(2) Area Burned by Forest Fires</h4>
+                <p> The total area burned by forest fires in the country from gridcells having 30% tree cover in units of thousands of km².</p>
+                <br>
+                <h4>(3) Carbon Emssions from All Fires</h4>
+                <p> The total carbon emissions from all fires in the country in units of thousands of tonnes of C.</p>
+                <br>
+                <h4>(4) Carbon Emissions from fires in forests</h4>
+                <p> The total carbon emissions from forest fires in the  country from gridcells having 30% tree cover in units of thousands of tonnes of C.</p>
+                <br>
+                <h3>Data export</h3>
+                <p> The underlying data for each plot is in CSV format.</p>
+                <br>
+                <h3>Statistics</h3>
+                <br>
+                <p> The timeseries are fit with a robust OLS regression 
+(Theil-Sen) and a regression t-test is performed to determine if the OLS
+ slope is significant at the 95% confidence level (p &lt; 0.05, α = 
+0.05). This is only shown when the alternative hypothesis is true. The 
+uncertainty band for the 95% confidence interval on the slope and 
+intercept is provided. For each timescale (with the exception of the 
+monthly data), 5-yr means are shaded as a visual guide to help 
+understand the variability and potential trend in the data.
+                </p>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    <p> Page created on 2024-01-08 by Michael Taylor (CRU/UEA) for the UEA PVC impact study project with Matt Jones and Tim Osborn.</p>
+    
+</div>
+
+
+
+	
+
+
+
+</body></html>
