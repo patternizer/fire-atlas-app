@@ -1,2 +1,0 @@
-fittype,tstart,tend,slope,intercept,corrcoef,R2adj,variable,timescale,region
-theil-sen,2001-07-01,2023-07-01,-0.001638,0.293058,0.220702,0.951129,BA_Forest_NonForest,yearly,ES

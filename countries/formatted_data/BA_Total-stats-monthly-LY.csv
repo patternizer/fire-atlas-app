@@ -1,2 +1,0 @@
-fittype,tstart,tend,slope,intercept,corrcoef,R2adj,variable,timescale,region
-theil-sen,2001-01-01,2023-06-01,1.8e-05,0.000727,-0.592495,0.486365,BA_Total,monthly,LY
