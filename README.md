@@ -16,6 +16,9 @@ UEA impact study app (dev)
 * `update-map-htmls.py` - Python script to re-point map HTMLs to region directory HTML at the corresponding timescale
 * `ar6.land.csv` - Look up table for IPCC AR6 land region abbreviations and descriptive names
 * `natural_earth_v5_0_0.countries_110.csv` - Look up table for the country list aligned with regionmask output but with country abbreviations replaced with ISO 3166 alpha-3 codes.
+* `continents_table.csv` - Look up table for assignment of countries to continents (Tim Osborn)
+* `mkhtml_continents.pro` - IDL code to generate HTML continent-country links for country level landing pages (Tim Osborn)
+* `mkhtml_continents.py` - python translation of IDL code to generate HTML continent-country links for country level landing pages
 
 The first step is to clone the latest fire-atlas-app repo and step into the check out directory: 
 
