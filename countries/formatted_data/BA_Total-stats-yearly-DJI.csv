@@ -1,0 +1,2 @@
+fittype,tstart,tend,slope,slope_lower,slope_upper,slope_mann_kendall,pvalue_slope,intercept,intercept_lower,intercept_upper,pvalue_intercept,SE,corrcoef,R2adj,variable,timescale,country
+theil-sen,2001-07-01,2023-07-01,0.000349,2.6e-05,0.000671,0.000111,0.033941,-0.000479,-0.00462,0.003662,0.82067,0.017311,0.948742,0.966316,BA_Total,yearly,DJI

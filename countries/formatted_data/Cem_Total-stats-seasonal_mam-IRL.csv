@@ -1,0 +1,2 @@
+fittype,tstart,tend,slope,slope_lower,slope_upper,slope_mann_kendall,pvalue_slope,intercept,intercept_lower,intercept_upper,pvalue_intercept,SE,corrcoef,R2adj,variable,timescale,country
+theil-sen,2002-04-01,2020-04-01,4e-05,-9.7e-05,0.000176,0.0,0.568152,0.000603,-0.000836,0.002042,0.411144,0.006009,0.693327,0.942248,Cem_Total,seasonal_mam,IRL

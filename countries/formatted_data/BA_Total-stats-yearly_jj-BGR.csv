@@ -1,0 +1,2 @@
+fittype,tstart,tend,slope,slope_lower,slope_upper,slope_mann_kendall,pvalue_slope,intercept,intercept_lower,intercept_upper,pvalue_intercept,SE,corrcoef,R2adj,variable,timescale,country
+theil-sen,2001-01-01,2023-01-01,-0.139,-0.281189,0.003189,-0.151,0.055365,4.951601,3.125148,6.778054,0.0,4.129298,0.958504,0.979847,BA_Total,yearly_jj,BGR

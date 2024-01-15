@@ -1,0 +1,2 @@
+fittype,tstart,tend,slope,slope_lower,slope_upper,slope_mann_kendall,pvalue_slope,intercept,intercept_lower,intercept_upper,pvalue_intercept,SE,corrcoef,R2adj,variable,timescale,country
+theil-sen,2002-07-01,2020-07-01,-0.000153,-0.001933,0.001627,0.0,0.865863,0.013513,-0.005241,0.032267,0.157877,0.028943,0.532379,0.924457,Cem_Total,yearly,FJI

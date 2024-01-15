@@ -1,0 +1,2 @@
+fittype,tstart,tend,slope,slope_lower,slope_upper,slope_mann_kendall,pvalue_slope,intercept,intercept_lower,intercept_upper,pvalue_intercept,SE,corrcoef,R2adj,variable,timescale,country
+theil-sen,2001-10-01,2023-10-01,0.002525,-0.001095,0.006146,0.001,0.171606,0.013974,-0.032534,0.060482,0.555924,0.07868,0.908826,0.945968,BA_Forest_NonForest,seasonal_son,BWA
