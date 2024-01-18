@@ -1,2 +1,2 @@
-fittype,tstart,tend,slope,intercept,corrcoef,R2adj,variable,timescale,region
-theil-sen,2001-02-01,2023-02-01,0.027683,0.257898,0.865761,0.923255,BA_Forest_NonForest,seasonal_djf,CAR
+fittype,tstart,tend,slope,slope_lower,slope_upper,slope_mann_kendall,pvalue_slope,intercept,intercept_lower,intercept_upper,pvalue_intercept,SE,corrcoef,R2adj,variable,timescale,region
+theil-sen,2001-02-01,2023-02-01,0.027683,0.004545,0.050821,0.03,0.01903,0.257898,-0.039319,0.555114,0.089003,0.721628,0.865761,0.923255,BA_Forest_NonForest,seasonal_djf,CAR

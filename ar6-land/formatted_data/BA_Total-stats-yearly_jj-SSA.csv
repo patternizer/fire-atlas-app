@@ -1,2 +1,2 @@
-fittype,tstart,tend,slope,intercept,corrcoef,R2adj,variable,timescale,region
-theil-sen,2001-01-01,2023-01-01,-0.106475,3.562022,0.627249,0.699238,BA_Total,yearly_jj,SSA
+fittype,tstart,tend,slope,slope_lower,slope_upper,slope_mann_kendall,pvalue_slope,intercept,intercept_lower,intercept_upper,pvalue_intercept,SE,corrcoef,R2adj,variable,timescale,region
+theil-sen,2001-01-01,2023-01-01,-0.106475,-0.271468,0.058518,-0.041278,0.205934,3.562022,1.442652,5.681392,0.000987,4.926146,0.627249,0.699238,BA_Total,yearly_jj,SSA

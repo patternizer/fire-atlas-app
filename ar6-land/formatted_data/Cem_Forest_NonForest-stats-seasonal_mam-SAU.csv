@@ -1,2 +1,2 @@
-fittype,tstart,tend,slope,intercept,corrcoef,R2adj,variable,timescale,region
-theil-sen,2002-04-01,2020-04-01,0.001239,0.258277,0.49686,0.838209,Cem_Forest_NonForest,seasonal_mam,SAU
+fittype,tstart,tend,slope,slope_lower,slope_upper,slope_mann_kendall,pvalue_slope,intercept,intercept_lower,intercept_upper,pvalue_intercept,SE,corrcoef,R2adj,variable,timescale,region
+theil-sen,2002-04-01,2020-04-01,0.001239,-0.015931,0.018409,0.00284,0.887501,0.258277,0.077382,0.439172,0.005136,0.439751,0.49686,0.838209,Cem_Forest_NonForest,seasonal_mam,SAU

@@ -1,2 +1,2 @@
-fittype,tstart,tend,slope,intercept,corrcoef,R2adj,variable,timescale,region
-theil-sen,2002-04-01,2020-04-01,-0.037966,10.857667,0.384047,0.997622,Cem_Total,seasonal_mam,WAF
+fittype,tstart,tend,slope,slope_lower,slope_upper,slope_mann_kendall,pvalue_slope,intercept,intercept_lower,intercept_upper,pvalue_intercept,SE,corrcoef,R2adj,variable,timescale,region
+theil-sen,2002-04-01,2020-04-01,-0.037966,-0.28377,0.207838,-0.015128,0.762097,10.857667,8.267963,13.447372,0.0,2.994181,0.384047,0.997622,Cem_Total,seasonal_mam,WAF
