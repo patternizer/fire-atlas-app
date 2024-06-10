@@ -21,4 +21,5 @@ year,sum,variable,timescale,region
 2020,0.022,BA_Total,seasonal_son,CAR
 2021,0.092,BA_Total,seasonal_son,CAR
 2022,0.133,BA_Total,seasonal_son,CAR
-2023,0.0,BA_Total,seasonal_son,CAR
+2023,0.001,BA_Total,seasonal_son,CAR
+2024,0.0,BA_Total,seasonal_son,CAR

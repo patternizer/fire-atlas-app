@@ -21,4 +21,5 @@ year,sum,variable,timescale,region
 2020,0.9420000000000002,BA_Forest_NonForest,seasonal_son,ENA
 2021,0.64,BA_Forest_NonForest,seasonal_son,ENA
 2022,2.0580000000000003,BA_Forest_NonForest,seasonal_son,ENA
-2023,0.0,BA_Forest_NonForest,seasonal_son,ENA
+2023,2.304,BA_Forest_NonForest,seasonal_son,ENA
+2024,0.0,BA_Forest_NonForest,seasonal_son,ENA

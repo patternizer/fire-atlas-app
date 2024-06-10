@@ -21,4 +21,5 @@ year,sum,variable,timescale,region
 2020,0.11800000000000001,BA_Forest_NonForest,seasonal_jja,WCA
 2021,0.56,BA_Forest_NonForest,seasonal_jja,WCA
 2022,1.8309999999999997,BA_Forest_NonForest,seasonal_jja,WCA
-2023,0.0,BA_Forest_NonForest,seasonal_jja,WCA
+2023,0.182,BA_Forest_NonForest,seasonal_jja,WCA
+2024,0.0,BA_Forest_NonForest,seasonal_jja,WCA

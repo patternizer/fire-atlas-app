@@ -22,3 +22,4 @@ year,sum,variable,timescale,region
 2021,0.08600000000000001,BA_Forest_NonForest,seasonal_djf,RFE
 2022,0.0,BA_Forest_NonForest,seasonal_djf,RFE
 2023,0.01,BA_Forest_NonForest,seasonal_djf,RFE
+2024,0.0,BA_Forest_NonForest,seasonal_djf,RFE

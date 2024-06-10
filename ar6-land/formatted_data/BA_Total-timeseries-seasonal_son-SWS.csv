@@ -21,4 +21,5 @@ year,sum,variable,timescale,region
 2020,0.534,BA_Total,seasonal_son,SWS
 2021,0.8730000000000001,BA_Total,seasonal_son,SWS
 2022,0.7040000000000002,BA_Total,seasonal_son,SWS
-2023,0.0,BA_Total,seasonal_son,SWS
+2023,0.647,BA_Total,seasonal_son,SWS
+2024,0.0,BA_Total,seasonal_son,SWS

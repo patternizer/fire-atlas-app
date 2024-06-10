@@ -21,4 +21,5 @@ year,sum,variable,timescale,region
 2020,0.6080000000000001,BA_Total,seasonal_jja,ECA
 2021,0.31800000000000006,BA_Total,seasonal_jja,ECA
 2022,0.25400000000000006,BA_Total,seasonal_jja,ECA
-2023,0.0,BA_Total,seasonal_jja,ECA
+2023,0.053000000000000005,BA_Total,seasonal_jja,ECA
+2024,0.0,BA_Total,seasonal_jja,ECA

@@ -1,2 +1,2 @@
 fittype,tstart,tend,slope,slope_lower,slope_upper,slope_mann_kendall,pvalue_slope,intercept,intercept_lower,intercept_upper,pvalue_intercept,SE,corrcoef,R2adj,variable,timescale,region
-theil-sen,2001-04-01,2023-04-01,0.675815,-1.014574,2.366203,0.27825,0.433281,48.331509,26.618072,70.044945,1.3e-05,27.10644,0.392559,0.968886,BA_Total,seasonal_mam,EAS
+theil-sen,2001-04-01,2024-04-01,0.069868,-1.878991,2.018727,-0.127685,0.943982,53.567653,27.408865,79.726441,6e-05,29.20641,0.119698,0.970297,BA_Total,seasonal_mam,EAS

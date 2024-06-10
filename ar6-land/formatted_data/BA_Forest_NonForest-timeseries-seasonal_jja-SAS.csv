@@ -21,4 +21,5 @@ year,sum,variable,timescale,region
 2020,0.0,BA_Forest_NonForest,seasonal_jja,SAS
 2021,0.0,BA_Forest_NonForest,seasonal_jja,SAS
 2022,0.002,BA_Forest_NonForest,seasonal_jja,SAS
-2023,0.0,BA_Forest_NonForest,seasonal_jja,SAS
+2023,0.05600000000000001,BA_Forest_NonForest,seasonal_jja,SAS
+2024,0.0,BA_Forest_NonForest,seasonal_jja,SAS
