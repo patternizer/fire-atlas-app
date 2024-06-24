@@ -1,2 +1,10 @@
-fittype,tstart,tend,slope,slope_lower,slope_upper,slope_mann_kendall,pvalue_slope,intercept,intercept_lower,intercept_upper,pvalue_intercept,SE,corrcoef,R2adj,variable,timescale,region
-theil-sen,2002-10-01,2020-10-01,5.9e-05,-9.2e-05,0.00021,0.0,0.443171,0.001074,-0.000514,0.002662,0.184827,0.009796,-0.207694,0.700648,Cem_Total,seasonal_son,NZ
+variable,timescale,region,tstart,tend,statistic,value,unit
+Cem_Total,seasonal_son,NZ,2002,2020,mann_kendall_slope,0.0,thousand_tonnes_C/year
+Cem_Total,seasonal_son,NZ,2002,2020,theil_sen_slope,5.9e-05,thousand_tonnes_C/year
+Cem_Total,seasonal_son,NZ,2002,2020,theil_sen_slope_lower,-9.2e-05,thousand_tonnes_C/year
+Cem_Total,seasonal_son,NZ,2002,2020,theil_sen_slope_upper,0.00021,thousand_tonnes_C/year
+Cem_Total,seasonal_son,NZ,2002,2020,theil_sen_pvalue_slope,0.443171,1
+Cem_Total,seasonal_son,NZ,2002,2020,theil_sen_intercept,0.001074,thousand_tonnes_C
+Cem_Total,seasonal_son,NZ,2002,2020,theil_sen_intercept_lower,-0.000514,thousand_tonnes_C
+Cem_Total,seasonal_son,NZ,2002,2020,theil_sen_intercept_upper,0.002662,thousand_tonnes_C
+Cem_Total,seasonal_son,NZ,2002,2020,residual_standard_deviation,0.009796,thousand_tonnes_C

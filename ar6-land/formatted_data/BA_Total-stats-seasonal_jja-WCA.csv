@@ -1,2 +1,10 @@
-fittype,tstart,tend,slope,slope_lower,slope_upper,slope_mann_kendall,pvalue_slope,intercept,intercept_lower,intercept_upper,pvalue_intercept,SE,corrcoef,R2adj,variable,timescale,region
-theil-sen,2001-07-01,2024-07-01,-2.410179,-3.53191,-1.288449,-2.420863,2.5e-05,71.331098,56.274542,86.387654,0.0,22.770409,0.971363,0.991997,BA_Total,seasonal_jja,WCA
+variable,timescale,region,tstart,tend,statistic,value,unit
+BA_Total,seasonal_jja,WCA,2001,2024,mann_kendall_slope,-2.420863,thousand_km2/year
+BA_Total,seasonal_jja,WCA,2001,2024,theil_sen_slope,-2.410179,thousand_km2/year
+BA_Total,seasonal_jja,WCA,2001,2024,theil_sen_slope_lower,-3.53191,thousand_km2/year
+BA_Total,seasonal_jja,WCA,2001,2024,theil_sen_slope_upper,-1.288449,thousand_km2/year
+BA_Total,seasonal_jja,WCA,2001,2024,theil_sen_pvalue_slope,2.5e-05,1
+BA_Total,seasonal_jja,WCA,2001,2024,theil_sen_intercept,71.331098,thousand_km2
+BA_Total,seasonal_jja,WCA,2001,2024,theil_sen_intercept_lower,56.274542,thousand_km2
+BA_Total,seasonal_jja,WCA,2001,2024,theil_sen_intercept_upper,86.387654,thousand_km2
+BA_Total,seasonal_jja,WCA,2001,2024,residual_standard_deviation,22.770409,thousand_km2

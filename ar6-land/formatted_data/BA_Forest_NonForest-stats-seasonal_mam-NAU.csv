@@ -1,2 +1,10 @@
-fittype,tstart,tend,slope,slope_lower,slope_upper,slope_mann_kendall,pvalue_slope,intercept,intercept_lower,intercept_upper,pvalue_intercept,SE,corrcoef,R2adj,variable,timescale,region
-theil-sen,2001-04-01,2024-04-01,0.004031,0.000391,0.007671,0.0037,0.029977,0.029336,-0.019523,0.078195,0.23927,0.149145,0.85547,0.924904,BA_Forest_NonForest,seasonal_mam,NAU
+variable,timescale,region,tstart,tend,statistic,value,unit
+BA_Forest,seasonal_mam,NAU,2001,2024,mann_kendall_slope,0.0037,thousand_km2/year
+BA_Forest,seasonal_mam,NAU,2001,2024,theil_sen_slope,0.004031,thousand_km2/year
+BA_Forest,seasonal_mam,NAU,2001,2024,theil_sen_slope_lower,0.000391,thousand_km2/year
+BA_Forest,seasonal_mam,NAU,2001,2024,theil_sen_slope_upper,0.007671,thousand_km2/year
+BA_Forest,seasonal_mam,NAU,2001,2024,theil_sen_pvalue_slope,0.029977,1
+BA_Forest,seasonal_mam,NAU,2001,2024,theil_sen_intercept,0.029336,thousand_km2
+BA_Forest,seasonal_mam,NAU,2001,2024,theil_sen_intercept_lower,-0.019523,thousand_km2
+BA_Forest,seasonal_mam,NAU,2001,2024,theil_sen_intercept_upper,0.078195,thousand_km2
+BA_Forest,seasonal_mam,NAU,2001,2024,residual_standard_deviation,0.149145,thousand_km2

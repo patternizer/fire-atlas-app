@@ -1,2 +1,10 @@
-fittype,tstart,tend,slope,slope_lower,slope_upper,slope_mann_kendall,pvalue_slope,intercept,intercept_lower,intercept_upper,pvalue_intercept,SE,corrcoef,R2adj,variable,timescale,region
-theil-sen,2001-04-01,2024-04-01,-0.277414,-0.507578,-0.047251,-0.276833,0.01816,10.220468,7.131075,13.309861,0.0,3.795667,0.959121,0.993391,BA_Total,seasonal_mam,CAR
+variable,timescale,region,tstart,tend,statistic,value,unit
+BA_Total,seasonal_mam,CAR,2001,2024,mann_kendall_slope,-0.276833,thousand_km2/year
+BA_Total,seasonal_mam,CAR,2001,2024,theil_sen_slope,-0.277414,thousand_km2/year
+BA_Total,seasonal_mam,CAR,2001,2024,theil_sen_slope_lower,-0.507578,thousand_km2/year
+BA_Total,seasonal_mam,CAR,2001,2024,theil_sen_slope_upper,-0.047251,thousand_km2/year
+BA_Total,seasonal_mam,CAR,2001,2024,theil_sen_pvalue_slope,0.01816,1
+BA_Total,seasonal_mam,CAR,2001,2024,theil_sen_intercept,10.220468,thousand_km2
+BA_Total,seasonal_mam,CAR,2001,2024,theil_sen_intercept_lower,7.131075,thousand_km2
+BA_Total,seasonal_mam,CAR,2001,2024,theil_sen_intercept_upper,13.309861,thousand_km2
+BA_Total,seasonal_mam,CAR,2001,2024,residual_standard_deviation,3.795667,thousand_km2

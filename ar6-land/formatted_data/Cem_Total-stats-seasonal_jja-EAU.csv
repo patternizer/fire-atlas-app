@@ -1,2 +1,10 @@
-fittype,tstart,tend,slope,slope_lower,slope_upper,slope_mann_kendall,pvalue_slope,intercept,intercept_lower,intercept_upper,pvalue_intercept,SE,corrcoef,R2adj,variable,timescale,region
-theil-sen,2002-07-01,2020-07-01,0.022388,-0.003652,0.048428,0.020564,0.091974,0.324794,0.050443,0.599144,0.020323,0.355376,0.96544,0.987894,Cem_Total,seasonal_jja,EAU
+variable,timescale,region,tstart,tend,statistic,value,unit
+Cem_Total,seasonal_jja,EAU,2002,2020,mann_kendall_slope,0.020564,thousand_tonnes_C/year
+Cem_Total,seasonal_jja,EAU,2002,2020,theil_sen_slope,0.022388,thousand_tonnes_C/year
+Cem_Total,seasonal_jja,EAU,2002,2020,theil_sen_slope_lower,-0.003652,thousand_tonnes_C/year
+Cem_Total,seasonal_jja,EAU,2002,2020,theil_sen_slope_upper,0.048428,thousand_tonnes_C/year
+Cem_Total,seasonal_jja,EAU,2002,2020,theil_sen_pvalue_slope,0.091974,1
+Cem_Total,seasonal_jja,EAU,2002,2020,theil_sen_intercept,0.324794,thousand_tonnes_C
+Cem_Total,seasonal_jja,EAU,2002,2020,theil_sen_intercept_lower,0.050443,thousand_tonnes_C
+Cem_Total,seasonal_jja,EAU,2002,2020,theil_sen_intercept_upper,0.599144,thousand_tonnes_C
+Cem_Total,seasonal_jja,EAU,2002,2020,residual_standard_deviation,0.355376,thousand_tonnes_C

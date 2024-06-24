@@ -1,2 +1,10 @@
-fittype,tstart,tend,slope,slope_lower,slope_upper,slope_mann_kendall,pvalue_slope,intercept,intercept_lower,intercept_upper,pvalue_intercept,SE,corrcoef,R2adj,variable,timescale,region
-theil-sen,2002-01-01,2020-01-01,0.000409,0.00013,0.000689,0.000341,0.004119,-0.000505,-0.003451,0.00244,0.736676,0.007002,0.92078,0.939628,Cem_Forest_NonForest,yearly_jj,NZ
+variable,timescale,region,tstart,tend,statistic,value,unit
+Cem_Forest,yearly_jj,NZ,2002,2020,mann_kendall_slope,0.000341,thousand_tonnes_C/year
+Cem_Forest,yearly_jj,NZ,2002,2020,theil_sen_slope,0.000409,thousand_tonnes_C/year
+Cem_Forest,yearly_jj,NZ,2002,2020,theil_sen_slope_lower,0.00013,thousand_tonnes_C/year
+Cem_Forest,yearly_jj,NZ,2002,2020,theil_sen_slope_upper,0.000689,thousand_tonnes_C/year
+Cem_Forest,yearly_jj,NZ,2002,2020,theil_sen_pvalue_slope,0.004119,1
+Cem_Forest,yearly_jj,NZ,2002,2020,theil_sen_intercept,-0.000505,thousand_tonnes_C
+Cem_Forest,yearly_jj,NZ,2002,2020,theil_sen_intercept_lower,-0.003451,thousand_tonnes_C
+Cem_Forest,yearly_jj,NZ,2002,2020,theil_sen_intercept_upper,0.00244,thousand_tonnes_C
+Cem_Forest,yearly_jj,NZ,2002,2020,residual_standard_deviation,0.007002,thousand_tonnes_C

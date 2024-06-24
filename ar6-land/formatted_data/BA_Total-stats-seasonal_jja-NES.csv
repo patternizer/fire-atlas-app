@@ -1,2 +1,10 @@
-fittype,tstart,tend,slope,slope_lower,slope_upper,slope_mann_kendall,pvalue_slope,intercept,intercept_lower,intercept_upper,pvalue_intercept,SE,corrcoef,R2adj,variable,timescale,region
-theil-sen,2001-07-01,2024-07-01,-2.3134,-4.83228,0.20548,-2.537,0.071848,124.368657,90.558695,158.178618,0.0,68.217075,0.827738,0.982305,BA_Total,seasonal_jja,NES
+variable,timescale,region,tstart,tend,statistic,value,unit
+BA_Total,seasonal_jja,NES,2001,2024,mann_kendall_slope,-2.537,thousand_km2/year
+BA_Total,seasonal_jja,NES,2001,2024,theil_sen_slope,-2.3134,thousand_km2/year
+BA_Total,seasonal_jja,NES,2001,2024,theil_sen_slope_lower,-4.83228,thousand_km2/year
+BA_Total,seasonal_jja,NES,2001,2024,theil_sen_slope_upper,0.20548,thousand_km2/year
+BA_Total,seasonal_jja,NES,2001,2024,theil_sen_pvalue_slope,0.071848,1
+BA_Total,seasonal_jja,NES,2001,2024,theil_sen_intercept,124.368657,thousand_km2
+BA_Total,seasonal_jja,NES,2001,2024,theil_sen_intercept_lower,90.558695,thousand_km2
+BA_Total,seasonal_jja,NES,2001,2024,theil_sen_intercept_upper,158.178618,thousand_km2
+BA_Total,seasonal_jja,NES,2001,2024,residual_standard_deviation,68.217075,thousand_km2

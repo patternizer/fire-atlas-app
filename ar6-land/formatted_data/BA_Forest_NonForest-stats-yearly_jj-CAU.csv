@@ -1,2 +1,10 @@
-fittype,tstart,tend,slope,slope_lower,slope_upper,slope_mann_kendall,pvalue_slope,intercept,intercept_lower,intercept_upper,pvalue_intercept,SE,corrcoef,R2adj,variable,timescale,region
-theil-sen,2001-01-01,2024-01-01,0.000138,-0.000441,0.000717,0.0,0.641296,0.003983,-0.003789,0.011755,0.315129,0.064306,-0.313001,0.885513,BA_Forest_NonForest,yearly_jj,CAU
+variable,timescale,region,tstart,tend,statistic,value,unit
+BA_Forest,yearly_jj,CAU,2001,2024,mann_kendall_slope,0.0,thousand_km2/year
+BA_Forest,yearly_jj,CAU,2001,2024,theil_sen_slope,0.000138,thousand_km2/year
+BA_Forest,yearly_jj,CAU,2001,2024,theil_sen_slope_lower,-0.000441,thousand_km2/year
+BA_Forest,yearly_jj,CAU,2001,2024,theil_sen_slope_upper,0.000717,thousand_km2/year
+BA_Forest,yearly_jj,CAU,2001,2024,theil_sen_pvalue_slope,0.641296,1
+BA_Forest,yearly_jj,CAU,2001,2024,theil_sen_intercept,0.003983,thousand_km2
+BA_Forest,yearly_jj,CAU,2001,2024,theil_sen_intercept_lower,-0.003789,thousand_km2
+BA_Forest,yearly_jj,CAU,2001,2024,theil_sen_intercept_upper,0.011755,thousand_km2
+BA_Forest,yearly_jj,CAU,2001,2024,residual_standard_deviation,0.064306,thousand_km2

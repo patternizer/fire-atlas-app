@@ -1,2 +1,10 @@
-fittype,tstart,tend,slope,slope_lower,slope_upper,slope_mann_kendall,pvalue_slope,intercept,intercept_lower,intercept_upper,pvalue_intercept,SE,corrcoef,R2adj,variable,timescale,region
-theil-sen,2001-01-01,2024-02-01,1.9e-05,-2.4e-05,6.2e-05,0.0,0.380736,0.006387,-0.000441,0.013215,0.066639,0.028994,0.914833,0.969622,BA_Total,monthly,NZ
+variable,timescale,region,tstart,tend,statistic,value,unit
+BA_Total,monthly,NZ,2001,2024,mann_kendall_slope,0.0,thousand_km2/year
+BA_Total,monthly,NZ,2001,2024,theil_sen_slope,1.9e-05,thousand_km2/year
+BA_Total,monthly,NZ,2001,2024,theil_sen_slope_lower,-2.4e-05,thousand_km2/year
+BA_Total,monthly,NZ,2001,2024,theil_sen_slope_upper,6.2e-05,thousand_km2/year
+BA_Total,monthly,NZ,2001,2024,theil_sen_pvalue_slope,0.380736,1
+BA_Total,monthly,NZ,2001,2024,theil_sen_intercept,0.006387,thousand_km2
+BA_Total,monthly,NZ,2001,2024,theil_sen_intercept_lower,-0.000441,thousand_km2
+BA_Total,monthly,NZ,2001,2024,theil_sen_intercept_upper,0.013215,thousand_km2
+BA_Total,monthly,NZ,2001,2024,residual_standard_deviation,0.028994,thousand_km2

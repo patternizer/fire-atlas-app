@@ -1,2 +1,10 @@
-fittype,tstart,tend,slope,slope_lower,slope_upper,slope_mann_kendall,pvalue_slope,intercept,intercept_lower,intercept_upper,pvalue_intercept,SE,corrcoef,R2adj,variable,timescale,region
-theil-sen,2002-02-01,2020-02-01,0.014184,-0.006199,0.034567,0.014742,0.172614,0.154756,-0.059993,0.369505,0.157827,0.268368,0.773317,0.970133,Cem_Forest_NonForest,seasonal_djf,SAM
+variable,timescale,region,tstart,tend,statistic,value,unit
+Cem_Forest,seasonal_djf,SAM,2002,2020,mann_kendall_slope,0.014742,thousand_tonnes_C/year
+Cem_Forest,seasonal_djf,SAM,2002,2020,theil_sen_slope,0.014184,thousand_tonnes_C/year
+Cem_Forest,seasonal_djf,SAM,2002,2020,theil_sen_slope_lower,-0.006199,thousand_tonnes_C/year
+Cem_Forest,seasonal_djf,SAM,2002,2020,theil_sen_slope_upper,0.034567,thousand_tonnes_C/year
+Cem_Forest,seasonal_djf,SAM,2002,2020,theil_sen_pvalue_slope,0.172614,1
+Cem_Forest,seasonal_djf,SAM,2002,2020,theil_sen_intercept,0.154756,thousand_tonnes_C
+Cem_Forest,seasonal_djf,SAM,2002,2020,theil_sen_intercept_lower,-0.059993,thousand_tonnes_C
+Cem_Forest,seasonal_djf,SAM,2002,2020,theil_sen_intercept_upper,0.369505,thousand_tonnes_C
+Cem_Forest,seasonal_djf,SAM,2002,2020,residual_standard_deviation,0.268368,thousand_tonnes_C

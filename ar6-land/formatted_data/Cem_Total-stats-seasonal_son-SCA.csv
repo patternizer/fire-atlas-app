@@ -1,2 +1,10 @@
-fittype,tstart,tend,slope,slope_lower,slope_upper,slope_mann_kendall,pvalue_slope,intercept,intercept_lower,intercept_upper,pvalue_intercept,SE,corrcoef,R2adj,variable,timescale,region
-theil-sen,2002-10-01,2020-10-01,0.003931,-0.00135,0.009212,0.00353,0.144565,0.10133,0.045691,0.156968,0.000358,0.057279,0.994303,0.998409,Cem_Total,seasonal_son,SCA
+variable,timescale,region,tstart,tend,statistic,value,unit
+Cem_Total,seasonal_son,SCA,2002,2020,mann_kendall_slope,0.00353,thousand_tonnes_C/year
+Cem_Total,seasonal_son,SCA,2002,2020,theil_sen_slope,0.003931,thousand_tonnes_C/year
+Cem_Total,seasonal_son,SCA,2002,2020,theil_sen_slope_lower,-0.00135,thousand_tonnes_C/year
+Cem_Total,seasonal_son,SCA,2002,2020,theil_sen_slope_upper,0.009212,thousand_tonnes_C/year
+Cem_Total,seasonal_son,SCA,2002,2020,theil_sen_pvalue_slope,0.144565,1
+Cem_Total,seasonal_son,SCA,2002,2020,theil_sen_intercept,0.10133,thousand_tonnes_C
+Cem_Total,seasonal_son,SCA,2002,2020,theil_sen_intercept_lower,0.045691,thousand_tonnes_C
+Cem_Total,seasonal_son,SCA,2002,2020,theil_sen_intercept_upper,0.156968,thousand_tonnes_C
+Cem_Total,seasonal_son,SCA,2002,2020,residual_standard_deviation,0.057279,thousand_tonnes_C

@@ -1,2 +1,10 @@
-fittype,tstart,tend,slope,slope_lower,slope_upper,slope_mann_kendall,pvalue_slope,intercept,intercept_lower,intercept_upper,pvalue_intercept,SE,corrcoef,R2adj,variable,timescale,region
-theil-sen,2002-07-01,2020-07-01,0.006764,-0.119928,0.133456,0.017526,0.916663,2.272828,0.938047,3.607608,0.000846,1.732858,0.366271,0.994054,Cem_Forest_NonForest,yearly,WAF
+variable,timescale,region,tstart,tend,statistic,value,unit
+Cem_Forest,yearly,WAF,2002,2020,mann_kendall_slope,0.017526,thousand_tonnes_C/year
+Cem_Forest,yearly,WAF,2002,2020,theil_sen_slope,0.006764,thousand_tonnes_C/year
+Cem_Forest,yearly,WAF,2002,2020,theil_sen_slope_lower,-0.119928,thousand_tonnes_C/year
+Cem_Forest,yearly,WAF,2002,2020,theil_sen_slope_upper,0.133456,thousand_tonnes_C/year
+Cem_Forest,yearly,WAF,2002,2020,theil_sen_pvalue_slope,0.916663,1
+Cem_Forest,yearly,WAF,2002,2020,theil_sen_intercept,2.272828,thousand_tonnes_C
+Cem_Forest,yearly,WAF,2002,2020,theil_sen_intercept_lower,0.938047,thousand_tonnes_C
+Cem_Forest,yearly,WAF,2002,2020,theil_sen_intercept_upper,3.607608,thousand_tonnes_C
+Cem_Forest,yearly,WAF,2002,2020,residual_standard_deviation,1.732858,thousand_tonnes_C

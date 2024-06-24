@@ -1,2 +1,10 @@
-fittype,tstart,tend,slope,slope_lower,slope_upper,slope_mann_kendall,pvalue_slope,intercept,intercept_lower,intercept_upper,pvalue_intercept,SE,corrcoef,R2adj,variable,timescale,region
-theil-sen,2002-01-01,2020-12-01,-0.001822,-0.005716,0.002073,5e-06,0.357726,1.398675,0.887679,1.909671,0.0,1.964274,0.496028,0.98879,Cem_Total,monthly,WCE
+variable,timescale,region,tstart,tend,statistic,value,unit
+Cem_Total,monthly,WCE,2002,2020,mann_kendall_slope,5e-06,thousand_tonnes_C/year
+Cem_Total,monthly,WCE,2002,2020,theil_sen_slope,-0.001822,thousand_tonnes_C/year
+Cem_Total,monthly,WCE,2002,2020,theil_sen_slope_lower,-0.005716,thousand_tonnes_C/year
+Cem_Total,monthly,WCE,2002,2020,theil_sen_slope_upper,0.002073,thousand_tonnes_C/year
+Cem_Total,monthly,WCE,2002,2020,theil_sen_pvalue_slope,0.357726,1
+Cem_Total,monthly,WCE,2002,2020,theil_sen_intercept,1.398675,thousand_tonnes_C
+Cem_Total,monthly,WCE,2002,2020,theil_sen_intercept_lower,0.887679,thousand_tonnes_C
+Cem_Total,monthly,WCE,2002,2020,theil_sen_intercept_upper,1.909671,thousand_tonnes_C
+Cem_Total,monthly,WCE,2002,2020,residual_standard_deviation,1.964274,thousand_tonnes_C

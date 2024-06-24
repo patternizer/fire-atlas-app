@@ -1,2 +1,10 @@
-fittype,tstart,tend,slope,slope_lower,slope_upper,slope_mann_kendall,pvalue_slope,intercept,intercept_lower,intercept_upper,pvalue_intercept,SE,corrcoef,R2adj,variable,timescale,region
-theil-sen,2001-07-01,2024-07-01,0.00086,-0.000206,0.001926,0.000708,0.113913,0.007169,-0.007141,0.021479,0.32618,0.028932,0.936717,0.912398,BA_Forest_NonForest,yearly,NZ
+variable,timescale,region,tstart,tend,statistic,value,unit
+BA_Forest,yearly,NZ,2001,2024,mann_kendall_slope,0.000708,thousand_km2/year
+BA_Forest,yearly,NZ,2001,2024,theil_sen_slope,0.00086,thousand_km2/year
+BA_Forest,yearly,NZ,2001,2024,theil_sen_slope_lower,-0.000206,thousand_km2/year
+BA_Forest,yearly,NZ,2001,2024,theil_sen_slope_upper,0.001926,thousand_km2/year
+BA_Forest,yearly,NZ,2001,2024,theil_sen_pvalue_slope,0.113913,1
+BA_Forest,yearly,NZ,2001,2024,theil_sen_intercept,0.007169,thousand_km2
+BA_Forest,yearly,NZ,2001,2024,theil_sen_intercept_lower,-0.007141,thousand_km2
+BA_Forest,yearly,NZ,2001,2024,theil_sen_intercept_upper,0.021479,thousand_km2
+BA_Forest,yearly,NZ,2001,2024,residual_standard_deviation,0.028932,thousand_km2

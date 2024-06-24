@@ -1,2 +1,10 @@
-fittype,tstart,tend,slope,slope_lower,slope_upper,slope_mann_kendall,pvalue_slope,intercept,intercept_lower,intercept_upper,pvalue_intercept,SE,corrcoef,R2adj,variable,timescale,region
-theil-sen,2001-02-01,2024-02-01,-0.030496,-0.148247,0.087256,-0.020808,0.611734,7.873908,6.293375,9.454442,0.0,2.370259,-0.551508,0.978221,BA_Total,seasonal_djf,ENA
+variable,timescale,region,tstart,tend,statistic,value,unit
+BA_Total,seasonal_djf,ENA,2001,2024,mann_kendall_slope,-0.020808,thousand_km2/year
+BA_Total,seasonal_djf,ENA,2001,2024,theil_sen_slope,-0.030496,thousand_km2/year
+BA_Total,seasonal_djf,ENA,2001,2024,theil_sen_slope_lower,-0.148247,thousand_km2/year
+BA_Total,seasonal_djf,ENA,2001,2024,theil_sen_slope_upper,0.087256,thousand_km2/year
+BA_Total,seasonal_djf,ENA,2001,2024,theil_sen_pvalue_slope,0.611734,1
+BA_Total,seasonal_djf,ENA,2001,2024,theil_sen_intercept,7.873908,thousand_km2
+BA_Total,seasonal_djf,ENA,2001,2024,theil_sen_intercept_lower,6.293375,thousand_km2
+BA_Total,seasonal_djf,ENA,2001,2024,theil_sen_intercept_upper,9.454442,thousand_km2
+BA_Total,seasonal_djf,ENA,2001,2024,residual_standard_deviation,2.370259,thousand_km2

@@ -1,2 +1,10 @@
-fittype,tstart,tend,slope,slope_lower,slope_upper,slope_mann_kendall,pvalue_slope,intercept,intercept_lower,intercept_upper,pvalue_intercept,SE,corrcoef,R2adj,variable,timescale,region
-theil-sen,2002-01-01,2020-12-01,-0.000716,-0.002235,0.000802,-2e-05,0.353506,0.474785,0.275582,0.673988,5e-06,0.765738,0.953072,0.986825,Cem_Forest_NonForest,monthly,NEAF
+variable,timescale,region,tstart,tend,statistic,value,unit
+Cem_Forest,monthly,NEAF,2002,2020,mann_kendall_slope,-2e-05,thousand_tonnes_C/year
+Cem_Forest,monthly,NEAF,2002,2020,theil_sen_slope,-0.000716,thousand_tonnes_C/year
+Cem_Forest,monthly,NEAF,2002,2020,theil_sen_slope_lower,-0.002235,thousand_tonnes_C/year
+Cem_Forest,monthly,NEAF,2002,2020,theil_sen_slope_upper,0.000802,thousand_tonnes_C/year
+Cem_Forest,monthly,NEAF,2002,2020,theil_sen_pvalue_slope,0.353506,1
+Cem_Forest,monthly,NEAF,2002,2020,theil_sen_intercept,0.474785,thousand_tonnes_C
+Cem_Forest,monthly,NEAF,2002,2020,theil_sen_intercept_lower,0.275582,thousand_tonnes_C
+Cem_Forest,monthly,NEAF,2002,2020,theil_sen_intercept_upper,0.673988,thousand_tonnes_C
+Cem_Forest,monthly,NEAF,2002,2020,residual_standard_deviation,0.765738,thousand_tonnes_C

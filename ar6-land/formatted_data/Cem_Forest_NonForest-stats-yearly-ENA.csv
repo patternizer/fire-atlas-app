@@ -1,2 +1,10 @@
-fittype,tstart,tend,slope,slope_lower,slope_upper,slope_mann_kendall,pvalue_slope,intercept,intercept_lower,intercept_upper,pvalue_intercept,SE,corrcoef,R2adj,variable,timescale,region
-theil-sen,2002-07-01,2020-07-01,0.015478,-0.064251,0.095206,0.014598,0.703583,2.058055,1.218063,2.898048,2e-06,1.130881,0.191155,0.970367,Cem_Forest_NonForest,yearly,ENA
+variable,timescale,region,tstart,tend,statistic,value,unit
+Cem_Forest,yearly,ENA,2002,2020,mann_kendall_slope,0.014598,thousand_tonnes_C/year
+Cem_Forest,yearly,ENA,2002,2020,theil_sen_slope,0.015478,thousand_tonnes_C/year
+Cem_Forest,yearly,ENA,2002,2020,theil_sen_slope_lower,-0.064251,thousand_tonnes_C/year
+Cem_Forest,yearly,ENA,2002,2020,theil_sen_slope_upper,0.095206,thousand_tonnes_C/year
+Cem_Forest,yearly,ENA,2002,2020,theil_sen_pvalue_slope,0.703583,1
+Cem_Forest,yearly,ENA,2002,2020,theil_sen_intercept,2.058055,thousand_tonnes_C
+Cem_Forest,yearly,ENA,2002,2020,theil_sen_intercept_lower,1.218063,thousand_tonnes_C
+Cem_Forest,yearly,ENA,2002,2020,theil_sen_intercept_upper,2.898048,thousand_tonnes_C
+Cem_Forest,yearly,ENA,2002,2020,residual_standard_deviation,1.130881,thousand_tonnes_C

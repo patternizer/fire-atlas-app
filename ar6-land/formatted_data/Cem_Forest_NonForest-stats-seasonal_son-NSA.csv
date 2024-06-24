@@ -1,2 +1,10 @@
-fittype,tstart,tend,slope,slope_lower,slope_upper,slope_mann_kendall,pvalue_slope,intercept,intercept_lower,intercept_upper,pvalue_intercept,SE,corrcoef,R2adj,variable,timescale,region
-theil-sen,2002-10-01,2020-10-01,0.052068,-0.046884,0.151021,0.029842,0.302386,1.310328,0.267802,2.352854,0.013761,2.878489,0.891489,0.877757,Cem_Forest_NonForest,seasonal_son,NSA
+variable,timescale,region,tstart,tend,statistic,value,unit
+Cem_Forest,seasonal_son,NSA,2002,2020,mann_kendall_slope,0.029842,thousand_tonnes_C/year
+Cem_Forest,seasonal_son,NSA,2002,2020,theil_sen_slope,0.052068,thousand_tonnes_C/year
+Cem_Forest,seasonal_son,NSA,2002,2020,theil_sen_slope_lower,-0.046884,thousand_tonnes_C/year
+Cem_Forest,seasonal_son,NSA,2002,2020,theil_sen_slope_upper,0.151021,thousand_tonnes_C/year
+Cem_Forest,seasonal_son,NSA,2002,2020,theil_sen_pvalue_slope,0.302386,1
+Cem_Forest,seasonal_son,NSA,2002,2020,theil_sen_intercept,1.310328,thousand_tonnes_C
+Cem_Forest,seasonal_son,NSA,2002,2020,theil_sen_intercept_lower,0.267802,thousand_tonnes_C
+Cem_Forest,seasonal_son,NSA,2002,2020,theil_sen_intercept_upper,2.352854,thousand_tonnes_C
+Cem_Forest,seasonal_son,NSA,2002,2020,residual_standard_deviation,2.878489,thousand_tonnes_C

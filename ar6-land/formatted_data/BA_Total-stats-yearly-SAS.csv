@@ -1,2 +1,10 @@
-fittype,tstart,tend,slope,slope_lower,slope_upper,slope_mann_kendall,pvalue_slope,intercept,intercept_lower,intercept_upper,pvalue_intercept,SE,corrcoef,R2adj,variable,timescale,region
-theil-sen,2001-07-01,2024-07-01,3.097604,-1.203481,7.398688,2.758776,0.158083,189.531431,131.799615,247.263247,0.0,80.502688,0.551187,0.982685,BA_Total,yearly,SAS
+variable,timescale,region,tstart,tend,statistic,value,unit
+BA_Total,yearly,SAS,2001,2024,mann_kendall_slope,2.758776,thousand_km2/year
+BA_Total,yearly,SAS,2001,2024,theil_sen_slope,3.097604,thousand_km2/year
+BA_Total,yearly,SAS,2001,2024,theil_sen_slope_lower,-1.203481,thousand_km2/year
+BA_Total,yearly,SAS,2001,2024,theil_sen_slope_upper,7.398688,thousand_km2/year
+BA_Total,yearly,SAS,2001,2024,theil_sen_pvalue_slope,0.158083,1
+BA_Total,yearly,SAS,2001,2024,theil_sen_intercept,189.531431,thousand_km2
+BA_Total,yearly,SAS,2001,2024,theil_sen_intercept_lower,131.799615,thousand_km2
+BA_Total,yearly,SAS,2001,2024,theil_sen_intercept_upper,247.263247,thousand_km2
+BA_Total,yearly,SAS,2001,2024,residual_standard_deviation,80.502688,thousand_km2
